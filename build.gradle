@@ -1,0 +1,27 @@
+buildscript {
+    project.ext {
+        kotlin_version = '1.5.30'
+        junit_version = '5.7.2'
+    }
+}
+
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version "$kotlin_version"
+}
+
+group 'org.eljabali.sami.javatimefun'
+version '0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junit_version"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junit_version"
+}
+
+test {
+    useJUnitPlatform()
+}

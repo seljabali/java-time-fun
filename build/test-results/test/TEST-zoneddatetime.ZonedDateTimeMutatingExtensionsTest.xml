@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="zoneddatetime.ZonedDateTimeMutatingExtensionsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-09-04T08:34:58" hostname="samsoomi.local" time="0.01">
+  <properties/>
+  <testcase name="given date is on a Monday, when looking for next Monday inclusive, then should return same date()" classname="zoneddatetime.ZonedDateTimeMutatingExtensionsTest" time="0.004"/>
+  <testcase name="given date is on a Monday, when looking for last Monday exclusive, then should return date minus 1 week()" classname="zoneddatetime.ZonedDateTimeMutatingExtensionsTest" time="0.001"/>
+  <testcase name="given date A, when adjusted time, then should properly apply time()" classname="zoneddatetime.ZonedDateTimeMutatingExtensionsTest" time="0.004"/>
+  <testcase name="given date is on a Monday, when looking for last Monday inclusive, then should return same date()" classname="zoneddatetime.ZonedDateTimeMutatingExtensionsTest" time="0.0"/>
+  <testcase name="given date is on a Monday, when looking for next Monday exclusive, then should return date plus 1 week()" classname="zoneddatetime.ZonedDateTimeMutatingExtensionsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
