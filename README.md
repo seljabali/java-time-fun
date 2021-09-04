@@ -4,12 +4,12 @@
 
 <p align="center"><strong>Kotlin extension functions for Java Time.</strong></p>
 
-### What's This?
-[Java Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html) became integrated to the JDK, as of Java 8, which was a huge improvement over [Date](https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html). <br><br>
-This library makes Java Time even that much easier to work with. 
+## What's This?
+[Java Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html) became integrated to the JDK as of Java 8, which was a huge improvement over [Date](https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html). <br><br>
+This library makes dates & times even that much easier to work with. 
 
-### What's In It?
-#### 1. Date Parsing
+## What's In It?
+#### 1. Parsing
 ```kotlin
 // Provided time
 val result = "01:30 AM".parseLocalTime()
@@ -29,14 +29,14 @@ val result = "2021-09-04T19:14:27+0000".parseZonedDateTime(convertToDefaultTimeZ
 // Parse, zoned date time conversion, & time zone conversion
 val result = "2021-06-07".parseZonedDateTime()
 ```
-#### 2. Date Creation
+#### 2. Creation
 ```kotlin
 val result = ZonedDateTimeUtil.new(year = 2021, month = 3, day = 25)
 
 val result = ZonedDateTimeUtil.new(1325134800000)
 ```
 
-#### 3. Date Comparisons
+#### 3. Comparisons
 ```kotlin
 // Day
 val result = dateA.compareDay(dateB)
@@ -56,20 +56,20 @@ val result = dateA.compareTime(dateB)
 val result = dateA.isAfterEqualTime(dateB)
 ```
 
-#### 4. Date Print
+#### 4. Print
 ```kotlin
 val date = "2021-07-06".parseZonedDateTime()
 val result = date.print(format = "MM/dd/yyyy")
 ```
 
-#### 5. Date Attributes
+#### 5. Attributes
 ```kotlin
 val result = date.isAtStartOfDay()
 
 val result = date.getDaysInMonth()
 ```
 
-#### 5. Date Mutations
+#### 5. Mutations
 ```kotlin
 val result = date.atStartOfDay()
 
@@ -88,3 +88,40 @@ val result = ZonedDateTimes.lastMonday
 
 val result = ZonedDateTimes.nextThursday
 ```
+
+## How to install?
+Add to root `build.gradle` at the end of repositories:
+```gradle
+allprojects {
+  repositories {
+    maven { url 'https://jitpack.io' }
+  }
+}
+```
+Add to module `build.gradle`
+```gradle
+implementation 'com.github.seljabali:java-time-plus:v0.1'
+```
+### For Android
+In addition to the above. Add to module `build.gradle`
+```gradle
+android {
+    defaultConfig {
+        // Required when setting minSdkVersion to 20 or lower
+        multiDexEnabled true
+    }
+
+    compileOptions {
+        // Flag to enable support for the new language APIs
+        coreLibraryDesugaringEnabled true
+        // Sets Java compatibility to Java 8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+}
+```
+For more information on Android desugaring click [here](https://developer.android.com/studio/write/java8-support#library-desugaring).
