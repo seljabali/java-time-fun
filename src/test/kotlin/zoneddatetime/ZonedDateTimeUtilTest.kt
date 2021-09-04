@@ -41,7 +41,7 @@ class ZonedDateTimeTest {
             year = year,
             month = month,
             day = day,
-            hour = hour,
+            hourIn24 = hour,
             minute = minute,
             second = second
         )

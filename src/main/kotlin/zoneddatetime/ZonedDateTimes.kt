@@ -33,4 +33,7 @@ object ZonedDateTimes {
     val nextFriday: ZonedDateTime get() = today.getNext(FRIDAY)
     val nextSaturday: ZonedDateTime get() = today.getNext(SATURDAY)
     val nextSunday: ZonedDateTime get() = today.getNext(SUNDAY)
+
+    val firstDayOfThisYear: ZonedDateTime get() = ZonedDateTimeUtil.new(today.year, 1, 1)
+    val lastDayOfThisYear: ZonedDateTime get() = ZonedDateTimeUtil.new(today.year, 12, 31)
 }

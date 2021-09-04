@@ -1,30 +1,24 @@
-package localdate
+package localtime.extensions
 
-import java.time.LocalDate
+import java.time.LocalTime
 import java.time.format.DateTimeFormatter
-import java.time.format.DateTimeFormatterBuilder
 import java.time.format.DateTimeParseException
-import java.util.Locale
 
-fun String.parseLocalDate(format: String? = null): LocalDate? =
+fun String.parseLocalTime(format: String? = null): LocalTime? =
     if (format == null || format.isEmpty()) {
         try {
-            LocalDate.parse(this)
+            LocalTime.parse(this)
         } catch (e: DateTimeParseException) {
             null
         } catch (e: IllegalArgumentException) {
             null
         }
-
     } else {
         try {
-            LocalDate.parse(this, DateTimeFormatter.ofPattern(format))
+            LocalTime.parse(this, DateTimeFormatter.ofPattern(format))
         } catch (e: DateTimeParseException) {
             null
         } catch (e: IllegalArgumentException) {
             null
         }
     }
-
-fun LocalDate.print(format: String, locale: Locale = Locale.US): String =
-    this.format(DateTimeFormatterBuilder().appendPattern(format).toFormatter(locale))

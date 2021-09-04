@@ -1,12 +1,10 @@
-package localdatetime
+package localdatetime.extensions
 
-import localdate.parseLocalDate
+import localdate.extensions.parseLocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
-import java.time.format.DateTimeFormatterBuilder
 import java.time.format.DateTimeParseException
-import java.util.Locale
 
 fun String.parseLocalDateTime(format: String? = null): LocalDateTime? {
     val localDateTime = parseLocalDateTimeHelper(this, format)
@@ -38,6 +36,3 @@ private fun parseLocalDateTimeHelper(dateText: String, format: String?): LocalDa
             null
         }
     }
-
-fun LocalDateTime.print(format: String, locale: Locale = Locale.US): String =
-    this.format(DateTimeFormatterBuilder().appendPattern(format).toFormatter(locale))

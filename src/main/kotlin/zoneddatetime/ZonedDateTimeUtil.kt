@@ -23,7 +23,7 @@ object ZonedDateTimeUtil {
         year: Int,
         month: Int,
         day: Int,
-        hour: Int = 0,
+        hourIn24: Int = 0,
         minute: Int = 0,
         second: Int = 0,
         nano: Int = 0
@@ -32,7 +32,29 @@ object ZonedDateTimeUtil {
             year,
             Month.of(month),
             day,
-            hour,
+            hourIn24,
+            minute,
+            second,
+            nano
+        )
+        return ZonedDateTime.of(localDateTime, getDefaultZoneId())
+    }
+
+    fun new(
+        year: Int,
+        month: Int,
+        day: Int,
+        hour: Int = 0,
+        minute: Int = 0,
+        second: Int = 0,
+        nano: Int = 0,
+        isAm: Boolean
+    ): ZonedDateTime {
+        val localDateTime = LocalDateTime.of(
+            year,
+            Month.of(month),
+            day,
+            if (isAm) hour else hour + 12,
             minute,
             second,
             nano

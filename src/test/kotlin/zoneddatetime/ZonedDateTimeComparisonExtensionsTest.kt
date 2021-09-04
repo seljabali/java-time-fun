@@ -17,8 +17,8 @@ class ZonedDateTimeComparisonExtensionsTest {
         val isDateABeforeDayB = dateA.isBefore(dateB) && dateA.compareDay(dateB) == -1
         val isDateBAfterDayA = dateB.isAfter(dateA) && dateB.compareDay(dateA) == 1
 
-        val isDateABeforeDayTimeB = dateA.isBeforeThanTime(dateB) && dateA.compareTime(dateB) == -1
-        val isDateBAfterDayTimeA = dateB.isAfterThanTime(dateA) && dateB.compareTime(dateA) == 1
+        val isDateABeforeDayTimeB = dateA.isBeforeTime(dateB) && dateA.compareTime(dateB) == -1
+        val isDateBAfterDayTimeA = dateB.isAfterTime(dateA) && dateB.compareTime(dateA) == 1
 
         val isDateANotEqualDayDateB = !dateA.isEqualDay(dateB) && !dateB.isEqualDay(dateA)
         val isDateANotEqualDayTimeDateB = !dateA.isEqualTime(dateB) && !dateB.isEqualTime(dateA)
@@ -65,7 +65,7 @@ class ZonedDateTimeComparisonExtensionsTest {
             year = 2021,
             month = 6,
             day = 8,
-            hour = 15,
+            hourIn24 = 15,
             minute = 30,
             second = 0,
             nano = 0
@@ -76,7 +76,7 @@ class ZonedDateTimeComparisonExtensionsTest {
             year = 2021,
             month = 6,
             day = 8,
-            hour = 16,
+            hourIn24 = 16,
             minute = 40,
             second = 0,
             nano = 0

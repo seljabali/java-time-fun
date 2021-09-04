@@ -45,9 +45,10 @@ private fun parseZonedDateTimeHelper(dateText: String, format: String?): ZonedDa
             null
         }
     }
-fun String.isMsftDate(): Boolean = this.contains("/Date(")
 
-fun String.parseMsftDate(): ZonedDateTime {
+private fun String.isMsftDate(): Boolean = this.contains("/Date(")
+
+private fun String.parseMsftDate(): ZonedDateTime {
 //    "\/Date(1325134800000)\/"
     val longString = this.substring(this.indexOf("(") + 1, this.indexOf(")"))
     return ZonedDateTimeUtil.new(longString.toLong())

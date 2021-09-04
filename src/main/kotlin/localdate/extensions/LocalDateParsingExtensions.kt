@@ -1,15 +1,13 @@
-package localtime
+package localdate.extensions
 
-import java.time.LocalTime
+import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import java.time.format.DateTimeFormatterBuilder
 import java.time.format.DateTimeParseException
-import java.util.Locale
 
-fun String.parseLocalTime(format: String? = null): LocalTime? =
+fun String.parseLocalDate(format: String? = null): LocalDate? =
     if (format == null || format.isEmpty()) {
         try {
-            LocalTime.parse(this)
+            LocalDate.parse(this)
         } catch (e: DateTimeParseException) {
             null
         } catch (e: IllegalArgumentException) {
@@ -17,13 +15,10 @@ fun String.parseLocalTime(format: String? = null): LocalTime? =
         }
     } else {
         try {
-            LocalTime.parse(this, DateTimeFormatter.ofPattern(format))
+            LocalDate.parse(this, DateTimeFormatter.ofPattern(format))
         } catch (e: DateTimeParseException) {
             null
         } catch (e: IllegalArgumentException) {
             null
         }
     }
-
-fun LocalTime.print(format: String, locale: Locale = Locale.US): String =
-    this.format(DateTimeFormatterBuilder().appendPattern(format).toFormatter(locale))

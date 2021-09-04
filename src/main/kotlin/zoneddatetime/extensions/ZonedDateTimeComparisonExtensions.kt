@@ -6,10 +6,10 @@ import kotlin.math.roundToInt
 
 // region Day Comparisons
 fun ZonedDateTime.compareDay(toDate: ZonedDateTime): Int {
-    val dayDifferentFromDate = getDayDifference(toDate)
+    val dayDifference = this.getDayDifference(toDate)
     return when {
-        dayDifferentFromDate > 0 -> -1
-        dayDifferentFromDate < 0 -> 1
+        dayDifference > 0 -> -1
+        dayDifference < 0 -> 1
         else -> 0
     }
 }
@@ -101,34 +101,34 @@ fun ZonedDateTime.isAfterYear(zonedDateTimeB: ZonedDateTime): Boolean {
 fun ZonedDateTime.compareTime(toDate: ZonedDateTime): Int =
     when {
         isEqualTime(toDate) -> 0
-        isBeforeThanTime(toDate) -> -1
+        isBeforeTime(toDate) -> -1
         else -> 1
     }
 
 fun ZonedDateTime.isEqualTime(b: ZonedDateTime): Boolean = isEqual(b)
 
-fun ZonedDateTime.isBeforeThanTime(b: ZonedDateTime): Boolean = this.isBefore(b)
+fun ZonedDateTime.isBeforeTime(b: ZonedDateTime): Boolean = this.isBefore(b)
 
-fun ZonedDateTime.isBeforeThanEqualTime(b: ZonedDateTime): Boolean = compareTime(b) <= 0
+fun ZonedDateTime.isBeforeEqualTime(b: ZonedDateTime): Boolean = compareTime(b) <= 0
 
-fun ZonedDateTime.isAfterThanTime(b: ZonedDateTime): Boolean = compareTime(b) > 0
+fun ZonedDateTime.isAfterTime(b: ZonedDateTime): Boolean = compareTime(b) > 0
 
-fun ZonedDateTime.isAfterThanEqualTime(b: ZonedDateTime): Boolean = compareTime(b) >= 0
+fun ZonedDateTime.isAfterEqualTime(b: ZonedDateTime): Boolean = compareTime(b) >= 0
 // endregion
 
-fun ZonedDateTime.getMinuteDifference(zonedDateTimeB: ZonedDateTime): Int {
+fun ZonedDateTime.getMinuteDifference(zonedDateTimeB: ZonedDateTime): Long {
     val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
-    return Duration.between(this, otherZonedDateTime).toMinutes().toInt()
+    return Duration.between(this, otherZonedDateTime).toMinutes()
 }
 
-fun ZonedDateTime.getHourDifference(zonedDateTimeB: ZonedDateTime): Int {
+fun ZonedDateTime.getHourDifference(zonedDateTimeB: ZonedDateTime): Long {
     val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
-    return (this.getMinuteDifference(otherZonedDateTime) / 60f).roundToInt()
+    return Duration.between(this, otherZonedDateTime).toHours()
 }
 
-fun ZonedDateTime.getDayDifference(zonedDateTimeB: ZonedDateTime): Int {
+fun ZonedDateTime.getDayDifference(zonedDateTimeB: ZonedDateTime): Long {
     val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
-    return Duration.between(this.atStartOfDay(), otherZonedDateTime.atStartOfDay()).toDays().toInt()
+    return Duration.between(this.atStartOfDay(), otherZonedDateTime.atStartOfDay()).toDays()
 }
 
 fun ZonedDateTime.getMonthDifference(zonedDateTimeB: ZonedDateTime): Int {
