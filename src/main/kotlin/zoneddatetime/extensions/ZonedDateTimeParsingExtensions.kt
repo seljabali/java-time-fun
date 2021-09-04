@@ -1,6 +1,6 @@
 package zoneddatetime.extensions
 
-import localdatetime.parseLocalDateTime
+import localdatetime.extensions.parseLocalDateTime
 import zoneddatetime.ZonedDateTimeUtil
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter

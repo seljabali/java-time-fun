@@ -1,7 +1,7 @@
 package zoneddatetime
 
 import localtime.extensions.parseLocalTime
-import localtime.print
+import localtime.extensions.print
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
