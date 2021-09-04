@@ -24,7 +24,7 @@ class ZonedDateTimeMutatingExtensionsTest {
         val dateA = ZonedDateTimeUtil.new(2021, 6, 7)
 
         // when
-        val resultLastMondayInclusive = dateA.getLast(DayOfWeek.MONDAY, countInCurrentDay = true)
+        val resultLastMondayInclusive = dateA.getLast(DayOfWeek.MONDAY, countingInThisDay = true)
 
         // then
         assertTrue(dateA.isEqualDay(resultLastMondayInclusive))
@@ -49,7 +49,7 @@ class ZonedDateTimeMutatingExtensionsTest {
         val dateA = ZonedDateTimeUtil.new(2021, 6, 7)
 
         // when
-        val resultNextMondayInclusive = dateA.getNext(DayOfWeek.MONDAY, countInCurrentDay = true)
+        val resultNextMondayInclusive = dateA.getNext(DayOfWeek.MONDAY, countingInThisDay = true)
 
         // then
         assertTrue(dateA.isEqualDay(resultNextMondayInclusive))

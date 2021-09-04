@@ -6,9 +6,15 @@ import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeParseException
 
-fun String.parseZonedDateTime(format: String? = null): ZonedDateTime? {
+fun String.parseZonedDateTime(
+    format: String? = null,
+    convertToDefaultTimeZone: Boolean = true
+): ZonedDateTime? {
     val zonedDateTime = parseZonedDateTimeHelper(this, format)
     if (zonedDateTime != null) {
+        if (convertToDefaultTimeZone) {
+            zonedDateTime.withZoneSameInstant(ZonedDateTimeUtil.getDefaultZoneId())
+        }
         return zonedDateTime
     }
     val localDateTime = this.parseLocalDateTime(format)
@@ -34,6 +40,8 @@ private fun parseZonedDateTimeHelper(dateText: String, format: String?): ZonedDa
         try {
             ZonedDateTime.parse(dateText, DateTimeFormatter.ofPattern(format))
         } catch (e: DateTimeParseException) {
+            null
+        } catch (e: IllegalArgumentException) {
             null
         }
     }

@@ -12,11 +12,15 @@ fun String.parseLocalTime(format: String? = null): LocalTime? =
             LocalTime.parse(this)
         } catch (e: DateTimeParseException) {
             null
+        } catch (e: IllegalArgumentException) {
+            null
         }
     } else {
         try {
             LocalTime.parse(this, DateTimeFormatter.ofPattern(format))
         } catch (e: DateTimeParseException) {
+            null
+        } catch (e: IllegalArgumentException) {
             null
         }
     }

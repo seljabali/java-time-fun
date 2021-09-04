@@ -42,8 +42,8 @@ class ZonedDateTimeComparisonExtensionsTest {
         val monthDifferenceOfAAndB = dateA.getMonthDifference(dateB)
         val monthDifferenceOfAAndBAreTheSame = dateA.getMonthDifference(dateB) == dateB.getMonthDifference(dateA)
 
-        val dateAAndBAreInSameYear = dateA.areInSameYear(dateB) and dateB.areInSameYear(dateA)
-        val dateAAndBAreInSameMonth = dateA.areInSameMonth(dateB) and dateB.areInSameMonth(dateA)
+        val dateAAndBAreInSameYear = dateA.isEqualYear(dateB) and dateB.isEqualYear(dateA)
+        val dateAAndBAreInSameMonth = dateA.isEqualMonth(dateB) and dateB.isEqualMonth(dateA)
 
         val dateAAndBDayDifference = dateA.getDayDifference(dateB)
 

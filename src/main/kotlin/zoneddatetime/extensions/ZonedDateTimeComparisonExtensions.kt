@@ -16,13 +16,85 @@ fun ZonedDateTime.compareDay(toDate: ZonedDateTime): Int {
 
 fun ZonedDateTime.isEqualDay(b: ZonedDateTime): Boolean = compareDay(b) == 0
 
-fun ZonedDateTime.isBeforeThanDay(b: ZonedDateTime): Boolean = compareDay(b) < 0
+fun ZonedDateTime.isBeforeDay(b: ZonedDateTime): Boolean = compareDay(b) < 0
 
-fun ZonedDateTime.isBeforeThanEqualDay(b: ZonedDateTime): Boolean = compareDay(b) <= 0
+fun ZonedDateTime.isBeforeEqualDay(b: ZonedDateTime): Boolean = compareDay(b) <= 0
 
-fun ZonedDateTime.isAfterThanDay(b: ZonedDateTime): Boolean = compareDay(b) > 0
+fun ZonedDateTime.isAfterDay(b: ZonedDateTime): Boolean = compareDay(b) > 0
 
-fun ZonedDateTime.isAfterThanEqualDay(b: ZonedDateTime): Boolean = compareDay(b) >= 0
+fun ZonedDateTime.isAfterEqualDay(b: ZonedDateTime): Boolean = compareDay(b) >= 0
+// endregion
+
+// region Month Comparisons
+fun ZonedDateTime.compareMonth(zonedDateTimeB: ZonedDateTime): Int =
+    when {
+        isBeforeMonth(zonedDateTimeB) -> -1
+        isEqualMonth(zonedDateTimeB) -> 0
+        else -> 1
+    }
+
+fun ZonedDateTime.isBeforeMonth(zonedDateTimeB: ZonedDateTime): Boolean {
+    val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
+    if (this.year > otherZonedDateTime.year) return false
+    if (this.year < otherZonedDateTime.year) return true
+    return this.month < otherZonedDateTime.month
+}
+
+fun ZonedDateTime.isBeforeEqualMonth(zonedDateTimeB: ZonedDateTime): Boolean {
+    val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
+    if (this.year > otherZonedDateTime.year) return false
+    if (this.year < otherZonedDateTime.year) return true
+    return this.month <= otherZonedDateTime.month
+}
+
+fun ZonedDateTime.isEqualMonth(zonedDateTimeB: ZonedDateTime): Boolean {
+    val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
+    return this.year == otherZonedDateTime.year && this.month == otherZonedDateTime.month
+}
+
+fun ZonedDateTime.isAfterEqualMonth(zonedDateTimeB: ZonedDateTime): Boolean {
+    val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
+    if (this.year > otherZonedDateTime.year) return true
+    if (this.year < otherZonedDateTime.year) return false
+    return this.month >= otherZonedDateTime.month
+}
+
+fun ZonedDateTime.isAfterMonth(zonedDateTimeB: ZonedDateTime): Boolean {
+    val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
+    if (this.year > otherZonedDateTime.year) return true
+    if (this.year < otherZonedDateTime.year) return false
+    return this.month > otherZonedDateTime.month
+}
+// endregion
+
+// region Year Comparisons
+fun ZonedDateTime.compareYear(zonedDateTimeB: ZonedDateTime): Int =
+    this.year.compareTo(zonedDateTimeB.withTimeZoneOf(this).year)
+
+fun ZonedDateTime.isBeforeYear(zonedDateTimeB: ZonedDateTime): Boolean {
+    val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
+    return this.year < otherZonedDateTime.year
+}
+
+fun ZonedDateTime.isBeforeEqualYear(zonedDateTimeB: ZonedDateTime): Boolean {
+    val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
+    return this.year <= otherZonedDateTime.year
+}
+
+fun ZonedDateTime.isEqualYear(zonedDateTimeB: ZonedDateTime): Boolean {
+    val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
+    return this.year == otherZonedDateTime.year
+}
+
+fun ZonedDateTime.isAfterEqualYear(zonedDateTimeB: ZonedDateTime): Boolean {
+    val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
+    return this.year >= otherZonedDateTime.year
+}
+
+fun ZonedDateTime.isAfterYear(zonedDateTimeB: ZonedDateTime): Boolean {
+    val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
+    return this.year > otherZonedDateTime.year
+}
 // endregion
 
 // region Time Comparisons
@@ -44,22 +116,23 @@ fun ZonedDateTime.isAfterThanTime(b: ZonedDateTime): Boolean = compareTime(b) > 
 fun ZonedDateTime.isAfterThanEqualTime(b: ZonedDateTime): Boolean = compareTime(b) >= 0
 // endregion
 
-fun ZonedDateTime.getMinuteDifference(zonedDateTimeB: ZonedDateTime): Int =
-    Duration.between(this, zonedDateTimeB).toMinutes().toInt()
-
-fun ZonedDateTime.getHourDifference(zonedDateTimeB: ZonedDateTime): Int =
-    (this.getMinuteDifference(zonedDateTimeB) / 60f).roundToInt()
-
-fun ZonedDateTime.getDayDifference(zonedDateTimeB: ZonedDateTime): Int =
-    Duration.between(this.atStartOfDay(), zonedDateTimeB.atStartOfDay()).toDays().toInt()
-
-fun ZonedDateTime.getMonthDifference(zonedDateTimeB: ZonedDateTime): Int {
-    val yearDif = (zonedDateTimeB.year - this.year) * 12
-    return yearDif + (zonedDateTimeB.month.value - this.month.value)
+fun ZonedDateTime.getMinuteDifference(zonedDateTimeB: ZonedDateTime): Int {
+    val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
+    return Duration.between(this, otherZonedDateTime).toMinutes().toInt()
 }
 
-fun ZonedDateTime.areInSameMonth(zonedDateTimeB: ZonedDateTime): Boolean =
-    year == zonedDateTimeB.year && month == zonedDateTimeB.month
+fun ZonedDateTime.getHourDifference(zonedDateTimeB: ZonedDateTime): Int {
+    val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
+    return (this.getMinuteDifference(otherZonedDateTime) / 60f).roundToInt()
+}
 
-fun ZonedDateTime.areInSameYear(zonedDateTimeB: ZonedDateTime): Boolean =
-    this.year == zonedDateTimeB.year
+fun ZonedDateTime.getDayDifference(zonedDateTimeB: ZonedDateTime): Int {
+    val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
+    return Duration.between(this.atStartOfDay(), otherZonedDateTime.atStartOfDay()).toDays().toInt()
+}
+
+fun ZonedDateTime.getMonthDifference(zonedDateTimeB: ZonedDateTime): Int {
+    val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
+    val yearDif = (otherZonedDateTime.year - this.year) * 12
+    return yearDif + (otherZonedDateTime.month.value - this.month.value)
+}

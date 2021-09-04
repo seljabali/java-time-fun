@@ -12,11 +12,16 @@ fun String.parseLocalDate(format: String? = null): LocalDate? =
             LocalDate.parse(this)
         } catch (e: DateTimeParseException) {
             null
+        } catch (e: IllegalArgumentException) {
+            null
         }
+
     } else {
         try {
             LocalDate.parse(this, DateTimeFormatter.ofPattern(format))
         } catch (e: DateTimeParseException) {
+            null
+        } catch (e: IllegalArgumentException) {
             null
         }
     }

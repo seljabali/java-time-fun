@@ -26,11 +26,15 @@ private fun parseLocalDateTimeHelper(dateText: String, format: String?): LocalDa
             LocalDateTime.parse(dateText)
         } catch (e: DateTimeParseException) {
             null
+        } catch (e: IllegalArgumentException) {
+            null
         }
     else {
         try {
             LocalDateTime.parse(dateText, DateTimeFormatter.ofPattern(format))
         } catch (e: DateTimeParseException) {
+            null
+        } catch (e: IllegalArgumentException) {
             null
         }
     }

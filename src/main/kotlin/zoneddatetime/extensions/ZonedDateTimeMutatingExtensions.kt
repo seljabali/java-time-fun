@@ -15,9 +15,16 @@ fun ZonedDateTime.withLocalTime(localTime: LocalTime): ZonedDateTime {
     return withSecond.withNano(localTime.nano)
 }
 
-fun ZonedDateTime.getLast(dayOfWeek: DayOfWeek, countInCurrentDay: Boolean = false): ZonedDateTime {
-    if (countInCurrentDay) {
-        if (this.dayOfWeek == dayOfWeek) return this
+fun ZonedDateTime.withTimeZoneOf(zonedDateTime: ZonedDateTime): ZonedDateTime {
+    if (this.zone != zonedDateTime.zone) {
+        return this.withZoneSameInstant(zonedDateTime.zone)
+    }
+    return this
+}
+
+fun ZonedDateTime.getLast(dayOfWeek: DayOfWeek, countingInThisDay: Boolean = false): ZonedDateTime {
+    if (countingInThisDay && this.dayOfWeek == dayOfWeek) {
+        return this
     }
     var mostRecentDay = this
     if (mostRecentDay.dayOfWeek == dayOfWeek) {
@@ -29,9 +36,9 @@ fun ZonedDateTime.getLast(dayOfWeek: DayOfWeek, countInCurrentDay: Boolean = fal
     return mostRecentDay
 }
 
-fun ZonedDateTime.getNext(dayOfWeek: DayOfWeek, countInCurrentDay: Boolean = false): ZonedDateTime {
-    if (countInCurrentDay) {
-        if (this.dayOfWeek == dayOfWeek) return this
+fun ZonedDateTime.getNext(dayOfWeek: DayOfWeek, countingInThisDay: Boolean = false): ZonedDateTime {
+    if (countingInThisDay && this.dayOfWeek == dayOfWeek) {
+        return this
     }
     var nextZonedDate = this
     if (nextZonedDate.dayOfWeek == dayOfWeek) {
