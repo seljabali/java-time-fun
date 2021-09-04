@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="zoneddatetime.ZonedDateTimeComparisonExtensionsTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-09-04T08:34:58" hostname="samsoomi.local" time="0.004">
-  <properties/>
-  <testcase name="given 2 dateTimes 2 and half hrs apart, then should see such differences in comparing()" classname="zoneddatetime.ZonedDateTimeComparisonExtensionsTest" time="0.002"/>
-  <testcase name="given date A &amp; B, when A is before B, then should properly have day &amp; month compare results as such()" classname="zoneddatetime.ZonedDateTimeComparisonExtensionsTest" time="0.001"/>
-  <testcase name="given date A &amp; B, when A is before B, then should properly have compare results as such()" classname="zoneddatetime.ZonedDateTimeComparisonExtensionsTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

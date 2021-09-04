@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="zoneddatetime.ZonedDateTimeParsingExtensionsTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-09-04T08:34:58" hostname="samsoomi.local" time="0.035">
-  <properties/>
-  <testcase name="given date in YYYY-MM-DD, when parsed without format &amp; converted to date, then should match when printed back to text()" classname="zoneddatetime.ZonedDateTimeParsingExtensionsTest" time="0.031"/>
-  <testcase name="given date in YYYY-MM-DD, when parsed with format &amp; converted to date, then should match when printed back to text()" classname="zoneddatetime.ZonedDateTimeParsingExtensionsTest" time="0.003"/>
-  <testcase name="given date in MM-DD-YYYY, when parsed with format &amp; converted to date, then should match when printed back to text()" classname="zoneddatetime.ZonedDateTimeParsingExtensionsTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
