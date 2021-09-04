@@ -100,7 +100,9 @@ allprojects {
 ```
 Add to module `build.gradle`
 ```gradle
-implementation 'com.github.seljabali:java-time-plus:v0.1'
+dependencies {
+  implementation 'com.github.seljabali:java-time-plus:v0.1'
+}  
 ```
 ### For Android
 In addition to the above. Add to module `build.gradle`
@@ -124,4 +126,4 @@ dependencies {
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
 }
 ```
-For more information on Android desugaring click [here](https://developer.android.com/studio/write/java8-support#library-desugaring).
+This to enable Android desugaring, to find out more click [here](https://developer.android.com/studio/write/java8-support#library-desugaring).
