@@ -105,7 +105,9 @@ dependencies {
 }  
 ```
 ### For Android
-In addition to the above. Add to module `build.gradle`
+In addition to the above, you need desugar your module:
+- Ensure you're using [Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin#updating-plugin) 4.0.0+.
+- Update module `build.gradle`:
 ```gradle
 android {
     defaultConfig {
@@ -126,4 +128,4 @@ dependencies {
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
 }
 ```
-This to enable Android desugaring, to find out more click [here](https://developer.android.com/studio/write/java8-support#library-desugaring).
+For more information on Android desugaring click [here](https://developer.android.com/studio/write/java8-support#library-desugaring).
