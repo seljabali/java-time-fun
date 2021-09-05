@@ -10,11 +10,17 @@ plugins {
     id 'maven-publish'
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = 'org.eljabali.sami.javatimefun'
+            artifactId = 'javatimefun'
+            version = '0.2'
 
-group 'org.eljabali.sami.javatimefun'
-version '0.1'
+            from components.java
+        }
+    }
+}
 
 repositories {
     mavenCentral()
