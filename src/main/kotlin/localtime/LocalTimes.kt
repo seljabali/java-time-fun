@@ -3,6 +3,7 @@ package localtime
 import java.time.LocalTime
 
 object LocalTimes {
-    val startOfDay: LocalTime get() = LocalTime.MIN
-    val endOfDay: LocalTime get() = LocalTime.MAX
+    val startOfDay: LocalTime = LocalTime.MIN
+    val noon: LocalTime = LocalTime.NOON
+    val endOfDay: LocalTime = LocalTime.MAX
 }

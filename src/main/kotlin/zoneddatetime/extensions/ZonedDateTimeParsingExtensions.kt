@@ -2,24 +2,25 @@ package zoneddatetime.extensions
 
 import localdatetime.extensions.parseLocalDateTime
 import zoneddatetime.ZonedDateTimeUtil
+import java.time.ZoneId
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeParseException
 
 fun String.parseZonedDateTime(
     format: String? = null,
-    convertToDefaultTimeZone: Boolean = true
+    useSystemTimeZone: Boolean = true
 ): ZonedDateTime? {
     val zonedDateTime = parseZonedDateTimeHelper(this, format)
     if (zonedDateTime != null) {
-        if (convertToDefaultTimeZone) {
-            zonedDateTime.withZoneSameInstant(ZonedDateTimeUtil.getDefaultZoneId())
+        if (useSystemTimeZone) {
+            return zonedDateTime.withZoneSameInstant(ZoneId.systemDefault())
         }
         return zonedDateTime
     }
     val localDateTime = this.parseLocalDateTime(format)
     if (localDateTime != null) {
-        return ZonedDateTime.of(localDateTime, ZonedDateTimeUtil.getDefaultZoneId())
+        return ZonedDateTime.of(localDateTime, ZoneId.systemDefault())
     }
     return null
 }

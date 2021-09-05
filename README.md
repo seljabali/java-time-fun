@@ -24,9 +24,9 @@ val result = "06/07/2021".parseLocalDate(format = "MM/dd/yyyy")
 val result = "2021-10-04T10:10:00+0000".parseZonedDateTime()
 
 // Maintain original time zone
-val result = "2021-10-04T10:10:00+0000".parseZonedDateTime(convertToDefaultTimeZone = false)
+val result = "2021-10-04T10:10:00+0000".parseZonedDateTime(useSystemTimeZone = false)
 
-// Parse LocalDate, ZonedDateTime conversion, system time zone conversion
+// Parse LocalDate, convert to ZonedDateTime, using system time zone
 val result = "2021-06-07".parseZonedDateTime()
 ```
 #### 2. Creation
@@ -40,6 +40,7 @@ val result = ZonedDateTimeUtil.new(1325134800000)
 ```kotlin
 // Day
 val result = dateA.compareDay(dateB)
+val result = dateA.getDayDifference(dateB)
 val result = dateA.isAfterEqualDay(dateB)
 
 // Year
@@ -48,11 +49,12 @@ val result = dateA.isBeforeYear(dateB)
 
 // Month
 val result = dateA.compareMonth(dateB)
-val result = dateA.isEqualMonth(dateB)
 val result = dateA.getMonthDifference(dateB)
+val result = dateA.isEqualMonth(dateB)
 
 // Time
 val result = dateA.compareTime(dateB)
+val result = dateA.getMinuteDifference(dateB)
 val result = dateA.isAfterEqualTime(dateB)
 ```
 

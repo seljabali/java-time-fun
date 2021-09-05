@@ -1,23 +1,12 @@
 package zoneddatetime
 
-import java.time.DateTimeException
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.Month
 import java.time.ZoneId
 import java.time.ZonedDateTime
-import java.time.zone.ZoneRulesException
 
 object ZonedDateTimeUtil {
-
-    fun getDefaultZoneId(): ZoneId =
-        try {
-            ZoneId.systemDefault()
-        } catch (e: DateTimeException) {
-            null
-        } catch (e: ZoneRulesException) {
-            null
-        } ?: ZoneId.of("America/Montreal")
 
     fun new(
         year: Int,
@@ -37,7 +26,7 @@ object ZonedDateTimeUtil {
             second,
             nano
         )
-        return ZonedDateTime.of(localDateTime, getDefaultZoneId())
+        return ZonedDateTime.of(localDateTime, ZoneId.systemDefault())
     }
 
     fun new(
@@ -59,10 +48,10 @@ object ZonedDateTimeUtil {
             second,
             nano
         )
-        return ZonedDateTime.of(localDateTime, getDefaultZoneId())
+        return ZonedDateTime.of(localDateTime, ZoneId.systemDefault())
     }
 
-    fun new(millis: Long): ZonedDateTime = Instant.ofEpochMilli(millis).atZone(getDefaultZoneId())
+    fun new(millis: Long): ZonedDateTime = Instant.ofEpochMilli(millis).atZone(ZoneId.systemDefault())
 
     fun isLeapYear(year: Int): Boolean =
         when {

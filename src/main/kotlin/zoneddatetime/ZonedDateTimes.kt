@@ -10,10 +10,11 @@ import java.time.DayOfWeek.SUNDAY
 import java.time.DayOfWeek.THURSDAY
 import java.time.DayOfWeek.TUESDAY
 import java.time.DayOfWeek.WEDNESDAY
+import java.time.ZoneId
 import java.time.ZonedDateTime
 
 object ZonedDateTimes {
-    val now: ZonedDateTime get() = ZonedDateTime.now(ZonedDateTimeUtil.getDefaultZoneId())
+    val now: ZonedDateTime get() = ZonedDateTime.now(ZoneId.systemDefault())
     val today: ZonedDateTime get() = now.atStartOfDay()
     val yesterday: ZonedDateTime get() = today.minusDays(1)
     val tomorrow: ZonedDateTime get() = today.plusDays(1)
