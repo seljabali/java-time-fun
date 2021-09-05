@@ -103,7 +103,7 @@ allprojects {
 Add to module `build.gradle`
 ```gradle
 dependencies {
-  implementation 'com.github.seljabali:java-time-plus:v0.1'
+  implementation 'com.github.seljabali:java-time-plus:0.2'
 }  
 ```
 ### For Android
