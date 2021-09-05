@@ -82,11 +82,11 @@ val result = date.getNext(DayOfWeek.MONDAY)
 ```kotlin
 val result = ZonedDateTimes.today
 
-val result = ZonedDateTimes.tomorrow
+val result = LocalDateTimes.tomorrow
 
-val result = ZonedDateTimes.lastMonday
+val result = LocalDates.nextMonday
 
-val result = ZonedDateTimes.nextThursday
+val result = ZonedDateTimes.lastDayOfThisYear
 ```
 
 ## How to install?
