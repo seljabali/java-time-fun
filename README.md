@@ -6,7 +6,7 @@
 
 ## Background
 [Java Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html) became integrated to the JDK as of Java 8. It was a huge improvement over its [Date](https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html) predecessor.<br><br>
-Java Time Fun library empowers Java Time even more, making usage of dates & times a breeze to work with.
+Java Time Fun library empowers Java Time even more, making usage of dates & times a breeze.
 
 ## What's In It?
 #### 1. Parsing
