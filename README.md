@@ -2,11 +2,11 @@
   <img src="screenshots/logo.png" width=300px alt="SwiftDate" title="SwiftDate">
 </p>
 
-<p align="center"><strong>Kotlin extension functions for Java Time.</strong></p>
+<p align="center"><strong>Java Time Kotlin extension functions.</strong></p>
 
-## What's This?
-[Java Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html) became integrated to the JDK as of Java 8, which was a huge improvement over [Date](https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html). <br><br>
-This library makes dates & times even that much easier to work with. 
+## Background
+[Java Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html) became integrated to the JDK as of Java 8. It was a huge improvement over its [Date](https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html) predecessor.<br><br>
+Java Time Fun library empowers Java Time even more, making usage of dates & times a breeze to work with.
 
 ## What's In It?
 #### 1. Parsing
@@ -21,12 +21,12 @@ val result = "2021-06-07".parseLocalDate()
 val result = "06/07/2021".parseLocalDate(format = "MM/dd/yyyy")
 
 // Automatic time zone conversions
-val result = "2021-09-04T19:14:27+0000".parseZonedDateTime()
+val result = "2021-10-04T10:10:00+0000".parseZonedDateTime()
 
 // Maintain original time zone
-val result = "2021-09-04T19:14:27+0000".parseZonedDateTime(convertToDefaultTimeZone = false)
+val result = "2021-10-04T10:10:00+0000".parseZonedDateTime(convertToDefaultTimeZone = false)
 
-// Parse, zoned date time conversion, & time zone conversion
+// Parse LocalDate, ZonedDateTime conversion, system time zone conversion
 val result = "2021-06-07".parseZonedDateTime()
 ```
 #### 2. Creation
@@ -69,7 +69,7 @@ val result = date.isAtStartOfDay()
 val result = date.getDaysInMonth()
 ```
 
-#### 5. Mutations
+#### 6. Mutations
 ```kotlin
 val result = date.atStartOfDay()
 
@@ -78,7 +78,7 @@ val result = date.getLast(DayOfWeek.FRIDAY)
 val result = date.getNext(DayOfWeek.MONDAY)
 ```
 
-#### 5. Preset Dates
+#### 7. Preset Dates
 ```kotlin
 val result = ZonedDateTimes.today
 
