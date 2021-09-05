@@ -26,7 +26,7 @@ val result = "2021-10-04T10:10:00+0000".parseZonedDateTime()
 // Maintain original time zone
 val result = "2021-10-04T10:10:00+0000".parseZonedDateTime(useSystemTimeZone = false)
 
-// Parse LocalDate, convert to ZonedDateTime, using system time zone
+// Parse LocalDate, convert to ZonedDateTime using system time zone
 val result = "2021-06-07".parseZonedDateTime()
 ```
 #### 2. Creation
@@ -87,8 +87,6 @@ val result = ZonedDateTimes.today
 val result = LocalDateTimes.tomorrow
 
 val result = LocalDates.nextMonday
-
-val result = ZonedDateTimes.lastDayOfThisYear
 ```
 
 ## How to install?
@@ -103,7 +101,7 @@ allprojects {
 Add to module `build.gradle`
 ```gradle
 dependencies {
-  implementation 'com.github.seljabali:java-time-plus:0.3'
+  implementation 'com.github.seljabali:java-time-fun:0.3'
 }  
 ```
 ### For Android
