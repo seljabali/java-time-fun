@@ -5,8 +5,12 @@ import java.time.LocalDateTime
 import java.time.Month
 import java.time.ZoneId
 import java.time.ZonedDateTime
+import java.util.Calendar
+import java.util.Date
 
 object ZonedDateTimeUtil {
+
+    private val UTC get() = ZoneId.of("UTC")
 
     fun new(
         year: Int,
@@ -15,7 +19,8 @@ object ZonedDateTimeUtil {
         hourIn24: Int = 0,
         minute: Int = 0,
         second: Int = 0,
-        nano: Int = 0
+        nano: Int = 0,
+        useSystemTimeZone: Boolean = true
     ): ZonedDateTime {
         val localDateTime = LocalDateTime.of(
             year,
@@ -26,7 +31,10 @@ object ZonedDateTimeUtil {
             second,
             nano
         )
-        return ZonedDateTime.of(localDateTime, ZoneId.systemDefault())
+        return ZonedDateTime.of(
+            localDateTime,
+            if (useSystemTimeZone) ZoneId.systemDefault() else UTC
+        )
     }
 
     fun new(
@@ -37,7 +45,8 @@ object ZonedDateTimeUtil {
         minute: Int = 0,
         second: Int = 0,
         nano: Int = 0,
-        isAm: Boolean
+        isAm: Boolean,
+        useSystemTimeZone: Boolean = true
     ): ZonedDateTime {
         val localDateTime = LocalDateTime.of(
             year,
@@ -48,16 +57,28 @@ object ZonedDateTimeUtil {
             second,
             nano
         )
-        return ZonedDateTime.of(localDateTime, ZoneId.systemDefault())
+        return ZonedDateTime.of(
+            localDateTime,
+            if (useSystemTimeZone) ZoneId.systemDefault() else UTC
+        )
     }
 
-    fun new(millis: Long): ZonedDateTime = Instant.ofEpochMilli(millis).atZone(ZoneId.systemDefault())
+    fun new(millis: Long, useSystemTimeZone: Boolean = true): ZonedDateTime =
+        getZonedDateTimeFromInstant(Instant.ofEpochMilli(millis), useSystemTimeZone)
 
-    fun isLeapYear(year: Int): Boolean =
-        when {
-            year % 4 != 0 -> false
-            year % 400 == 0 -> true
-            year % 100 == 0 -> false
-            else -> true
+    fun new(date: Date, useSystemTimeZone: Boolean = true): ZonedDateTime =
+        getZonedDateTimeFromInstant(date.toInstant(), useSystemTimeZone)
+
+    fun new(calendar: Calendar, useSystemTimeZone: Boolean = true): ZonedDateTime {
+        if (useSystemTimeZone) {
+            return getZonedDateTimeFromInstant(calendar.toInstant(), true)
         }
+        return ZonedDateTime.ofInstant(calendar.toInstant(), ZoneId.of(calendar.timeZone.id))
+    }
+
+    private fun getZonedDateTimeFromInstant(instant: Instant, useSystemTimeZone: Boolean): ZonedDateTime =
+        ZonedDateTime.ofInstant(
+            instant,
+            if (useSystemTimeZone) ZoneId.systemDefault() else UTC
+        )
 }
