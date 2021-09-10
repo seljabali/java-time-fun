@@ -1,9 +1,8 @@
 package zoneddatetime.extensions
 
-import zoneddatetime.ZonedDateTimeUtil
 import java.time.ZonedDateTime
 
-fun ZonedDateTime.isInLeapYear(): Boolean = ZonedDateTimeUtil.isLeapYear(this.year)
+fun ZonedDateTime.isInLeapYear(): Boolean = YearUtil.isLeapYear(this.year)
 
 fun ZonedDateTime.isAtStartOfDay(): Boolean = this.isEqualTime(this.atStartOfDay())
 

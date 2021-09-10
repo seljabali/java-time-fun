@@ -1,9 +1,8 @@
 package localdatetime.extensions
 
-import zoneddatetime.ZonedDateTimeUtil
 import java.time.LocalDateTime
 
-fun LocalDateTime.isInLeapYear(): Boolean = ZonedDateTimeUtil.isLeapYear(this.year)
+fun LocalDateTime.isInLeapYear(): Boolean = YearUtil.isLeapYear(this.year)
 
 fun LocalDateTime.isAtStartOfDay(): Boolean = this.isEqualTime(this.atStartOfDay())
 
