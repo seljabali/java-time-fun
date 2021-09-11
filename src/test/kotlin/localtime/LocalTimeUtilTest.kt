@@ -1,8 +1,11 @@
 package localtime
 
-import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import java.util.*
+import java.util.Date
+import java.util.Calendar
+import java.util.GregorianCalendar
+import java.util.TimeZone
 
 class LocalTimeUtilTest {
 
@@ -15,9 +18,9 @@ class LocalTimeUtilTest {
         val localTime = LocalTimeUtil.new(epoch)
 
         // then
-        Assertions.assertEquals(5, localTime.hour)
-        Assertions.assertEquals(0, localTime.minute)
-        Assertions.assertEquals(0, localTime.second)
+        assertEquals(5, localTime.hour)
+        assertEquals(0, localTime.minute)
+        assertEquals(0, localTime.second)
     }
 
     @Test
@@ -30,9 +33,9 @@ class LocalTimeUtilTest {
         val localTime = LocalTimeUtil.new(date)
 
         // then
-        Assertions.assertEquals(5, localTime.hour)
-        Assertions.assertEquals(0, localTime.minute)
-        Assertions.assertEquals(0, localTime.second)
+        assertEquals(5, localTime.hour)
+        assertEquals(0, localTime.minute)
+        assertEquals(0, localTime.second)
     }
 
     @Test
@@ -49,13 +52,13 @@ class LocalTimeUtilTest {
         val localTime = LocalTimeUtil.new(calendar)
 
         // then
-        Assertions.assertEquals(5, localTime.hour)
-        Assertions.assertEquals(0, localTime.minute)
-        Assertions.assertEquals(0, localTime.second)
-        Assertions.assertEquals(calendar[Calendar.HOUR], localTime.hour)
-        Assertions.assertEquals(calendar[Calendar.MINUTE], localTime.minute)
-        Assertions.assertEquals(calendar[Calendar.SECOND], localTime.second)
-        Assertions.assertEquals(calendar[Calendar.MILLISECOND], localTime.nano / 1000000)
+        assertEquals(5, localTime.hour)
+        assertEquals(0, localTime.minute)
+        assertEquals(0, localTime.second)
+        assertEquals(calendar[Calendar.HOUR], localTime.hour)
+        assertEquals(calendar[Calendar.MINUTE], localTime.minute)
+        assertEquals(calendar[Calendar.SECOND], localTime.second)
+        assertEquals(calendar[Calendar.MILLISECOND], localTime.nano / 1000000)
     }
     
 }
