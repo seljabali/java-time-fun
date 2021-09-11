@@ -9,7 +9,7 @@ import java.util.Calendar
 import java.util.Date
 
 /**
- * ZonedDateTimeUtil object contains helper functions that only serve to create new ZonedDateTimes.
+ * Contains helper functions that only serve to create new ZonedDateTimes.
  * Creation methods do not include parsing methods.
  */
 object ZonedDateTimeUtil {
@@ -54,10 +54,10 @@ object ZonedDateTimeUtil {
      * @param month  Month with range 1-12, i.e. 1 for January.
      * @param day  Day of the month with range 1-31.
      * @param hour  Hour of the day with range 1-12.
-     * @param isAm  If true, sets assumes hour is in the AM, else PM.
      * @param minute  Minute of the hour with range 0-59.
      * @param second  Second of the minute with range 0-59.
      * @param nano  Nano-of-second to represent, from 0 to 999,999,999.
+     * @param isAm  If true, sets assumes hour is in the AM, else PM.
      * @param useSystemTimeZone  If true, sets the time zone of the device, else UTC.
      * @return  ZonedDateTime.
      */
@@ -66,10 +66,10 @@ object ZonedDateTimeUtil {
         month: Int,
         day: Int,
         hour: Int = 0,
-        isAm: Boolean,
         minute: Int = 0,
         second: Int = 0,
         nano: Int = 0,
+        isAm: Boolean,
         useSystemTimeZone: Boolean = true
     ): ZonedDateTime =
         new(
