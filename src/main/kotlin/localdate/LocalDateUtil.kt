@@ -17,23 +17,13 @@ object LocalDateUtil {
      * @param day  Day of the month with range 1-31.
      * @return  LocalDate.
      */
-    fun new(
-        year: Int,
-        month: Int,
-        day: Int,
-    ): LocalDate =
-        LocalDate.of(
-            year,
-            Month.of(month),
-            day
-        )
+    fun new(year: Int, month: Int, day: Int): LocalDate = LocalDate.of(year, Month.of(month), day)
 
     /**
      * @param epochMilliseconds  Epoch time, aka Unix time, are seconds elapsed since January 1st 1970 at 00:00:00 UTC.
      * @return  LocalDate.
      */
-    fun new(epochMilliseconds: Long): LocalDate =
-        LocalDate.ofEpochDay(epochMilliseconds / 1000 / 60 / 60 / 24)
+    fun new(epochMilliseconds: Long): LocalDate = LocalDate.ofEpochDay(epochMilliseconds / 1000 / 60 / 60 / 24)
 
     /**
      * @param date  A wrapper of Epoch time in UTC.

@@ -30,16 +30,7 @@ object LocalDateTimeUtil {
         minute: Int = 0,
         second: Int = 0,
         nano: Int = 0
-    ): LocalDateTime =
-        LocalDateTime.of(
-            year,
-            Month.of(month),
-            day,
-            hourIn24,
-            minute,
-            second,
-            nano
-        )
+    ): LocalDateTime = LocalDateTime.of(year, Month.of(month), day, hourIn24, minute, second, nano)
 
     /**
      * @param year  Year, ie, 2020.
@@ -61,10 +52,7 @@ object LocalDateTimeUtil {
         second: Int = 0,
         nano: Int = 0,
         isAm: Boolean,
-    ): LocalDateTime =
-        new(
-            year, month, day, if (isAm) hour else hour + 12, minute, second, nano
-        )
+    ): LocalDateTime = new(year, month, day, if (isAm) hour else hour + 12, minute, second, nano)
 
     /**
      * @param epochMilliseconds  Epoch time, aka Unix time, are seconds elapsed since January 1st 1970 at 00:00:00 UTC.
