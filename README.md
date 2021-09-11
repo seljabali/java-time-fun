@@ -26,7 +26,7 @@ val result = "2021-10-04T10:10:00+0000".parseZonedDateTime()
 // Maintain original time zone
 val result = "2021-10-04T10:10:00+0000".parseZonedDateTime(useSystemTimeZone = false)
 
-// Parse LocalDate, convert to ZonedDateTime using system time zone
+// Parse LocalDate as ZonedDateTime
 val result = "2021-06-07".parseZonedDateTime()
 ```
 #### 2. Creation
@@ -38,11 +38,6 @@ val result = ZonedDateTimeUtil.new(1325134800000)
 
 #### 3. Comparisons
 ```kotlin
-// Day
-val result = dateA.compareDay(dateB)
-val result = dateA.getDayDifference(dateB)
-val result = dateA.isAfterEqualDay(dateB)
-
 // Year
 val result = dateA.compareYear(dateB)
 val result = dateA.isBeforeYear(dateB)
@@ -51,6 +46,11 @@ val result = dateA.isBeforeYear(dateB)
 val result = dateA.compareMonth(dateB)
 val result = dateA.getMonthDifference(dateB)
 val result = dateA.isEqualMonth(dateB)
+
+// Day
+val result = dateA.compareDay(dateB)
+val result = dateA.getDayDifference(dateB)
+val result = dateA.isAfterEqualDay(dateB)
 
 // Time
 val result = dateA.compareTime(dateB)
@@ -94,7 +94,7 @@ Add to root `build.gradle` at the end of repositories:
 ```gradle
 allprojects {
   repositories {
-    maven { url 'https://jitpack.io' }
+    maven { url 'https://jitpack.io' } // last line
   }
 }
 ```
@@ -105,7 +105,7 @@ dependencies {
 }  
 ```
 ### For Android
-In addition to the above, you need desugar your module:
+In addition to the above, you need to desugar your module:
 - Ensure you're using [Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin#updating-plugin) 4.0.0+.
 - Update module `build.gradle`:
 ```gradle

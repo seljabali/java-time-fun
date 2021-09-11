@@ -4,6 +4,14 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeParseException
 
+/**
+ * Works off of String representations of date, without time, nor time zone.
+ * When a format is present, it'll try parsing using that format alone, & return null if it fails.
+ *
+ * @param this  String representation of LocalDate.
+ * @param format  String representing format that should solely be used when parsing the date.
+ * @return  LocalDate? Null means couldn't parse, else parsed LocalDate.
+ */
 fun String.parseLocalDate(format: String? = null): LocalDate? =
     if (format == null || format.isEmpty()) {
         try {

@@ -7,6 +7,22 @@ import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeParseException
 
+/**
+ * Works off of String representations of (zoned)date(time) and parses through the following attempts in order when
+ * no format is present:
+ * <p><ul>
+ * <li>First, if the date is identified as MsftDate, then it'll attempt to parse & return value.
+ * <li>Second, it'll try parsing as ZonedDateTime, if successful converts to systemTimeZone per param value.
+ * <li>Third, it'll try parsing as LocalDateTime, if successful, uses systemTimeZone.
+ * <li>Lastly, it'll try parsing as LocalDate, if successful, adds start of daytime, & systemTimeZone.
+ * </ul><p>
+ * When a format is present, it'll try parsing using that format alone, & return null if it fails.
+ *
+ * @param this  String representation of either MsftDate, LocalDate, LocalDateTime, or ZonedDateTime.
+ * @param format  String representing format that should solely be used when parsing the date.
+ * @param useSystemTimeZone  If true, converts parsed date to system default timezone, else keeps original time zone.
+ * @return  ZonedDateTime? Null means couldn't parse, else parsed ZonedDateTime.
+ */
 fun String.parseZonedDateTime(
     format: String? = null,
     useSystemTimeZone: Boolean = true
