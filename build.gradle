@@ -15,7 +15,7 @@ publishing {
         mavenJava(MavenPublication) {
             groupId = 'org.eljabali.sami'
             artifactId = 'javatimefun'
-            version = '0.3'
+            version = '0.4'
 
             from components.java
         }
