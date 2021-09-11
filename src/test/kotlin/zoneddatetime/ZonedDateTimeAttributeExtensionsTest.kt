@@ -2,10 +2,9 @@ package zoneddatetime
 
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
-import zoneddatetime.extensions.getDaysInMonth
-import zoneddatetime.extensions.getMonthBaseZero
-import zoneddatetime.extensions.isInLeapYear
+import zoneddatetime.extensions.*
 
 class ZonedDateTimeAttributeExtensionsTest {
 
@@ -54,5 +53,47 @@ class ZonedDateTimeAttributeExtensionsTest {
         // then
         assertEquals(monthBase0, 5)
         assertEquals(getDaysInMonth, 30)
+    }
+
+    @Test
+    fun `given date A at start of day, then should properly describe it as such`() {
+        // given
+        val dateA = ZonedDateTimeUtil.new(
+            2020,
+            6,
+            20,
+            0,
+            0,
+            0,
+            0,
+            false
+        )
+
+        // when
+        val startOfDay = dateA.isAtStartOfDay()
+
+        // then
+        assertTrue(startOfDay)
+    }
+
+    @Test
+    fun `given date A at end of day, then should properly describe it as such`() {
+        // given
+        val dateA = ZonedDateTimeUtil.new(
+            2020,
+            6,
+            20,
+            23,
+            59,
+            59,
+            999999999,
+            false
+        )
+
+        // when
+        val startOfDay = dateA.isAtEndOfDay()
+
+        // then
+        assertTrue(startOfDay)
     }
 }

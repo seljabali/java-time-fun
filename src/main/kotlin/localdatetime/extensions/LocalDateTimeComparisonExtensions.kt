@@ -13,22 +13,22 @@ fun LocalDateTime.compareDay(toDate: LocalDateTime): Int {
     }
 }
 
-fun LocalDateTime.isEqualDay(b: LocalDateTime): Boolean = compareDay(b) == 0
+fun LocalDateTime.isEqualDay(b: LocalDateTime): Boolean = this.compareDay(b) == 0
 
-fun LocalDateTime.isBeforeDay(b: LocalDateTime): Boolean = compareDay(b) < 0
+fun LocalDateTime.isBeforeDay(b: LocalDateTime): Boolean = this.compareDay(b) < 0
 
-fun LocalDateTime.isBeforeEqualDay(b: LocalDateTime): Boolean = compareDay(b) <= 0
+fun LocalDateTime.isBeforeEqualDay(b: LocalDateTime): Boolean = this.compareDay(b) <= 0
 
-fun LocalDateTime.isAfterDay(b: LocalDateTime): Boolean = compareDay(b) > 0
+fun LocalDateTime.isAfterDay(b: LocalDateTime): Boolean = this.compareDay(b) > 0
 
-fun LocalDateTime.isAfterEqualDay(b: LocalDateTime): Boolean = compareDay(b) >= 0
+fun LocalDateTime.isAfterEqualDay(b: LocalDateTime): Boolean = this.compareDay(b) >= 0
 // endregion
 
 // region Month Comparisons
 fun LocalDateTime.compareMonth(localDateTimeB: LocalDateTime): Int =
     when {
-        isBeforeMonth(localDateTimeB) -> -1
-        isEqualMonth(localDateTimeB) -> 0
+        this.isBeforeMonth(localDateTimeB) -> -1
+        this.isEqualMonth(localDateTimeB) -> 0
         else -> 1
     }
 
@@ -77,20 +77,20 @@ fun LocalDateTime.isAfterYear(localDateTimeB: LocalDateTime): Boolean = this.yea
 // region Time Comparisons
 fun LocalDateTime.compareTime(toDate: LocalDateTime): Int =
     when {
-        isEqualTime(toDate) -> 0
-        isBeforeTime(toDate) -> -1
+        this.isEqualTime(toDate) -> 0
+        this.isBeforeTime(toDate) -> -1
         else -> 1
     }
 
-fun LocalDateTime.isEqualTime(b: LocalDateTime): Boolean = isEqual(b)
+fun LocalDateTime.isEqualTime(b: LocalDateTime): Boolean = this.isEqual(b)
 
 fun LocalDateTime.isBeforeTime(b: LocalDateTime): Boolean = this.isBefore(b)
 
-fun LocalDateTime.isBeforeEqualTime(b: LocalDateTime): Boolean = compareTime(b) <= 0
+fun LocalDateTime.isBeforeEqualTime(b: LocalDateTime): Boolean = this.compareTime(b) <= 0
 
-fun LocalDateTime.isAfterTime(b: LocalDateTime): Boolean = compareTime(b) > 0
+fun LocalDateTime.isAfterTime(b: LocalDateTime): Boolean = this.compareTime(b) > 0
 
-fun LocalDateTime.isAfterEqualTime(b: LocalDateTime): Boolean = compareTime(b) >= 0
+fun LocalDateTime.isAfterEqualTime(b: LocalDateTime): Boolean = this.compareTime(b) >= 0
 // endregion
 
 fun LocalDateTime.getMinuteDifference(localDateTimeB: LocalDateTime): Long =

@@ -29,18 +29,12 @@ object LocalDateTimeUtil {
         month: Int,
         day: Int,
         hour: Int = 0,
+        isAm: Boolean,
         minute: Int = 0,
         second: Int = 0,
-        nano: Int = 0,
-        isAm: Boolean
+        nano: Int = 0
     ): LocalDateTime =
-        LocalDateTime.of(
-            year,
-            Month.of(month),
-            day,
-            if (isAm) hour else hour + 12,
-            minute,
-            second,
-            nano
+        new(
+            year, month, day, if (isAm) hour else hour + 12, minute, second, nano
         )
 }

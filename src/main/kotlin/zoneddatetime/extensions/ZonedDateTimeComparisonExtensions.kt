@@ -13,15 +13,15 @@ fun ZonedDateTime.compareDay(toDate: ZonedDateTime): Int {
     }
 }
 
-fun ZonedDateTime.isEqualDay(b: ZonedDateTime): Boolean = compareDay(b) == 0
+fun ZonedDateTime.isEqualDay(b: ZonedDateTime): Boolean = this.compareDay(b) == 0
 
-fun ZonedDateTime.isBeforeDay(b: ZonedDateTime): Boolean = compareDay(b) < 0
+fun ZonedDateTime.isBeforeDay(b: ZonedDateTime): Boolean = this.compareDay(b) < 0
 
-fun ZonedDateTime.isBeforeEqualDay(b: ZonedDateTime): Boolean = compareDay(b) <= 0
+fun ZonedDateTime.isBeforeEqualDay(b: ZonedDateTime): Boolean = this.compareDay(b) <= 0
 
-fun ZonedDateTime.isAfterDay(b: ZonedDateTime): Boolean = compareDay(b) > 0
+fun ZonedDateTime.isAfterDay(b: ZonedDateTime): Boolean = this.compareDay(b) > 0
 
-fun ZonedDateTime.isAfterEqualDay(b: ZonedDateTime): Boolean = compareDay(b) >= 0
+fun ZonedDateTime.isAfterEqualDay(b: ZonedDateTime): Boolean = this.compareDay(b) >= 0
 // endregion
 
 // region Month Comparisons
@@ -99,20 +99,20 @@ fun ZonedDateTime.isAfterYear(zonedDateTimeB: ZonedDateTime): Boolean {
 // region Time Comparisons
 fun ZonedDateTime.compareTime(toDate: ZonedDateTime): Int =
     when {
-        isEqualTime(toDate) -> 0
-        isBeforeTime(toDate) -> -1
+        this.isEqualTime(toDate) -> 0
+        this.isBeforeTime(toDate) -> -1
         else -> 1
     }
 
-fun ZonedDateTime.isEqualTime(b: ZonedDateTime): Boolean = isEqual(b)
+fun ZonedDateTime.isEqualTime(b: ZonedDateTime): Boolean = this.isEqual(b)
 
 fun ZonedDateTime.isBeforeTime(b: ZonedDateTime): Boolean = this.isBefore(b)
 
-fun ZonedDateTime.isBeforeEqualTime(b: ZonedDateTime): Boolean = compareTime(b) <= 0
+fun ZonedDateTime.isBeforeEqualTime(b: ZonedDateTime): Boolean = this.compareTime(b) <= 0
 
-fun ZonedDateTime.isAfterTime(b: ZonedDateTime): Boolean = compareTime(b) > 0
+fun ZonedDateTime.isAfterTime(b: ZonedDateTime): Boolean = this.compareTime(b) > 0
 
-fun ZonedDateTime.isAfterEqualTime(b: ZonedDateTime): Boolean = compareTime(b) >= 0
+fun ZonedDateTime.isAfterEqualTime(b: ZonedDateTime): Boolean = this.compareTime(b) >= 0
 // endregion
 
 fun ZonedDateTime.getMinuteDifference(zonedDateTimeB: ZonedDateTime): Long {

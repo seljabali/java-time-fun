@@ -23,7 +23,7 @@ object ZonedDateTimeUtil {
      * @param hourIn24  Hour of the day with range 0-23.
      * @param minute  Minute of the hour with range 0-59.
      * @param second  Second of the minute with range 0-59.
-     * @param nano  Nano of the second.
+     * @param nano  Nano-of-second to represent, from 0 to 999,999,999.
      * @param useSystemTimeZone  If true, sets the time zone of the device, else UTC.
      * @return  ZonedDateTime.
      */
@@ -57,7 +57,7 @@ object ZonedDateTimeUtil {
      * @param isAm  If true, sets assumes hour is in the AM, else PM.
      * @param minute  Minute of the hour with range 0-59.
      * @param second  Second of the minute with range 0-59.
-     * @param nano  Nano of the second.
+     * @param nano  Nano-of-second to represent, from 0 to 999,999,999.
      * @param useSystemTimeZone  If true, sets the time zone of the device, else UTC.
      * @return  ZonedDateTime.
      */
