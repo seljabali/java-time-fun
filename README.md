@@ -90,7 +90,7 @@ val result = LocalDates.nextMonday
 ```
 
 ## How to install?
-Add to root `build.gradle` at the end of repositories:
+Add to root `build.gradle`:
 ```gradle
 allprojects {
   repositories {
