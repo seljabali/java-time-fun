@@ -105,7 +105,7 @@ allprojects {
 Add to module `build.gradle`:
 ```gradle
 dependencies {
-  implementation 'com.github.seljabali:java-time-fun:0.3'
+  implementation 'com.github.seljabali:java-time-fun:0.4'
 }  
 ```
 ### For Android
