@@ -13,7 +13,7 @@ plugins {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = 'org.eljabali.sami.javatimefun'
+            groupId = 'org.eljabali.sami'
             artifactId = 'javatimefun'
             version = '0.3'
 
