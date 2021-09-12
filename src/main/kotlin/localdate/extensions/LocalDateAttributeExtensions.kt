@@ -1,8 +1,9 @@
 package localdate.extensions
 
 import java.time.LocalDate
+import java.time.Year
 
-fun LocalDate.isInLeapYear(): Boolean = YearUtil.isLeapYear(this.year)
+fun LocalDate.isInLeapYear(): Boolean = Year.of(year).isLeap
 
 fun LocalDate.getMonthBaseZero(): Int = this.monthValue - 1
 

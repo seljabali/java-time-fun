@@ -1,8 +1,9 @@
 package localdatetime.extensions
 
 import java.time.LocalDateTime
+import java.time.Year
 
-fun LocalDateTime.isInLeapYear(): Boolean = YearUtil.isLeapYear(this.year)
+fun LocalDateTime.isInLeapYear(): Boolean = Year.of(year).isLeap
 
 fun LocalDateTime.isAtStartOfDay(): Boolean = this.isEqualTime(this.atStartOfDay())
 
