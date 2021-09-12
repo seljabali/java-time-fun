@@ -1,12 +1,13 @@
 package zoneddatetime.extensions
 
+import java.time.Year
 import java.time.ZonedDateTime
 
 /**
  * Works off of ZonedDateTime context.
  * @return  True if context's year is a leap year.
  */
-fun ZonedDateTime.isInLeapYear(): Boolean = YearUtil.isLeapYear(this.year)
+fun ZonedDateTime.isInLeapYear(): Boolean = Year.of(year).isLeap
 
 /**
  * Works off of ZonedDateTime context.
