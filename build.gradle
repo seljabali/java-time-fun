@@ -5,28 +5,90 @@ buildscript {
 
         group_id = 'org.eljabali.sami.javatimefun'
         artifact_id = 'javatimefun'
-        version_id = '0.5'
+        version_id = '0.6'
         project_name = 'Java Time Fun'
         project_desc = 'Java Time Kotlin extension functions.'
         project_url = "https://github.com/seljabali/java-time-fun"
         project_scm_url = "https://github.com/seljabali/java-time-fun.git"
+        project_license = "MIT"
+        project_license_url = "https://github.com/seljabali/java-time-fun/blob/main/LICENSE"
     }
 }
 
 plugins {
     id 'org.jetbrains.kotlin.jvm' version "$kotlin_version"
     id 'maven-publish'
+    id 'signing'
+}
+
+group = "$group_id"
+archivesBaseName = "$artifact_id"
+version = "$version_id"
+
+java {
+    withJavadocJar()
+    withSourcesJar()
 }
 
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = "$group_id"
             artifactId = "$artifact_id"
-            version = "$version_id"
-
             from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+            pom {
+                name = "$project_name"
+                description = "$project_desc"
+                url = "$project_url"
+                properties = [
+                        myProp: "value",
+                        "prop.with.dots": "anotherValue"
+                ]
+                licenses {
+                    license {
+                        name = "$project_license"
+                        url = "$project_license_url"
+                    }
+                }
+                developers {
+                    developer {
+                        id = sonatypeUsername
+                        name = sonatypeName
+                        email = sonatypeEmail
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/seljabali/java-time-fun.git'
+                    developerConnection = 'scm:git:ssh://github.com/seljabali/java-time-fun.git'
+                    url = "$project_url"
+                }
+            }
         }
+    }
+    repositories {
+        maven {
+            // change URLs to point to your repos, e.g. http://my.org/repo
+            def releasesRepoUrl = layout.buildDirectory.dir('repos/releases')
+            def snapshotsRepoUrl = layout.buildDirectory.dir('repos/snapshots')
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}
+
+javadoc {
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
     }
 }
 
@@ -36,6 +98,14 @@ repositories {
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
+artifacts {
+    archives sourcesJar
+}
+
+signing {
+    sign configurations.archives
+}
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
