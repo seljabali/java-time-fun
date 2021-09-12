@@ -2,6 +2,14 @@ buildscript {
     project.ext {
         kotlin_version = '1.5.30'
         junit_version = '5.7.2'
+
+        group_id = 'org.eljabali.sami.javatimefun'
+        artifact_id = 'javatimefun'
+        version_id = '0.5'
+        project_name = 'Java Time Fun'
+        project_desc = 'Java Time Kotlin extension functions.'
+        project_url = "https://github.com/seljabali/java-time-fun"
+        project_scm_url = "https://github.com/seljabali/java-time-fun.git"
     }
 }
 
@@ -13,9 +21,9 @@ plugins {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = 'org.eljabali.sami.javatimefun'
-            artifactId = 'javatimefun'
-            version = '0.5'
+            groupId = "$group_id"
+            artifactId = "$artifact_id"
+            version = "$version_id"
 
             from components.java
         }
@@ -25,6 +33,9 @@ publishing {
 repositories {
     mavenCentral()
 }
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
