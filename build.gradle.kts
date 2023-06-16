@@ -9,7 +9,7 @@ plugins {
     signing
 }
 
-group = "io.github.seljabali"
+group = "org.eljabali.sami.javatimefun"
 version = "0.5"
 
 repositories {
@@ -41,7 +41,7 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             pom {
-                name.set("java-time-fun")
+                name.set(project.name)
                 description.set("java.time Kotlin extension functions library.")
                 url.set("https://github.com/seljabali/java-time-fun")
                 licenses {
