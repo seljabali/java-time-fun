@@ -3,7 +3,7 @@ val junitVersion by extra { "5.8.1" }
 
 plugins {
     kotlin("jvm") version "1.9.20"
-    id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
+    id("io.github.gradle-nexus.publish-plugin") version "1.3.0"
     `java-library`
     `maven-publish`
     signing
