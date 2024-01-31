@@ -1,8 +1,8 @@
-val kotlinVersion by extra { "1.5.30" }
+val kotlinVersion by extra { "1.9.20" }
 val junitVersion by extra { "5.8.1" }
 
 plugins {
-    kotlin("jvm") version "1.5.30"
+    kotlin("jvm") version "1.9.20"
     id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
     `java-library`
     `maven-publish`
@@ -23,11 +23,9 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
-
 tasks.getByName<Test>("test") {
     useJUnitPlatform()
 }
-
 
 signing {
     useInMemoryPgpKeys(
