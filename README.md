@@ -93,22 +93,21 @@ val result = LocalDateTimes.tomorrow
 val result = LocalDates.nextMonday
 ```
 
-## How to install?
-Add to root `build.gradle`:
-```gradle
-allprojects {
-  repositories {
-    maven { url 'https://jitpack.io' } // last line
-  }
-}
-```
+## Install
 Add to module `build.gradle`:
 ```gradle
+repositories {
+  mavenCentral()
+}
+
 dependencies {
-  implementation 'com.github.seljabali:java-time-fun:0.5'
+  implementation("org.eljabali.sami.javatimefun:javatimefun:0.5")
 }  
 ```
-### For Android
+
+<details>
+<summary>For Android</summary>
+
 In addition to the above, you need to desugar your module:
 - Ensure you're using [Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin#updating-plugin) 4.0.0+.
 - Update module `build.gradle`:
@@ -133,3 +132,5 @@ dependencies {
 }
 ```
 For more information on Android desugaring click [here](https://developer.android.com/studio/write/java8-support#library-desugaring).
+
+</details>
