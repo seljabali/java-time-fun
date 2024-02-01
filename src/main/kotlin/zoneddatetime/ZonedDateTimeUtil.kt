@@ -73,6 +73,11 @@ object ZonedDateTimeUtil {
     fun new(epochMilliseconds: Long, useSystemTimeZone: Boolean = true): ZonedDateTime =
         getZonedDateTimeFromInstant(Instant.ofEpochMilli(epochMilliseconds), useSystemTimeZone)
 
+    fun ZonedDateTime.toDate(): Date {
+        val milliseconds = this.toInstant().toEpochMilli()
+        return Date(milliseconds)
+    }
+
     /**
      * @param date  A wrapper of Epoch time in UTC.
      * @param useSystemTimeZone  If true, converts to time zone of the device, else leaves as UTC.
