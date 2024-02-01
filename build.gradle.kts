@@ -3,6 +3,7 @@ val junitVersion by extra { "5.8.1" }
 
 plugins {
     kotlin("jvm") version "1.9.20"
+    id("org.jetbrains.dokka") version "1.9.10"
     id("io.github.gradle-nexus.publish-plugin") version "1.3.0"
     `java-library`
     `maven-publish`
@@ -25,6 +26,21 @@ dependencies {
 
 tasks.getByName<Test>("test") {
     useJUnitPlatform()
+}
+
+tasks{
+    register<Jar>("dokkaJar") {
+        from(dokkaHtml)
+        dependsOn(dokkaHtml)
+        archiveClassifier.set("javadoc")
+    }
+    withType<Jar> {
+        metaInf.with(
+            copySpec {
+                from("${project.rootDir}/LICENSE")
+            }
+        )
+    }
 }
 
 signing {
@@ -67,6 +83,7 @@ publishing {
             version = project.version as String
             from(components["java"])
             artifacts {
+                artifact(tasks["dokkaJar"])
                 artifact(tasks.kotlinSourcesJar) {
                     classifier = "sources"
                 }
