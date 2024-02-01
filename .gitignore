@@ -1,3 +1,13 @@
+# IntelliJ
+*.iml
+.idea
+.gradle
+app/build
+build
+
+# Mac
+.DS_Store
+
 # Compiled class file
 *.class
 
