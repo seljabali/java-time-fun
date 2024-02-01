@@ -83,6 +83,7 @@ publishing {
             version = project.version as String
             from(components["java"])
             artifacts {
+                artifact(tasks["dokkaJar"])
                 artifact(tasks.kotlinSourcesJar) {
                     classifier = "sources"
                 }
