@@ -27,6 +27,21 @@ tasks.getByName<Test>("test") {
     useJUnitPlatform()
 }
 
+tasks{
+    register<Jar>("dokkaJar") {
+        from(dokkaHtml)
+        dependsOn(dokkaHtml)
+        archiveClassifier.set("javadoc")
+    }
+    withType<Jar> {
+        metaInf.with(
+            copySpec {
+                from("${project.rootDir}/LICENSE")
+            }
+        )
+    }
+}
+
 signing {
     useInMemoryPgpKeys(
         System.getProperty("GPG_PRIVATE_KEY"),
