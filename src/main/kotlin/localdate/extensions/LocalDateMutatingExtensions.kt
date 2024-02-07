@@ -2,6 +2,8 @@ package localdate.extensions
 
 import java.time.DayOfWeek
 import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.LocalTime
 
 fun LocalDate.getLast(dayOfWeek: DayOfWeek, countingInThisDay: Boolean = false): LocalDate {
     if (countingInThisDay && this.dayOfWeek == dayOfWeek) {
@@ -30,3 +32,7 @@ fun LocalDate.getNext(dayOfWeek: DayOfWeek, countingInThisDay: Boolean = false):
     }
     return nextLocalDate
 }
+
+fun LocalDate.startOfDay(): LocalDateTime = LocalDateTime.of(this, LocalTime.MIN)
+
+fun LocalDate.atEndOfDay(): LocalDateTime = LocalDateTime.of(this, LocalTime.MAX)
