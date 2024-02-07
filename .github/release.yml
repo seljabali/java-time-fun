@@ -1,0 +1,15 @@
+# https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes#configuration-options
+changelog:
+  exclude:
+    labels:
+      - ignore-for-release
+  categories:
+    - title: ✨ Enhancements
+      labels:
+        - '*'
+      exclude:
+        labels:
+          - dependencies
+    - title: 🔨 Dependencies
+      labels:
+        - dependencies
