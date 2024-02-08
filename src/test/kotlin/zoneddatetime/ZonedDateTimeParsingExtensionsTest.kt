@@ -2,8 +2,8 @@ package zoneddatetime
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import zoneddatetime.extensions.parseZonedDateTime
-import zoneddatetime.extensions.print
+import javatimefun.zoneddatetime.extensions.parseZonedDateTime
+import javatimefun.zoneddatetime.extensions.print
 import java.lang.RuntimeException
 import java.time.ZonedDateTime
 
