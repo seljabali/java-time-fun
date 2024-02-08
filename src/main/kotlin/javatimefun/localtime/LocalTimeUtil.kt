@@ -1,6 +1,6 @@
 package javatimefun.localtime
 
-import localdatetime.LocalDateTimeUtil
+import javatimefun.localdatetime.LocalDateTimeUtil
 import java.time.LocalTime
 import java.util.Date
 import java.util.Calendar

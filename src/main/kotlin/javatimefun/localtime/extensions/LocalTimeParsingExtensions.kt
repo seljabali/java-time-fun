@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeParseException
 
 fun String.parseLocalTime(format: String? = null): LocalTime? =
-    if (format == null || format.isEmpty()) {
+    if (format.isNullOrEmpty()) {
         try {
             LocalTime.parse(this)
         } catch (e: DateTimeParseException) {

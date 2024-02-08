@@ -1,6 +1,6 @@
 package javatimefun.localdatetime.extensions
 
-import localdate.extensions.parseLocalDate
+import javatimefun.localdate.extensions.parseLocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter

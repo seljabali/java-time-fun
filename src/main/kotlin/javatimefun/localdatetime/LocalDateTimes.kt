@@ -1,8 +1,8 @@
 package javatimefun.localdatetime
 
-import localdatetime.extensions.atStartOfDay
-import localdatetime.extensions.getLast
-import localdatetime.extensions.getNext
+import javatimefun.localdatetime.extensions.atStartOfDay
+import javatimefun.localdatetime.extensions.getLast
+import javatimefun.localdatetime.extensions.getNext
 import java.time.DayOfWeek
 import java.time.LocalDateTime
 

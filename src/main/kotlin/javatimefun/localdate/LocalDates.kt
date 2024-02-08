@@ -1,7 +1,7 @@
 package javatimefun.localdate
 
-import localdate.extensions.getLast
-import localdate.extensions.getNext
+import javatimefun.localdate.extensions.getLast
+import javatimefun.localdate.extensions.getNext
 import java.time.DayOfWeek
 import java.time.LocalDate
 
