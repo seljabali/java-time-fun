@@ -59,7 +59,7 @@ class LocalDateTimeUtilTest {
             timeZone = TimeZone.getTimeZone("UTC")
             time = date
         }
-        val localDateTime = calendar.toLocalDateTime(useSystemTimeZone = false)
+        val localDateTime = calendar.toLocalDateTime()
 
         // then
         assertEquals(2011, localDateTime.year)
