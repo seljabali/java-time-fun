@@ -1,8 +1,13 @@
 package javatimefun.calendar.extensions
 
 import javatimefun.localdate.LocalDateUtil
+import javatimefun.localdatetime.LocalDateTimeUtil
+import javatimefun.localtime.LocalTimeUtil
 import javatimefun.zoneddatetime.ZonedDateTimeUtil
-import java.time.*
+import java.time.ZonedDateTime
+import java.time.LocalDateTime
+import java.time.LocalDate
+import java.time.LocalTime
 import java.util.Calendar
 
 /**
@@ -15,14 +20,11 @@ fun Calendar.toZonedDateTime(useSystemTimeZone: Boolean = true): ZonedDateTime =
         useSystemTimeZone
     )
 
-fun Calendar.toLocalDateTime(useSystemTimeZone: Boolean = true): LocalDateTime =
-    LocalDateTime.ofInstant(
-        this.toInstant(),
-        if (useSystemTimeZone) ZoneId.systemDefault() else ZoneOffset.UTC
-    )
+fun Calendar.toLocalDateTime(): LocalDateTime =
+    LocalDateTimeUtil.new(this.toInstant().toEpochMilli())
 
 fun Calendar.toLocalDate(): LocalDate =
     LocalDateUtil.new(this.toInstant().toEpochMilli())
 
-fun Calendar.toLocalTime(useSystemTimeZone: Boolean = false): LocalTime =
-    this.toLocalDateTime(useSystemTimeZone).toLocalTime()
+fun Calendar.toLocalTime(): LocalTime =
+    LocalTimeUtil.new(this.toInstant().toEpochMilli())
