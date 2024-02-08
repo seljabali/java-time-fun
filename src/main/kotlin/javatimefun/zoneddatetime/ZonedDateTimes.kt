@@ -1,8 +1,8 @@
 package javatimefun.zoneddatetime
 
-import zoneddatetime.extensions.atStartOfDay
-import zoneddatetime.extensions.getLast
-import zoneddatetime.extensions.getNext
+import javatimefun.zoneddatetime.extensions.atStartOfDay
+import javatimefun.zoneddatetime.extensions.getLast
+import javatimefun.zoneddatetime.extensions.getNext
 import java.time.DayOfWeek.FRIDAY
 import java.time.DayOfWeek.MONDAY
 import java.time.DayOfWeek.SATURDAY

@@ -1,7 +1,7 @@
 package javatimefun.zoneddatetime.extensions
 
-import localdatetime.extensions.parseLocalDateTime
-import zoneddatetime.ZonedDateTimeUtil
+import javatimefun.localdatetime.extensions.parseLocalDateTime
+import javatimefun.zoneddatetime.ZonedDateTimeUtil
 import java.time.ZoneId
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
