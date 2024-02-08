@@ -13,7 +13,7 @@ import java.time.format.DateTimeParseException
  * @return  LocalDate? Null means couldn't parse, else parsed LocalDate.
  */
 fun String.parseLocalDate(format: String? = null): LocalDate? =
-    if (format == null || format.isEmpty()) {
+    if (format.isNullOrEmpty()) {
         try {
             LocalDate.parse(this)
         } catch (e: DateTimeParseException) {

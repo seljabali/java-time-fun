@@ -42,7 +42,7 @@ fun String.parseZonedDateTime(
 }
 
 private fun parseZonedDateTimeHelper(dateText: String, format: String?): ZonedDateTime? =
-    if (format == null || format.isEmpty()) {
+    if (format.isNullOrEmpty()) {
         try {
             if (dateText.isMsftDate()) {
                 dateText.parseMsftDate()

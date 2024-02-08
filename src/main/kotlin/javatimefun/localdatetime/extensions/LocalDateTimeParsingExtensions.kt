@@ -32,7 +32,7 @@ fun String.parseLocalDateTime(format: String? = null): LocalDateTime? {
 }
 
 private fun parseLocalDateTimeHelper(dateText: String, format: String?): LocalDateTime? =
-    if (format == null || format.isEmpty())
+    if (format.isNullOrEmpty())
         try {
             LocalDateTime.parse(dateText)
         } catch (e: DateTimeParseException) {
