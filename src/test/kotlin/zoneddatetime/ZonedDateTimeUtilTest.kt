@@ -150,7 +150,7 @@ class ZonedDateTimeTest {
             timeZone = TimeZone.getTimeZone(timeZoneId)
             set(year, month, day, hour, minute, second)
         }
-        val zonedDateTime = calendar.toZonedDateTime(useSystemTimeZone = false)
+        val zonedDateTime = calendar.toZonedDateTime()
 
         // then
         assertEquals(calendar.timeZone.id, zonedDateTime.zone.id)
