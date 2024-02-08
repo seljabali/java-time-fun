@@ -1,8 +1,9 @@
 package zoneddatetime
 
+import javatimefun.zoneddatetime.ZonedDateTimeUtil
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import zoneddatetime.extensions.getMonthBaseZero
+import javatimefun.zoneddatetime.extensions.getMonthBaseZero
 import java.time.ZonedDateTime
 import java.util.Calendar
 import java.util.Calendar.HOUR

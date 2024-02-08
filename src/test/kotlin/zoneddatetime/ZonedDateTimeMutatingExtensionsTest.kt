@@ -1,14 +1,15 @@
 package zoneddatetime
 
-import localtime.extensions.parseLocalTime
-import localtime.extensions.print
+import javatimefun.localtime.extensions.parseLocalTime
+import javatimefun.localtime.extensions.print
+import javatimefun.zoneddatetime.ZonedDateTimeUtil
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
-import zoneddatetime.extensions.getLast
-import zoneddatetime.extensions.getNext
-import zoneddatetime.extensions.isEqualDay
-import zoneddatetime.extensions.withLocalTime
+import javatimefun.zoneddatetime.extensions.getLast
+import javatimefun.zoneddatetime.extensions.getNext
+import javatimefun.zoneddatetime.extensions.isEqualDay
+import javatimefun.zoneddatetime.extensions.withLocalTime
 import java.time.DayOfWeek
 import java.time.LocalTime
 

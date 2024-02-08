@@ -1,5 +1,6 @@
 package localtime
 
+import javatimefun.localtime.LocalTimeUtil
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import java.util.Date

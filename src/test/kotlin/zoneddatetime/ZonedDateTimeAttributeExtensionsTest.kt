@@ -1,10 +1,11 @@
 package zoneddatetime
 
+import javatimefun.zoneddatetime.ZonedDateTimeUtil
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
-import zoneddatetime.extensions.*
+import javatimefun.zoneddatetime.extensions.*
 
 class ZonedDateTimeAttributeExtensionsTest {
 
