@@ -1,5 +1,7 @@
 package localdatetime
 
+import javatimefun.calendar.extensions.toLocalDateTime
+import javatimefun.date.extensions.toLocalDateTime
 import javatimefun.localdatetime.LocalDateTimeUtil
 import javatimefun.localdatetime.extensions.getMonthBaseZero
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -35,7 +37,7 @@ class LocalDateTimeUtilTest {
 
         // when
         val date = Date(epoch)
-        val localDateTime = LocalDateTimeUtil.new(date)
+        val localDateTime = date.toLocalDateTime()
 
         // then
         assertEquals(2011, localDateTime.year)
@@ -57,7 +59,7 @@ class LocalDateTimeUtilTest {
             timeZone = TimeZone.getTimeZone("UTC")
             time = date
         }
-        val localDateTime = LocalDateTimeUtil.new(calendar, useSystemTimeZone = false)
+        val localDateTime = calendar.toLocalDateTime()
 
         // then
         assertEquals(2011, localDateTime.year)

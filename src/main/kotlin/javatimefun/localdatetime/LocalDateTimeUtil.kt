@@ -1,9 +1,10 @@
 package javatimefun.localdatetime
 
+import javatimefun.date.extensions.toLocalDateTime
+import java.time.Instant
 import java.time.LocalDateTime
 import java.time.Month
-import java.time.ZoneId
-import java.util.Calendar
+import java.time.ZoneOffset
 import java.util.Date
 
 /**
@@ -58,21 +59,9 @@ object LocalDateTimeUtil {
      * @param epochMilliseconds  Epoch time, aka Unix time, are seconds elapsed since January 1st 1970 at 00:00:00 UTC.
      * @return  LocalDateTime.
      */
-    fun new(epochMilliseconds: Long): LocalDateTime = new(Date(epochMilliseconds))
-
-    /**
-     * @param date  A wrapper of Epoch time in UTC.
-     * @return  LocalDateTime.
-     */
-    fun new(date: Date): LocalDateTime = LocalDateTime.ofInstant(date.toInstant(), ZoneId.of("UTC"))
-
-    /**
-     * @param calendar  Calendar, a date time variable that supports time zones.
-     * @return  LocalDateTime.
-     */
-    fun new(calendar: Calendar, useSystemTimeZone: Boolean = true): LocalDateTime =
+    fun new(epochMilliseconds: Long): LocalDateTime =
         LocalDateTime.ofInstant(
-            calendar.toInstant(),
-            if (useSystemTimeZone) ZoneId.systemDefault() else ZoneId.of("UTC")
+            Instant.ofEpochMilli(epochMilliseconds),
+            ZoneOffset.UTC
         )
 }

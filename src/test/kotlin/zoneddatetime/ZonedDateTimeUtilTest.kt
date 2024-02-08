@@ -1,5 +1,6 @@
 package zoneddatetime
 
+import javatimefun.calendar.extensions.toZonedDateTime
 import javatimefun.zoneddatetime.ZonedDateTimeUtil
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
@@ -149,7 +150,7 @@ class ZonedDateTimeTest {
             timeZone = TimeZone.getTimeZone(timeZoneId)
             set(year, month, day, hour, minute, second)
         }
-        val zonedDateTime = ZonedDateTimeUtil.new(calendar, useSystemTimeZone = false)
+        val zonedDateTime = calendar.toZonedDateTime()
 
         // then
         assertEquals(calendar.timeZone.id, zonedDateTime.zone.id)

@@ -1,20 +1,12 @@
 package javatimefun.zoneddatetime
 
-import java.time.Instant
-import java.time.LocalDateTime
-import java.time.Month
-import java.time.ZoneId
-import java.time.ZonedDateTime
-import java.util.Calendar
-import java.util.Date
+import java.time.*
 
 /**
  * Contains helper functions that only serve to create new ZonedDateTimes.
  * Creation methods do not include parsing methods.
  */
 object ZonedDateTimeUtil {
-
-    private val UTC get() = ZoneId.of("UTC")
 
     /**
      * @param year  Year, ie, 2020.
@@ -38,7 +30,10 @@ object ZonedDateTimeUtil {
         useSystemTimeZone: Boolean = true
     ): ZonedDateTime {
         val localDateTime = LocalDateTime.of(year, Month.of(month), day, hourIn24, minute, second, nano)
-        return ZonedDateTime.of(localDateTime, if (useSystemTimeZone) ZoneId.systemDefault() else UTC)
+        return ZonedDateTime.of(
+            localDateTime,
+            if (useSystemTimeZone) ZoneId.systemDefault() else ZoneOffset.UTC
+        )
     }
 
     /**
@@ -71,28 +66,8 @@ object ZonedDateTimeUtil {
      * @return  ZonedDateTime.
      */
     fun new(epochMilliseconds: Long, useSystemTimeZone: Boolean = true): ZonedDateTime =
-        getZonedDateTimeFromInstant(Instant.ofEpochMilli(epochMilliseconds), useSystemTimeZone)
-
-    /**
-     * @param date  A wrapper of Epoch time in UTC.
-     * @param useSystemTimeZone  If true, converts to time zone of the device, else leaves as UTC.
-     * @return  ZonedDateTime.
-     */
-    fun new(date: Date, useSystemTimeZone: Boolean = true): ZonedDateTime =
-        getZonedDateTimeFromInstant(date.toInstant(), useSystemTimeZone)
-
-    /**
-     * @param calendar  Calendar, a date time variable that supports time zones.
-     * @param useSystemTimeZone  If true, converts to time zone of the device, else leaves as is on calendar.
-     * @return  ZonedDateTime.
-     */
-    fun new(calendar: Calendar, useSystemTimeZone: Boolean = true): ZonedDateTime {
-        if (useSystemTimeZone) {
-            return getZonedDateTimeFromInstant(calendar.toInstant(), true)
-        }
-        return ZonedDateTime.ofInstant(calendar.toInstant(), ZoneId.of(calendar.timeZone.id))
-    }
-
-    private fun getZonedDateTimeFromInstant(instant: Instant, useSystemTimeZone: Boolean): ZonedDateTime =
-        ZonedDateTime.ofInstant(instant, if (useSystemTimeZone) ZoneId.systemDefault() else UTC)
+        ZonedDateTime.ofInstant(
+            Instant.ofEpochMilli(epochMilliseconds),
+            if (useSystemTimeZone) ZoneId.systemDefault() else ZoneOffset.UTC
+        )
 }

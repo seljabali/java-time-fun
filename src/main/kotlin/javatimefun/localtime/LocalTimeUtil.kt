@@ -1,9 +1,9 @@
 package javatimefun.localtime
 
-import javatimefun.localdatetime.LocalDateTimeUtil
+import java.time.Instant
+import java.time.LocalDateTime
 import java.time.LocalTime
-import java.util.Date
-import java.util.Calendar
+import java.time.ZoneOffset
 
 /**
  * Contains helper functions that only serve to create new LocalTimes.
@@ -48,17 +48,10 @@ object LocalTimeUtil {
      * @param epochMilliseconds  Epoch time, aka Unix time, are seconds elapsed since January 1st 1970 at 00:00:00 UTC.
      * @return  LocalTime.
      */
-    fun new(epochMilliseconds: Long): LocalTime = LocalDateTimeUtil.new(epochMilliseconds).toLocalTime()
-
-    /**
-     * @param date  A wrapper of Epoch time in UTC.
-     * @return  LocalTime.
-     */
-    fun new(date: Date): LocalTime = LocalDateTimeUtil.new(date).toLocalTime()
-
-    /**
-     * @param calendar  Calendar, a date time variable that supports time zones.
-     * @return  LocalTime.
-     */
-    fun new(calendar: Calendar): LocalTime = LocalDateTimeUtil.new(calendar, useSystemTimeZone = false).toLocalTime()
+    fun new(epochMilliseconds: Long): LocalTime =
+        LocalDateTime.ofInstant(
+            Instant.ofEpochMilli(epochMilliseconds),
+            ZoneOffset.UTC
+        )
+            .toLocalTime()
 }
