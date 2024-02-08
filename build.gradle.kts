@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "org.eljabali.sami.javatimefun"
-version = "0.7"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
