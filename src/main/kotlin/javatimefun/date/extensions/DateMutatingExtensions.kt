@@ -29,7 +29,6 @@ fun Date.toLocalDateTime(): LocalDateTime =
 fun Date.toLocalDate(): LocalDate =
     LocalDateUtil.new(this.toInstant().toEpochMilli())
 
-
 /**
  * @return  LocalTime.
  */

@@ -8,8 +8,6 @@ import java.time.*
  */
 object ZonedDateTimeUtil {
 
-    private val UTC get() = ZoneOffset.UTC
-
     /**
      * @param year  Year, ie, 2020.
      * @param month  Month with range 1-12, i.e. 1 for January.
@@ -32,7 +30,10 @@ object ZonedDateTimeUtil {
         useSystemTimeZone: Boolean = true
     ): ZonedDateTime {
         val localDateTime = LocalDateTime.of(year, Month.of(month), day, hourIn24, minute, second, nano)
-        return ZonedDateTime.of(localDateTime, if (useSystemTimeZone) ZoneId.systemDefault() else UTC)
+        return ZonedDateTime.of(
+            localDateTime,
+            if (useSystemTimeZone) ZoneId.systemDefault() else ZoneOffset.UTC
+        )
     }
 
     /**
@@ -67,6 +68,6 @@ object ZonedDateTimeUtil {
     fun new(epochMilliseconds: Long, useSystemTimeZone: Boolean = true): ZonedDateTime =
         ZonedDateTime.ofInstant(
             Instant.ofEpochMilli(epochMilliseconds),
-            if (useSystemTimeZone) ZoneId.systemDefault() else UTC
+            if (useSystemTimeZone) ZoneId.systemDefault() else ZoneOffset.UTC
         )
 }

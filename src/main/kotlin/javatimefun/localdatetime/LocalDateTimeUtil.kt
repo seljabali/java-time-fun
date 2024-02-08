@@ -1,8 +1,10 @@
 package javatimefun.localdatetime
 
 import javatimefun.date.extensions.toLocalDateTime
+import java.time.Instant
 import java.time.LocalDateTime
 import java.time.Month
+import java.time.ZoneOffset
 import java.util.Date
 
 /**
@@ -57,5 +59,9 @@ object LocalDateTimeUtil {
      * @param epochMilliseconds  Epoch time, aka Unix time, are seconds elapsed since January 1st 1970 at 00:00:00 UTC.
      * @return  LocalDateTime.
      */
-    fun new(epochMilliseconds: Long): LocalDateTime = Date(epochMilliseconds).toLocalDateTime()
+    fun new(epochMilliseconds: Long): LocalDateTime =
+        LocalDateTime.ofInstant(
+            Instant.ofEpochMilli(epochMilliseconds),
+            ZoneOffset.UTC
+        )
 }

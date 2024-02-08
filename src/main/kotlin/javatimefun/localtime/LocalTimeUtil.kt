@@ -49,6 +49,9 @@ object LocalTimeUtil {
      * @return  LocalTime.
      */
     fun new(epochMilliseconds: Long): LocalTime =
-        LocalDateTime.ofInstant(Instant.ofEpochMilli(epochMilliseconds), ZoneOffset.UTC)
+        LocalDateTime.ofInstant(
+            Instant.ofEpochMilli(epochMilliseconds),
+            ZoneOffset.UTC
+        )
             .toLocalTime()
 }

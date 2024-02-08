@@ -33,9 +33,9 @@ val result = "2021-06-07".parseZonedDateTime()
 ```kotlin
 val result = ZonedDateTimeUtil.new(year = 2021, month = 3, day = 25)
 
-val result = LocalDateTimeUtil.new(Date())
+val result = Date().toLocalDateTime()
 
-val result = LocalDateUtil.new(GregorianCalendar())
+val result = GregorianCalendar().toLocalDate()
 
 val result = LocalTimeUtil.new(hour = 5, minute = 30)
 ```
