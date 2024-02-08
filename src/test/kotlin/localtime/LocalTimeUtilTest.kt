@@ -1,5 +1,7 @@
 package localtime
 
+import javatimefun.calendar.extensions.toLocalTime
+import javatimefun.date.extensions.toLocalTime
 import javatimefun.localtime.LocalTimeUtil
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
@@ -31,7 +33,7 @@ class LocalTimeUtilTest {
 
         // when
         val date = Date(epoch)
-        val localTime = LocalTimeUtil.new(date)
+        val localTime = date.toLocalTime()
 
         // then
         assertEquals(5, localTime.hour)
@@ -50,7 +52,7 @@ class LocalTimeUtilTest {
             timeZone = TimeZone.getTimeZone("UTC")
             time = date
         }
-        val localTime = LocalTimeUtil.new(calendar)
+        val localTime = calendar.toLocalTime()
 
         // then
         assertEquals(5, localTime.hour)
