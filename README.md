@@ -140,5 +140,5 @@ For more information on Android desugaring click [here](https://developer.androi
 </details>
 
 ## Find this library useful? 😏
-* Star this __[repository](https://github.com/seljabali/java-time-fun/stargazers)__. ⭐️
+* Star this repository __[as others have](https://github.com/seljabali/java-time-fun/stargazers)__. ⭐️
 * __[Follow me](https://github.com/seljabali)__ on GitHub! 😃
