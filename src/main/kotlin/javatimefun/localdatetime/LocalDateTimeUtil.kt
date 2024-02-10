@@ -1,11 +1,9 @@
 package javatimefun.localdatetime
 
-import javatimefun.date.extensions.toLocalDateTime
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.Month
 import java.time.ZoneOffset
-import java.util.Date
 
 /**
  * Contains helper functions that only serve to create new LocalDateTimes.
