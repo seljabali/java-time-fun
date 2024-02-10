@@ -2,6 +2,7 @@ package javatimefun.zoneddatetime.extensions
 
 import java.time.Duration
 import java.time.ZonedDateTime
+import java.time.temporal.ChronoUnit
 
 // region Year Comparisons
 /**
@@ -237,6 +238,16 @@ fun ZonedDateTime.isAfterEqualTime(zonedDateTimeB: ZonedDateTime): Boolean = thi
 
 /**
  * Works off of ZonedDateTime context.
+ * @param zonedDateTimeB  ZonedDateTime of which we want to compare context's second difference from.
+ * @return  Seconds away from param be it positive or negative.
+ */
+fun ZonedDateTime.getSecondDifference(zonedDateTimeB: ZonedDateTime): Long {
+    val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
+    return Duration.between(this, otherZonedDateTime).toSeconds()
+}
+
+/**
+ * Works off of ZonedDateTime context.
  * @param zonedDateTimeB  ZonedDateTime of which we want to compare context's minute difference from.
  * @return  Minutes away from param be it positive or negative.
  */
@@ -270,8 +281,17 @@ fun ZonedDateTime.getDayDifference(zonedDateTimeB: ZonedDateTime): Long {
  * @param zonedDateTimeB  ZonedDateTime of which we want to compare context's months difference from.
  * @return  Months away from param be it positive or negative.
  */
-fun ZonedDateTime.getMonthDifference(zonedDateTimeB: ZonedDateTime): Int {
+fun ZonedDateTime.getMonthDifference(zonedDateTimeB: ZonedDateTime): Long {
     val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
-    val yearDif = (otherZonedDateTime.year - this.year) * 12
-    return yearDif + (otherZonedDateTime.month.value - this.month.value)
+    return ChronoUnit.MONTHS.between(this, otherZonedDateTime)
+}
+
+/**
+ * Works off of ZonedDateTime context.
+ * @param zonedDateTimeB  ZonedDateTime of which we want to compare context's years difference from.
+ * @return  Years away from param be it positive or negative.
+ */
+fun ZonedDateTime.getYearDifference(zonedDateTimeB: ZonedDateTime): Long {
+    val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
+    return ChronoUnit.YEARS.between(this, otherZonedDateTime)
 }
