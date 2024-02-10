@@ -26,16 +26,6 @@ object LocalDates {
     val nextSaturday: LocalDate get() = today.getNext(DayOfWeek.SATURDAY)
     val nextSunday: LocalDate get() = today.getNext(DayOfWeek.SUNDAY)
 
-    val firstDayOfThisYear: LocalDate
-        get() = LocalDateUtil.new(
-            today.year,
-            1,
-            1
-        )
-    val lastDayOfThisYear: LocalDate
-        get() = LocalDateUtil.new(
-            today.year,
-            12,
-            31
-        )
+    val firstDayOfThisYear: LocalDate get() = LocalDateUtil.new(today.year, 1, 1)
+    val lastDayOfThisYear: LocalDate get() = LocalDateUtil.new(today.year, 12, 31)
 }
