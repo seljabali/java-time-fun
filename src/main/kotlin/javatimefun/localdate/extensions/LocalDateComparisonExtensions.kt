@@ -76,16 +76,16 @@ fun LocalDate.isAfterYear(localDateB: LocalDate): Boolean = this.year > localDat
 // endregion
 
 fun LocalDate.getSecondDifference(localDateB: LocalDate): Long =
-    Duration.between(this, localDateB).toSeconds()
+    Duration.between(this.atStartOfDay(), localDateB.atStartOfDay()).toSeconds()
 
 fun LocalDate.getMinuteDifference(localDateB: LocalDate): Long =
-    Duration.between(this, localDateB).toMinutes()
+    Duration.between(this.atStartOfDay(), localDateB.atStartOfDay()).toMinutes()
 
 fun LocalDate.getHourDifference(localDateB: LocalDate): Long =
-    Duration.between(this, localDateB).toHours()
+    Duration.between(this.atStartOfDay(), localDateB.atStartOfDay()).toHours()
 
 fun LocalDate.getDayDifference(localDateB: LocalDate): Long =
-    Duration.between(this, localDateB).toDays()
+    ChronoUnit.DAYS.between(this, localDateB)
 
 fun LocalDate.getMonthDifference(localDateB: LocalDate): Long =
     ChronoUnit.MONTHS.between(this, localDateB)

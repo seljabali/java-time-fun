@@ -62,17 +62,23 @@ fun LocalDateTime.isAfterMonth(localDateTimeB: LocalDateTime): Boolean {
 // endregion
 
 // region Year Comparisons
-fun LocalDateTime.compareYear(localDateTimeB: LocalDateTime): Int = this.year.compareTo(localDateTimeB.year)
+fun LocalDateTime.compareYear(localDateTimeB: LocalDateTime): Int =
+    this.year.compareTo(localDateTimeB.year)
 
-fun LocalDateTime.isBeforeYear(localDateTimeB: LocalDateTime): Boolean = this.year < localDateTimeB.year
+fun LocalDateTime.isBeforeYear(localDateTimeB: LocalDateTime): Boolean =
+    this.year < localDateTimeB.year
 
-fun LocalDateTime.isBeforeEqualYear(localDateTimeB: LocalDateTime): Boolean = this.year <= localDateTimeB.year
+fun LocalDateTime.isBeforeEqualYear(localDateTimeB: LocalDateTime): Boolean =
+    this.year <= localDateTimeB.year
 
-fun LocalDateTime.isEqualYear(localDateTimeB: LocalDateTime): Boolean = this.year == localDateTimeB.year
+fun LocalDateTime.isEqualYear(localDateTimeB: LocalDateTime): Boolean =
+    this.year == localDateTimeB.year
 
-fun LocalDateTime.isAfterEqualYear(localDateTimeB: LocalDateTime): Boolean = this.year >= localDateTimeB.year
+fun LocalDateTime.isAfterEqualYear(localDateTimeB: LocalDateTime): Boolean =
+    this.year >= localDateTimeB.year
 
-fun LocalDateTime.isAfterYear(localDateTimeB: LocalDateTime): Boolean = this.year > localDateTimeB.year
+fun LocalDateTime.isAfterYear(localDateTimeB: LocalDateTime): Boolean =
+    this.year > localDateTimeB.year
 // endregion
 
 // region Time Comparisons

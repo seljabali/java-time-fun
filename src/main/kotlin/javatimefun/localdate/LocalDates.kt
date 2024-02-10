@@ -26,14 +26,16 @@ object LocalDates {
     val nextSaturday: LocalDate get() = javatimefun.localdate.LocalDates.today.getNext(DayOfWeek.SATURDAY)
     val nextSunday: LocalDate get() = javatimefun.localdate.LocalDates.today.getNext(DayOfWeek.SUNDAY)
 
-    val firstDayOfThisYear: LocalDate get() = javatimefun.localdate.LocalDateUtil.new(
-        javatimefun.localdate.LocalDates.today.year,
-        1,
-        1
-    )
-    val lastDayOfThisYear: LocalDate get() = javatimefun.localdate.LocalDateUtil.new(
-        javatimefun.localdate.LocalDates.today.year,
-        12,
-        31
-    )
+    val firstDayOfThisYear: LocalDate
+        get() = javatimefun.localdate.LocalDateUtil.new(
+            javatimefun.localdate.LocalDates.today.year,
+            1,
+            1
+        )
+    val lastDayOfThisYear: LocalDate
+        get() = javatimefun.localdate.LocalDateUtil.new(
+            javatimefun.localdate.LocalDates.today.year,
+            12,
+            31
+        )
 }

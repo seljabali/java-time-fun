@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test
 class LocalDateTimeComparisonExtensionsTest {
 
     @Test
-    fun `given 2 dateTimes 2 and half hrs apart, then should see such differences in comparing`() {
+    fun `given 2 dateTimes 1hr and 10m apart, then should see such differences in comparing`() {
         // given
         // 2021-06-08 3:30 PM
         val dateA = LocalDateTimeUtil.new(
@@ -52,7 +52,7 @@ class LocalDateTimeComparisonExtensionsTest {
     }
 
     @Test
-    fun `given 2 dateTimes 2 years apart, then should see such differences in comparing`() {
+    fun `given 2 dateTimes 3 years apart, then should see such differences in comparing`() {
         // given
         // 2021-06-08 3:30 PM
         val dateA = LocalDateTimeUtil.new(

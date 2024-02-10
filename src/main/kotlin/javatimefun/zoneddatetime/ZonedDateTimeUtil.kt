@@ -29,7 +29,8 @@ object ZonedDateTimeUtil {
         nano: Int = 0,
         useSystemTimeZone: Boolean = true
     ): ZonedDateTime {
-        val localDateTime = LocalDateTime.of(year, Month.of(month), day, hourIn24, minute, second, nano)
+        val localDateTime =
+            LocalDateTime.of(year, Month.of(month), day, hourIn24, minute, second, nano)
         return ZonedDateTime.of(
             localDateTime,
             if (useSystemTimeZone) ZoneId.systemDefault() else ZoneOffset.UTC
@@ -58,7 +59,16 @@ object ZonedDateTimeUtil {
         nano: Int = 0,
         isAm: Boolean,
         useSystemTimeZone: Boolean = true
-    ): ZonedDateTime = new(year, month, day, if (isAm) hour else hour + 12, minute, second, nano, useSystemTimeZone)
+    ): ZonedDateTime = new(
+        year,
+        month,
+        day,
+        if (isAm) hour else hour + 12,
+        minute,
+        second,
+        nano,
+        useSystemTimeZone
+    )
 
     /**
      * @param epochMilliseconds  Epoch time, aka Unix time, are seconds elapsed since January 1st 1970 at 00:00:00 UTC.
