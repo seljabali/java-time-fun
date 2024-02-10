@@ -10,7 +10,7 @@
 </p> <br>
 
 ## Background
-[Java Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html) became integrated to the JDK as of Java 8. It was a huge improvement over its [Date](https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html) predecessor.<br><br>
+[Java Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html), released in Java 8, was a huge improvement over its [Date](https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html) predecessor.<br><br>
 This library empowers Java Time & makes it a lot of **fun**! 😃
 
 ## What's In It?
