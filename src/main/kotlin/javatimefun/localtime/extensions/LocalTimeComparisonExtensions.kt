@@ -22,8 +22,14 @@ fun LocalTime.isAfterTime(b: LocalTime): Boolean = compareTime(b) > 0
 fun LocalTime.isAfterEqualTime(b: LocalTime): Boolean = compareTime(b) >= 0
 // endregion
 
-fun LocalTime.getSecondDifference(localTimeB: LocalTime): Int = Duration.between(this, localTimeB).seconds.toInt()
+fun LocalTime.getMilliSecondDifference(localTimeB: LocalTime): Int =
+    Duration.between(this, localTimeB).toMillis().toInt()
 
-fun LocalTime.getMinuteDifference(localTimeB: LocalTime): Int = Duration.between(this, localTimeB).toMinutes().toInt()
+fun LocalTime.getSecondDifference(localTimeB: LocalTime): Int =
+    Duration.between(this, localTimeB).seconds.toInt()
 
-fun LocalTime.getHourDifference(localTimeB: LocalTime): Int = Duration.between(this, localTimeB).toHours().toInt()
+fun LocalTime.getMinuteDifference(localTimeB: LocalTime): Int =
+    Duration.between(this, localTimeB).toMinutes().toInt()
+
+fun LocalTime.getHourDifference(localTimeB: LocalTime): Int =
+    Duration.between(this, localTimeB).toHours().toInt()

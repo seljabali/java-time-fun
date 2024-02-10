@@ -2,6 +2,7 @@ package javatimefun.zoneddatetime.extensions
 
 import java.time.Duration
 import java.time.ZonedDateTime
+import java.time.temporal.ChronoUnit
 
 // region Year Comparisons
 /**
@@ -155,35 +156,40 @@ fun ZonedDateTime.compareDay(zonedDateTimeB: ZonedDateTime): Int {
  * @param zonedDateTimeB  ZonedDateTime of which we want to compare context's day to.
  * @return  True if context's equals param's day, false otherwise.
  */
-fun ZonedDateTime.isEqualDay(zonedDateTimeB: ZonedDateTime): Boolean = this.compareDay(zonedDateTimeB) == 0
+fun ZonedDateTime.isEqualDay(zonedDateTimeB: ZonedDateTime): Boolean =
+    this.compareDay(zonedDateTimeB) == 0
 
 /**
  * Works off of ZonedDateTime context.
  * @param zonedDateTimeB  ZonedDateTime of which we want to compare context's day to.
  * @return  True if context is before param's day, false otherwise.
  */
-fun ZonedDateTime.isBeforeDay(zonedDateTimeB: ZonedDateTime): Boolean = this.compareDay(zonedDateTimeB) < 0
+fun ZonedDateTime.isBeforeDay(zonedDateTimeB: ZonedDateTime): Boolean =
+    this.compareDay(zonedDateTimeB) < 0
 
 /**
  * Works off of ZonedDateTime context.
  * @param zonedDateTimeB  ZonedDateTime of which we want to compare context's day to.
  * @return  True if context is before or equal param's day, false otherwise.
  */
-fun ZonedDateTime.isBeforeEqualDay(zonedDateTimeB: ZonedDateTime): Boolean = this.compareDay(zonedDateTimeB) <= 0
+fun ZonedDateTime.isBeforeEqualDay(zonedDateTimeB: ZonedDateTime): Boolean =
+    this.compareDay(zonedDateTimeB) <= 0
 
 /**
  * Works off of ZonedDateTime context.
  * @param zonedDateTimeB  ZonedDateTime of which we want to compare context's day to.
  * @return  True if context is after param's day, false otherwise.
  */
-fun ZonedDateTime.isAfterDay(zonedDateTimeB: ZonedDateTime): Boolean = this.compareDay(zonedDateTimeB) > 0
+fun ZonedDateTime.isAfterDay(zonedDateTimeB: ZonedDateTime): Boolean =
+    this.compareDay(zonedDateTimeB) > 0
 
 /**
  * Works off of ZonedDateTime context.
  * @param zonedDateTimeB  ZonedDateTime of which we want to compare context's day to.
  * @return  True if context is after or equal param's day, false otherwise.
  */
-fun ZonedDateTime.isAfterEqualDay(zonedDateTimeB: ZonedDateTime): Boolean = this.compareDay(zonedDateTimeB) >= 0
+fun ZonedDateTime.isAfterEqualDay(zonedDateTimeB: ZonedDateTime): Boolean =
+    this.compareDay(zonedDateTimeB) >= 0
 // endregion
 
 // region Time Comparisons
@@ -211,29 +217,43 @@ fun ZonedDateTime.isEqualTime(zonedDateTimeB: ZonedDateTime): Boolean = this.isE
  * @param zonedDateTimeB  ZonedDateTime of which we want to compare context's day & time to.
  * @return  True if context is before param's day & time, false otherwise.
  */
-fun ZonedDateTime.isBeforeTime(zonedDateTimeB: ZonedDateTime): Boolean = this.isBefore(zonedDateTimeB)
+fun ZonedDateTime.isBeforeTime(zonedDateTimeB: ZonedDateTime): Boolean =
+    this.isBefore(zonedDateTimeB)
 
 /**
  * Works off of ZonedDateTime context.
  * @param zonedDateTimeB  ZonedDateTime of which we want to compare context's day & time to.
  * @return  True if context is before or equal param's day & time, false otherwise.
  */
-fun ZonedDateTime.isBeforeEqualTime(zonedDateTimeB: ZonedDateTime): Boolean = this.compareTime(zonedDateTimeB) <= 0
+fun ZonedDateTime.isBeforeEqualTime(zonedDateTimeB: ZonedDateTime): Boolean =
+    this.compareTime(zonedDateTimeB) <= 0
 
 /**
  * Works off of ZonedDateTime context.
  * @param zonedDateTimeB  ZonedDateTime of which we want to compare context's day & time to.
  * @return  True if context is after param's day & time, false otherwise.
  */
-fun ZonedDateTime.isAfterTime(zonedDateTimeB: ZonedDateTime): Boolean = this.compareTime(zonedDateTimeB) > 0
+fun ZonedDateTime.isAfterTime(zonedDateTimeB: ZonedDateTime): Boolean =
+    this.compareTime(zonedDateTimeB) > 0
 
 /**
  * Works off of ZonedDateTime context.
  * @param zonedDateTimeB  ZonedDateTime of which we want to compare context's day & time to.
  * @return  True if context is after or equal param's day & time, false otherwise.
  */
-fun ZonedDateTime.isAfterEqualTime(zonedDateTimeB: ZonedDateTime): Boolean = this.compareTime(zonedDateTimeB) >= 0
+fun ZonedDateTime.isAfterEqualTime(zonedDateTimeB: ZonedDateTime): Boolean =
+    this.compareTime(zonedDateTimeB) >= 0
 // endregion
+
+/**
+ * Works off of ZonedDateTime context.
+ * @param zonedDateTimeB  ZonedDateTime of which we want to compare context's second difference from.
+ * @return  Seconds away from param be it positive or negative.
+ */
+fun ZonedDateTime.getSecondDifference(zonedDateTimeB: ZonedDateTime): Long {
+    val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
+    return Duration.between(this, otherZonedDateTime).toSeconds()
+}
 
 /**
  * Works off of ZonedDateTime context.
@@ -270,8 +290,17 @@ fun ZonedDateTime.getDayDifference(zonedDateTimeB: ZonedDateTime): Long {
  * @param zonedDateTimeB  ZonedDateTime of which we want to compare context's months difference from.
  * @return  Months away from param be it positive or negative.
  */
-fun ZonedDateTime.getMonthDifference(zonedDateTimeB: ZonedDateTime): Int {
+fun ZonedDateTime.getMonthDifference(zonedDateTimeB: ZonedDateTime): Long {
     val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
-    val yearDif = (otherZonedDateTime.year - this.year) * 12
-    return yearDif + (otherZonedDateTime.month.value - this.month.value)
+    return ChronoUnit.MONTHS.between(this, otherZonedDateTime)
+}
+
+/**
+ * Works off of ZonedDateTime context.
+ * @param zonedDateTimeB  ZonedDateTime of which we want to compare context's years difference from.
+ * @return  Years away from param be it positive or negative.
+ */
+fun ZonedDateTime.getYearDifference(zonedDateTimeB: ZonedDateTime): Long {
+    val otherZonedDateTime = zonedDateTimeB.withTimeZoneOf(this)
+    return ChronoUnit.YEARS.between(this, otherZonedDateTime)
 }

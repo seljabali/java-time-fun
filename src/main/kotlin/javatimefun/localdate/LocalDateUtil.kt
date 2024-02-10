@@ -2,8 +2,6 @@ package javatimefun.localdate
 
 import java.time.LocalDate
 import java.time.Month
-import java.util.Date
-import java.util.Calendar
 
 /**
  * Contains helper functions that only serve to create new LocalDates.

@@ -2,6 +2,7 @@ package javatimefun.localdatetime.extensions
 
 import java.time.Duration
 import java.time.LocalDateTime
+import java.time.temporal.ChronoUnit
 
 // region Day Comparisons
 fun LocalDateTime.compareDay(toDate: LocalDateTime): Int {
@@ -61,17 +62,23 @@ fun LocalDateTime.isAfterMonth(localDateTimeB: LocalDateTime): Boolean {
 // endregion
 
 // region Year Comparisons
-fun LocalDateTime.compareYear(localDateTimeB: LocalDateTime): Int = this.year.compareTo(localDateTimeB.year)
+fun LocalDateTime.compareYear(localDateTimeB: LocalDateTime): Int =
+    this.year.compareTo(localDateTimeB.year)
 
-fun LocalDateTime.isBeforeYear(localDateTimeB: LocalDateTime): Boolean = this.year < localDateTimeB.year
+fun LocalDateTime.isBeforeYear(localDateTimeB: LocalDateTime): Boolean =
+    this.year < localDateTimeB.year
 
-fun LocalDateTime.isBeforeEqualYear(localDateTimeB: LocalDateTime): Boolean = this.year <= localDateTimeB.year
+fun LocalDateTime.isBeforeEqualYear(localDateTimeB: LocalDateTime): Boolean =
+    this.year <= localDateTimeB.year
 
-fun LocalDateTime.isEqualYear(localDateTimeB: LocalDateTime): Boolean = this.year == localDateTimeB.year
+fun LocalDateTime.isEqualYear(localDateTimeB: LocalDateTime): Boolean =
+    this.year == localDateTimeB.year
 
-fun LocalDateTime.isAfterEqualYear(localDateTimeB: LocalDateTime): Boolean = this.year >= localDateTimeB.year
+fun LocalDateTime.isAfterEqualYear(localDateTimeB: LocalDateTime): Boolean =
+    this.year >= localDateTimeB.year
 
-fun LocalDateTime.isAfterYear(localDateTimeB: LocalDateTime): Boolean = this.year > localDateTimeB.year
+fun LocalDateTime.isAfterYear(localDateTimeB: LocalDateTime): Boolean =
+    this.year > localDateTimeB.year
 // endregion
 
 // region Time Comparisons
@@ -93,6 +100,9 @@ fun LocalDateTime.isAfterTime(b: LocalDateTime): Boolean = this.compareTime(b) >
 fun LocalDateTime.isAfterEqualTime(b: LocalDateTime): Boolean = this.compareTime(b) >= 0
 // endregion
 
+fun LocalDateTime.getSecondDifference(localDateTimeB: LocalDateTime): Long =
+    Duration.between(this, localDateTimeB).toSeconds()
+
 fun LocalDateTime.getMinuteDifference(localDateTimeB: LocalDateTime): Long =
     Duration.between(this, localDateTimeB).toMinutes()
 
@@ -102,7 +112,8 @@ fun LocalDateTime.getHourDifference(localDateTimeB: LocalDateTime): Long =
 fun LocalDateTime.getDayDifference(localDateTimeB: LocalDateTime): Long =
     Duration.between(this.atStartOfDay(), localDateTimeB.atStartOfDay()).toDays()
 
-fun LocalDateTime.getMonthDifference(localDateTimeB: LocalDateTime): Int {
-    val yearDif = (localDateTimeB.year - this.year) * 12
-    return yearDif + (localDateTimeB.month.value - this.month.value)
-}
+fun LocalDateTime.getMonthDifference(localDateTimeB: LocalDateTime): Long =
+    ChronoUnit.MONTHS.between(this, localDateTimeB)
+
+fun LocalDateTime.getYearDifference(localDateTimeB: LocalDateTime): Long =
+    ChronoUnit.YEARS.between(this, localDateTimeB)
