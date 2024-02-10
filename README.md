@@ -138,3 +138,7 @@ dependencies {
 For more information on Android desugaring click [here](https://developer.android.com/studio/write/java8-support#library-desugaring).
 
 </details>
+
+## Find this library useful? 😏
+* Star this __[repository](https://github.com/seljabali/java-time-fun/stargazers)__. ⭐️
+* __[Follow me](https://github.com/seljabali)__ on GitHub! 😃
