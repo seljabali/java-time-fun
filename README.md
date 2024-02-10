@@ -11,7 +11,7 @@
 
 ## Background
 [Java Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html) became integrated to the JDK as of Java 8. It was a huge improvement over its [Date](https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html) predecessor.<br><br>
-Java Time Fun library empowers Java Time even more, making usage of dates & times a breeze.
+This library empowers Java Time & makes it a lot of **fun**! 😃
 
 ## What's In It?
 #### 1. Parsing
@@ -141,5 +141,5 @@ For more information on Android desugaring click [here](https://developer.androi
 </details>
 
 ## Find this library useful? 😏
-* Star this repository __[as others have](https://github.com/seljabali/java-time-fun/stargazers)__. ⭐️
-* __[Follow me](https://github.com/seljabali)__ on GitHub! 😃
+Star this repository __[as others have](https://github.com/seljabali/java-time-fun/stargazers)__. ⭐️ <br> <br>
+__[Follow me](https://github.com/seljabali)__ on GitHub! 😃
