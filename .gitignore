@@ -3,7 +3,12 @@
 .idea
 .gradle
 app/build
-build
+build/classes/
+build/kotlin/
+build/reports/
+build/snapshot/
+build/test-results/
+build/tmp/
 
 # Mac
 .DS_Store
