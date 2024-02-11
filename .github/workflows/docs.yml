@@ -1,7 +1,12 @@
 name: Docs
+
 on:
   push:
-    branches: [main]
+    branches: [ main ]
+
+  pull_request:
+    branches: [ main ]
+
 jobs:
   publish:
     runs-on: ubuntu-latest
