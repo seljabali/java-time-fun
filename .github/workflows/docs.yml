@@ -22,11 +22,10 @@ jobs:
           distribution: 'adopt'
 
       - name: Build documentation
-        run: ./gradlew asciidoctor
+        run: ./gradlew dokkaHtml
 
       - name: Publish documentation
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
           FOLDER: build/docs
