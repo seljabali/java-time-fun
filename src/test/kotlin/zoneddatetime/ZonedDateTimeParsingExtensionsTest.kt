@@ -2,7 +2,7 @@ package zoneddatetime
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import javatimefun.zoneddatetime.extensions.parseZonedDateTime
+import javatimefun.zoneddatetime.extensions.toZonedDateTime
 import javatimefun.zoneddatetime.extensions.print
 import java.lang.RuntimeException
 import java.time.ZonedDateTime
@@ -20,7 +20,7 @@ class ZonedDateTimeParsingExtensionsTest {
         val dateInText = "2021-06-07"
 
         // when
-        val dateParsed: ZonedDateTime = dateInText.parseZonedDateTime() ?: throw RuntimeException("Failed to parse")
+        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals(dateInText, dateParsed.print(YYYY_MM_DD_DASH))
@@ -32,7 +32,7 @@ class ZonedDateTimeParsingExtensionsTest {
         val dateInText = "2021-06-07"
 
         // when
-        val dateParsed: ZonedDateTime = dateInText.parseZonedDateTime(format = YYYY_MM_DD_DASH)
+        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime(format = YYYY_MM_DD_DASH)
             ?: throw RuntimeException("Failed to parse")
 
         // then
@@ -45,7 +45,7 @@ class ZonedDateTimeParsingExtensionsTest {
         val dateInText = "06/07/2021"
 
         // when
-        val dateParsed: ZonedDateTime = dateInText.parseZonedDateTime(format = MM_DD_YYYY_SLASH) ?: throw RuntimeException("Failed to parse")
+        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime(format = MM_DD_YYYY_SLASH) ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals(dateInText, dateParsed.print(MM_DD_YYYY_SLASH))

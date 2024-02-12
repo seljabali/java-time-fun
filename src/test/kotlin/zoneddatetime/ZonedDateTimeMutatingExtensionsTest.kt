@@ -1,6 +1,6 @@
 package zoneddatetime
 
-import javatimefun.localtime.extensions.parseLocalTime
+import javatimefun.localtime.extensions.toLocalTime
 import javatimefun.localtime.extensions.print
 import javatimefun.zoneddatetime.ZonedDateTimeUtil
 import org.junit.jupiter.api.Assertions
@@ -74,7 +74,7 @@ class ZonedDateTimeMutatingExtensionsTest {
         // given
         var dateA = ZonedDateTimeUtil.new(2020, 3, 20)
         val timeText = "07:35:11 AM"
-        val time: LocalTime = timeText.parseLocalTime(HH_MM_SS_AM)  ?: throw RuntimeException("Failed to parse")
+        val time: LocalTime = timeText.toLocalTime(HH_MM_SS_AM)  ?: throw RuntimeException("Failed to parse")
 
         // when
         dateA = dateA.withLocalTime(time)

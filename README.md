@@ -17,22 +17,22 @@ This library empowers Java Time & makes it a lot of **fun**! 😃
 #### 1. Parsing
 ```kotlin
 // Provided time
-val result = "01:30 AM".parseLocalTime()
+val result = "01:30 AM".toLocalTime()
 
 // Provided local date
-val result = "2021-06-07".parseLocalDate()
+val result = "2021-06-07".toLocalDate()
 
 // Provided ambiguous date formats
-val result = "06/07/2021".parseLocalDate(format = "MM/dd/yyyy")
+val result = "06/07/2021".toLocalDate(format = "MM/dd/yyyy")
 
 // Automatic time zone conversions
-val result = "2021-10-04T10:10:00+0000".parseZonedDateTime()
+val result = "2021-10-04T10:10:00+0000".toZonedDateTime()
 
 // Maintain original time zone
-val result = "2021-10-04T10:10:00+0000".parseZonedDateTime(useSystemTimeZone = false)
+val result = "2021-10-04T10:10:00+0000".toZonedDateTime(useSystemTimeZone = false)
 
 // Parse LocalDate as ZonedDateTime
-val result = "2021-06-07".parseZonedDateTime()
+val result = "2021-06-07".toZonedDateTime()
 ```
 #### 2. Creation
 ```kotlin
@@ -69,7 +69,7 @@ val result = dateA.isAfterEqualTime(dateB)
 
 #### 4. Print
 ```kotlin
-val date = "2021-07-06".parseZonedDateTime()
+val date = "2021-07-06".toZonedDateTime()
 val result = date.print(format = "MM/dd/yyyy")
 ```
 
