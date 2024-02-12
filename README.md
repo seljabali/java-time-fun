@@ -106,7 +106,7 @@ repositories {
 }
 
 dependencies {
-  implementation("org.eljabali.sami.javatimefun:javatimefun:2.1.0")
+  implementation("org.eljabali.sami.javatimefun:javatimefun:3.0.0")
 }  
 ```
 
