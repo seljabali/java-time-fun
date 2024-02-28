@@ -20,8 +20,8 @@ This library empowers Java Time & makes it a lot of **fun**! 😃
 
 
 - val dateFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy")
-- println(dateFormatter.format(date))
-+ println(date.print("MM/dd/yyyy"))
+- print(dateFormatter.format(date))
++ print(date.print("MM/dd/yyyy"))
 
 - if (ChronoUnit.YEARS.between(dateOfBirth, LocalDate.now()) < 18) {
 + if (dateOfBirth.getYearDifference(LocalDates.today) < 18) {
