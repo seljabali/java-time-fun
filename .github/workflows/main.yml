@@ -25,10 +25,14 @@ jobs:
           distribution: 'adopt'
 
       - name: Make Gradle executable
-        run: chmod +x ./gradlew
+        run: |
+          chmod +x gradlew
+          chmod +x gradle/wrapper/gradle-wrapper.jar
 
       - name: Unit tests
-        run: bash ./gradlew test --stacktrace
+        run: |
+          ./gradlew build
+          ./gradlew test
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4
