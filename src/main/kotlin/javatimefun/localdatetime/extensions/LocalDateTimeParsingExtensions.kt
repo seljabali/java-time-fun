@@ -6,6 +6,8 @@ import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeParseException
 
+private const val flexibleIso8601Format = "yyyy-MM-dd'T'HH:mm:ss[.SSSSSS][.SSSS][.SSS][.SS][.S]['Z']"
+
 /**
  * Works off of String representations of date(time) and parses through the following attempts in order when
  * no format is present:
@@ -20,18 +22,19 @@ import java.time.format.DateTimeParseException
  * @return LocalDateTime? Null means couldn't parse, else parsed LocalDateTime.
  */
 fun String.toLocalDateTime(format: String? = null): LocalDateTime? {
-    val localDateTime = parseLocalDateTimeHelper(this, format)
-    if (localDateTime != null) {
-        return localDateTime
-    }
+    var localDateTime = parseLocalDateTimeOrNull(this, format)
+    if (localDateTime != null) return localDateTime
+
+    localDateTime = parseLocalDateTimeOrNull(this, flexibleIso8601Format)
+    if (localDateTime != null) return localDateTime
+
     val localDate = this.toLocalDate(format)
-    if (localDate != null) {
-        return LocalDateTime.of(localDate, LocalTime.MIN)
-    }
+    if (localDate != null) return LocalDateTime.of(localDate, LocalTime.MIN)
+
     return null
 }
 
-private fun parseLocalDateTimeHelper(dateText: String, format: String?): LocalDateTime? =
+private fun parseLocalDateTimeOrNull(dateText: String, format: String?): LocalDateTime? =
     if (format.isNullOrEmpty())
         try {
             LocalDateTime.parse(dateText)
