@@ -10,10 +10,6 @@
   <a href="https://mailchi.mp/kotlinweekly/kotlin-weekly-396"><img alt="Kotlin Weekly" src="https://skydoves.github.io/badges/kotlin-weekly.svg"/></a>
 </p> <br>
 
-## Background
-[Java Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html), released in Java 8, was a huge improvement over its [Date](https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html) predecessor.<br><br>
-This library empowers Java Time & makes it that much more **fun**! 😃
-
 ```diff
 - val dateTimeFormatter = DateTimeFormatter.ofPattern("yyyyMMdd")
 - val date = LocalDate.parse(dateText, dateTimeFormatter)
@@ -26,6 +22,10 @@ This library empowers Java Time & makes it that much more **fun**! 😃
 - if (ChronoUnit.YEARS.between(dateOfBirth, LocalDate.now()) < 18) {
 + if (dateOfBirth.getYearDifference(LocalDates.today) < 18) {
 ```
+
+## Background
+[Java Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html), released in Java 8, was a huge improvement over its [Date](https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html) predecessor.<br><br>
+This library empowers Java Time & makes it that much more **fun**! 😃
 
 ## What's In It?
 #### 1. Parsing
