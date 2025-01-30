@@ -1,8 +1,8 @@
-val kotlinVersion by extra { "1.9.20" }
+val kotlinVersion by extra { "2.1.10" }
 val junitVersion by extra { "5.8.1" }
 
 plugins {
-    kotlin("jvm") version "1.9.20"
+    kotlin("jvm") version "2.1.10"
     id("org.jetbrains.dokka") version "1.9.10"
     id("io.github.gradle-nexus.publish-plugin") version "1.3.0"
     `java-library`
