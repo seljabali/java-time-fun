@@ -14,21 +14,26 @@ class LocalDateTimeParsingExtensionsTest {
         private const val ISO_8601_S = "yyyy-MM-dd'T'HH:mm:ss.S'Z'"
         private const val ISO_8601_SS = "yyyy-MM-dd'T'HH:mm:ss.SS'Z'"
         private const val ISO_8601_SSS = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        private const val ISO_8601_SSSS = "yyyy-MM-dd'T'HH:mm:ss.SSSS'Z'"
-        private const val ISO_8601_SSSSSS = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
+        private const val ISO_8601_4S = "yyyy-MM-dd'T'HH:mm:ss.SSSS'Z'"
+        private const val ISO_8601_5S = "yyyy-MM-dd'T'HH:mm:ss.SSSSS'Z'"
+        private const val ISO_8601_6S = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
     }
     
     @Test
     fun `given date in ISO_8601, when parsed without format & converted to date, then should match when printed back to text`() {
         // given
-        val dateInText = "2023-07-26T12:34:56Z"
+        val dateInText = "2023-07-26T12:34:56"
+        val dateInTextWithZ = "${dateInText}Z"
 
         // when
-        val dateParsed: LocalDateTime = dateInText.toLocalDateTime() ?: throw RuntimeException("Failed to parse")
+        val dateParsed: LocalDateTime = dateInTextWithZ.toLocalDateTime() ?: throw RuntimeException("Failed to parse")
+        val dateParsedWithZ: LocalDateTime = dateInText.toLocalDateTime() ?: throw RuntimeException("Failed to parse")
 
         // then
-        assertEquals(dateInText, dateParsed.print(ISO_8601))
-        assertEquals("2023-07-26T12:34:56.000000Z", dateParsed.print(ISO_8601_SSSSSS))
+        assertEquals(dateInTextWithZ, dateParsed.print(ISO_8601))
+        assertEquals(dateInTextWithZ, dateParsedWithZ.print(ISO_8601))
+        assertEquals("2023-07-26T12:34:56.000000Z", dateParsed.print(ISO_8601_6S))
+        assertEquals("2023-07-26T12:34:56.000000Z", dateParsedWithZ.print(ISO_8601_6S))
     }
 
     @Test
@@ -41,7 +46,7 @@ class LocalDateTimeParsingExtensionsTest {
 
         // then
         assertEquals(dateInText, dateParsed.print(ISO_8601_S))
-        assertEquals("2023-07-26T12:34:56.100000Z", dateParsed.print(ISO_8601_SSSSSS))
+        assertEquals("2023-07-26T12:34:56.100000Z", dateParsed.print(ISO_8601_6S))
     }
 
     @Test
@@ -54,7 +59,7 @@ class LocalDateTimeParsingExtensionsTest {
 
         // then
         assertEquals(dateInText, dateParsed.print(ISO_8601_SS))
-        assertEquals("2023-07-26T12:34:56.120000Z", dateParsed.print(ISO_8601_SSSSSS))
+        assertEquals("2023-07-26T12:34:56.120000Z", dateParsed.print(ISO_8601_6S))
     }
 
     @Test
@@ -67,11 +72,11 @@ class LocalDateTimeParsingExtensionsTest {
 
         // then
         assertEquals(dateInText, dateParsed.print(ISO_8601_SSS))
-        assertEquals("2023-07-26T12:34:56.123000Z", dateParsed.print(ISO_8601_SSSSSS))
+        assertEquals("2023-07-26T12:34:56.123000Z", dateParsed.print(ISO_8601_6S))
     }
 
     @Test
-    fun `given date in ISO_8601_SSSS, when parsed without format & converted to date, then should match when printed back to text`() {
+    fun `given date in ISO_8601_4S, when parsed without format & converted to date, then should match when printed back to text`() {
         // given
         val dateInText = "2023-07-26T12:34:56.1234Z"
 
@@ -79,12 +84,29 @@ class LocalDateTimeParsingExtensionsTest {
         val dateParsed: LocalDateTime = dateInText.toLocalDateTime() ?: throw RuntimeException("Failed to parse")
 
         // then
-        assertEquals(dateInText, dateParsed.print(ISO_8601_SSSS))
-        assertEquals("2023-07-26T12:34:56.123400Z", dateParsed.print(ISO_8601_SSSSSS))
+        assertEquals(dateInText, dateParsed.print(ISO_8601_4S))
+        assertEquals("2023-07-26T12:34:56.123400Z", dateParsed.print(ISO_8601_6S))
     }
 
     @Test
-    fun `given date in ISO_8601_SSSSSS, when parsed without format & converted to date, then should match when printed back to text`() {
+    fun `given date in ISO_8601_5S, when parsed without format & converted to date, then should be null`() {
+        // given
+        val dateInText = "2023-07-26T12:34:56.12345"
+        val dateInTextWithZ = "${dateInText}Z"
+
+        // when
+        val dateParsed: LocalDateTime = dateInTextWithZ.toLocalDateTime() ?: throw RuntimeException("Failed to parse")
+        val dateParsedWithZ: LocalDateTime = dateInText.toLocalDateTime() ?: throw RuntimeException("Failed to parse")
+
+        // then
+        assertEquals(dateInTextWithZ, dateParsed.print(ISO_8601_5S))
+        assertEquals(dateInTextWithZ, dateParsedWithZ.print(ISO_8601_5S))
+        assertEquals("2023-07-26T12:34:56.123450Z", dateParsed.print(ISO_8601_6S))
+        assertEquals("2023-07-26T12:34:56.123450Z", dateParsedWithZ.print(ISO_8601_6S))
+    }
+
+    @Test
+    fun `given date in ISO_8601_6S, when parsed without format & converted to date, then should match when printed back to text`() {
         // given
         val dateInText = "2023-07-26T12:34:56.123456Z"
 
@@ -92,8 +114,7 @@ class LocalDateTimeParsingExtensionsTest {
         val dateParsed: LocalDateTime = dateInText.toLocalDateTime() ?: throw RuntimeException("Failed to parse")
 
         // then
-        assertEquals(dateInText, dateParsed.print(ISO_8601_SSSSSS))
-        assertEquals("2023-07-26T12:34:56.123456Z", dateParsed.print(ISO_8601_SSSSSS))
+        assertEquals(dateInText, dateParsed.print(ISO_8601_6S))
     }
 
 }
