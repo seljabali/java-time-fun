@@ -2,6 +2,7 @@
 *.iml
 .idea
 .gradle
+.kotlin
 app/build
 build
 
