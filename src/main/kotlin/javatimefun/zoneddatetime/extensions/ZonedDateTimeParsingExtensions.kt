@@ -1,11 +1,12 @@
 package javatimefun.zoneddatetime.extensions
 
 import javatimefun.localdatetime.extensions.toLocalDateTime
-import javatimefun.zoneddatetime.ZonedDateTimeUtil
 import java.time.ZoneId
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeParseException
+
+private const val flexibleIso8601ZonedFormat = "yyyy-MM-dd'T'HH:mm:ss[.SSSSSS][.SSSSS][.SSSS][.SSS][.SS][.S]XXX"
 
 /**
  * Works off of String representations of (zoned)date(time) and parses through the following attempts in order when
@@ -27,7 +28,8 @@ fun String.toZonedDateTime(
     format: String? = null,
     useSystemTimeZone: Boolean = true
 ): ZonedDateTime? {
-    val zonedDateTime = parseZonedDateTimeHelper(this, format)
+    val zonedDateTime = parseZonedDateTimeOrNull(this, format)
+//        ?: parseZonedDateTimeOrNull(this, flexibleIso8601ZonedFormat)
     if (zonedDateTime != null) {
         if (useSystemTimeZone) {
             return zonedDateTime.withZoneSameInstant(ZoneId.systemDefault())
@@ -41,12 +43,9 @@ fun String.toZonedDateTime(
     return null
 }
 
-private fun parseZonedDateTimeHelper(dateText: String, format: String?): ZonedDateTime? =
+private fun parseZonedDateTimeOrNull(dateText: String, format: String?): ZonedDateTime? =
     if (format.isNullOrEmpty()) {
         try {
-            if (dateText.isMsftDate()) {
-                dateText.parseMsftDate()
-            }
             ZonedDateTime.parse(dateText)
         } catch (e: DateTimeParseException) {
             null
@@ -62,11 +61,3 @@ private fun parseZonedDateTimeHelper(dateText: String, format: String?): ZonedDa
             null
         }
     }
-
-private fun String.isMsftDate(): Boolean = this.contains("/Date(")
-
-private fun String.parseMsftDate(): ZonedDateTime {
-//    "\/Date(1325134800000)\/"
-    val longString = this.substring(this.indexOf("(") + 1, this.indexOf(")"))
-    return ZonedDateTimeUtil.new(longString.toLong())
-}
