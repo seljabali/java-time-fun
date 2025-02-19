@@ -42,6 +42,23 @@ tasks{
     }
 }
 
+dokka {
+    moduleName.set("Java Time Fun")
+    dokkaSourceSets.main {
+        includes.from("README.md")
+        sourceLink {
+            localDirectory.set(file("src/main/kotlin"))
+            remoteUrl("https://github.com/seljabali/java-time-fun")
+            remoteLineSuffix.set("#L")
+        }
+    }
+    pluginsConfiguration.html {
+        customStyleSheets.from("styles.css")
+        customAssets.from("/screenshots/logo.png")
+        footerMessage.set("Sami Eljabali")
+    }
+}
+
 signing {
     useInMemoryPgpKeys(
         System.getProperty("GPG_PRIVATE_KEY"),
