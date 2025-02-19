@@ -14,7 +14,6 @@ class ZonedDateTimeParsingExtensionsTest {
         private const val MM_DD_YYYY_SLASH = "MM/dd/yyyy"
         private const val YYYY_MM_DD_DASH_T_HH_MM_SS_XXX = "yyyy-MM-dd'T'HH:mm:ssXXX"
         private const val YYYY_MM_DD_DASH_T_HH_MM_SS = "yyyy-MM-dd'T'HH:mm:ss"
-        private const val YYYY_MM_DD_DASH_T_HH_MM_SS_SSSSSS = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"
     }
 
     @Test
