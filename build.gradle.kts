@@ -3,7 +3,7 @@ val junitVersion by extra { "5.8.1" }
 
 plugins {
     kotlin("jvm") version "2.1.10"
-    id("org.jetbrains.dokka") version "1.9.20"
+    id("org.jetbrains.dokka") version "2.0.0"
     id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
     `java-library`
     `maven-publish`
@@ -39,6 +39,23 @@ tasks{
                 from("${project.rootDir}/LICENSE")
             }
         )
+    }
+}
+
+dokka {
+    moduleName.set("Java Time Fun")
+    dokkaSourceSets.main {
+        includes.from("README.md")
+        sourceLink {
+            localDirectory.set(file("src/main/kotlin"))
+            remoteUrl("https://github.com/seljabali/java-time-fun")
+            remoteLineSuffix.set("#L")
+        }
+    }
+    pluginsConfiguration.html {
+        customStyleSheets.from("styles.css")
+        customAssets.from("/screenshots/logo.png")
+        footerMessage.set("Sami Eljabali")
     }
 }
 
