@@ -1,4 +1,4 @@
-val kotlinVersion by extra { "2.1.10" }
+val kotlinVersion by extra { "2.1.20" }
 val junitVersion by extra { "5.8.1" }
 
 plugins {
