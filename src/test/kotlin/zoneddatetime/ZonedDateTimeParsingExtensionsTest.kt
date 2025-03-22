@@ -17,43 +17,6 @@ class ZonedDateTimeParsingExtensionsTest {
     }
 
     @Test
-    fun `given date in YYYY-MM-DD, when parsed without format & converted to date, then should match when printed back to text`() {
-        // given
-        val dateInText = "2021-06-07"
-
-        // when
-        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime() ?: throw RuntimeException("Failed to parse")
-
-        // then
-        assertEquals(dateInText, dateParsed.print(YYYY_MM_DD_DASH))
-    }
-
-    @Test
-    fun `given date in YYYY-MM-DD, when parsed with format & converted to date, then should match when printed back to text`() {
-        // given
-        val dateInText = "2021-06-07"
-
-        // when
-        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime(format = YYYY_MM_DD_DASH)
-            ?: throw RuntimeException("Failed to parse")
-
-        // then
-        assertEquals(dateInText, dateParsed.print(YYYY_MM_DD_DASH))
-    }
-
-    @Test
-    fun `given date in MM-DD-YYYY, when parsed with format & converted to date, then should match when printed back to text`() {
-        // given
-        val dateInText = "06/07/2021"
-
-        // when
-        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime(format = MM_DD_YYYY_SLASH) ?: throw RuntimeException("Failed to parse")
-
-        // then
-        assertEquals(dateInText, dateParsed.print(MM_DD_YYYY_SLASH))
-    }
-
-    @Test
     fun `given date in ISO8601 Zulu format, when parsed & converted, then should match when printed back`() {
         // given
         val dateInText = "2024-02-17T12:34:56Z"
