@@ -1,11 +1,13 @@
 package localdatetime
 
+import javatimefun.ZoneIds
 import javatimefun.calendar.extensions.toLocalDateTime
 import javatimefun.date.extensions.toLocalDateTime
 import javatimefun.localdatetime.LocalDateTimeUtil
 import javatimefun.localdatetime.extensions.getMonthBaseZero
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import java.time.ZoneId
 import java.util.Calendar
 import java.util.Date
 import java.util.GregorianCalendar
@@ -19,7 +21,7 @@ class LocalDateTimeUtilTest {
         val epoch = 1325134800000
 
         // when
-        val localDateTime = LocalDateTimeUtil.new(epoch)
+        val localDateTime = LocalDateTimeUtil.new(epoch, ZoneIds.UTC)
 
         // then
         assertEquals(2011, localDateTime.year)
@@ -37,7 +39,7 @@ class LocalDateTimeUtilTest {
 
         // when
         val date = Date(epoch)
-        val localDateTime = date.toLocalDateTime()
+        val localDateTime = date.toLocalDateTime(ZoneIds.UTC)
 
         // then
         assertEquals(2011, localDateTime.year)

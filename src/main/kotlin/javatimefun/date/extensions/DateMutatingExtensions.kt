@@ -1,36 +1,29 @@
 package javatimefun.date.extensions
 
-import javatimefun.localdate.LocalDateUtil
-import javatimefun.localdatetime.LocalDateTimeUtil
-import javatimefun.localtime.LocalTimeUtil
-import javatimefun.zoneddatetime.ZonedDateTimeUtil
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
+import java.time.ZoneId
 import java.time.ZonedDateTime
 import java.util.Date
 
-/**
- * @param useSystemTimeZone  If true, converts to time zone of the device, else leaves as UTC.
- * @return  ZonedDateTime.
- */
-fun Date.toZonedDateTime(useSystemTimeZone: Boolean = true): ZonedDateTime =
-    ZonedDateTimeUtil.new(this.toInstant().toEpochMilli(), useSystemTimeZone)
+fun Date.toZonedDateTime(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime =
+    ZonedDateTime.ofInstant(this.toInstant(), zoneId)
 
 /**
  * @return  LocalDateTime.
  */
-fun Date.toLocalDateTime(): LocalDateTime =
-    LocalDateTimeUtil.new(this.toInstant().toEpochMilli())
+fun Date.toLocalDateTime(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime =
+    LocalDateTime.ofInstant(this.toInstant(), zoneId)
 
 /**
  * @return  LocalDate.
  */
-fun Date.toLocalDate(): LocalDate =
-    LocalDateUtil.new(this.toInstant().toEpochMilli())
+fun Date.toLocalDate(zoneId: ZoneId = ZoneId.systemDefault()): LocalDate =
+    LocalDate.ofInstant(this.toInstant(), zoneId)
 
 /**
  * @return  LocalTime.
  */
-fun Date.toLocalTime(): LocalTime =
-    LocalTimeUtil.new(this.toInstant().toEpochMilli())
+fun Date.toLocalTime(zoneId: ZoneId = ZoneId.systemDefault()): LocalTime =
+    this.toLocalDateTime(zoneId).toLocalTime()

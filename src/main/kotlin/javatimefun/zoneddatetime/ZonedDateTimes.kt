@@ -14,27 +14,29 @@ import java.time.ZoneId
 import java.time.ZonedDateTime
 
 object ZonedDateTimes {
-    val now: ZonedDateTime get() = ZonedDateTime.now(ZoneId.systemDefault())
-    val today: ZonedDateTime get() = now.atStartOfDay()
-    val yesterday: ZonedDateTime get() = today.minusDays(1)
-    val tomorrow: ZonedDateTime get() = today.plusDays(1)
+    fun now(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = ZonedDateTime.now(zoneId)
+    fun today(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = now(zoneId).atStartOfDay()
+    fun yesterday(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).minusDays(1)
+    fun tomorrow(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).plusDays(1)
 
-    val lastMonday: ZonedDateTime get() = today.getLast(MONDAY)
-    val lastTuesday: ZonedDateTime get() = today.getLast(TUESDAY)
-    val lastWednesday: ZonedDateTime get() = today.getLast(WEDNESDAY)
-    val lastThursday: ZonedDateTime get() = today.getLast(THURSDAY)
-    val lastFriday: ZonedDateTime get() = today.getLast(FRIDAY)
-    val lastSaturday: ZonedDateTime get() = today.getLast(SATURDAY)
-    val lastSunday: ZonedDateTime get() = today.getLast(SUNDAY)
+    fun lastMonday(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).getLast(MONDAY)
+    fun lastTuesday(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).getLast(TUESDAY)
+    fun lastWednesday(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).getLast(WEDNESDAY)
+    fun lastThursday(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).getLast(THURSDAY)
+    fun lastFriday(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).getLast(FRIDAY)
+    fun lastSaturday(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).getLast(SATURDAY)
+    fun lastSunday(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).getLast(SUNDAY)
 
-    val nextMonday: ZonedDateTime get() = today.getNext(MONDAY)
-    val nextTuesday: ZonedDateTime get() = today.getNext(TUESDAY)
-    val nextWednesday: ZonedDateTime get() = today.getNext(WEDNESDAY)
-    val nextThursday: ZonedDateTime get() = today.getNext(THURSDAY)
-    val nextFriday: ZonedDateTime get() = today.getNext(FRIDAY)
-    val nextSaturday: ZonedDateTime get() = today.getNext(SATURDAY)
-    val nextSunday: ZonedDateTime get() = today.getNext(SUNDAY)
+    fun nextMonday(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).getNext(MONDAY)
+    fun nextTuesday(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).getNext(TUESDAY)
+    fun nextWednesday(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).getNext(WEDNESDAY)
+    fun nextThursday(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).getNext(THURSDAY)
+    fun nextFriday(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).getNext(FRIDAY)
+    fun nextSaturday(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).getNext(SATURDAY)
+    fun nextSunday(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).getNext(SUNDAY)
 
-    val firstDayOfThisYear: ZonedDateTime get() = ZonedDateTimeUtil.new(today.year, 1, 1)
-    val lastDayOfThisYear: ZonedDateTime get() = ZonedDateTimeUtil.new(today.year, 12, 31)
+    fun firstDayOfTheYear(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime =
+        ZonedDateTimeUtil.new(today(zoneId).year, 1, 1)
+    fun lastDayOfTheYear(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime =
+        ZonedDateTimeUtil.new(today(zoneId).year, 12, 31)
 }

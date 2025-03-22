@@ -3,7 +3,7 @@ package javatimefun.localtime
 import java.time.LocalTime
 
 object LocalTimes {
-    val startOfDay: LocalTime = LocalTime.MIN
-    val noon: LocalTime = LocalTime.NOON
-    val endOfDay: LocalTime = LocalTime.MAX
+    fun startOfDay(): LocalTime = LocalTime.MIN
+    fun noon(): LocalTime = LocalTime.NOON
+    fun endOfDay(): LocalTime = LocalTime.MAX
 }

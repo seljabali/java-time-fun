@@ -59,7 +59,7 @@ class ZonedDateTimeParsingExtensionsTest {
         val dateInText = "2024-02-17T12:34:56Z"
 
         // when
-        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime(useSystemTimeZone = false) ?: throw RuntimeException("Failed to parse")
+        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals(dateInText, dateParsed.print(YYYY_MM_DD_DASH_T_HH_MM_SS_XXX))
@@ -71,7 +71,7 @@ class ZonedDateTimeParsingExtensionsTest {
         val dateInText = "2024-02-17T12:34:56+00:00"
 
         // when
-        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime(useSystemTimeZone = false) ?: throw RuntimeException("Failed to parse")
+        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals("2024-02-17T12:34:56", dateParsed.print(YYYY_MM_DD_DASH_T_HH_MM_SS))
@@ -83,7 +83,7 @@ class ZonedDateTimeParsingExtensionsTest {
         val dateInText = "2024-02-17T12:34:56-08:00"
 
         // when
-        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime(useSystemTimeZone = false) ?: throw RuntimeException("Failed to parse")
+        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals(dateInText, dateParsed.print(YYYY_MM_DD_DASH_T_HH_MM_SS_XXX))
@@ -95,7 +95,7 @@ class ZonedDateTimeParsingExtensionsTest {
         val dateInText = "2024-02-17T12:34:56.123Z"
 
         // when
-        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime(useSystemTimeZone = false) ?: throw RuntimeException("Failed to parse")
+        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals(dateInText, dateParsed.print("yyyy-MM-dd'T'HH:mm:ss.SSSXXX"))
@@ -107,7 +107,7 @@ class ZonedDateTimeParsingExtensionsTest {
         val dateInText = "2024-02-17T12:34:56.123456Z"
 
         // when
-        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime(useSystemTimeZone = false) ?: throw RuntimeException("Failed to parse")
+        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals(dateInText, dateParsed.print("yyyy-MM-dd'T'HH:mm:ss.SSSSSSXXX"))
@@ -119,7 +119,7 @@ class ZonedDateTimeParsingExtensionsTest {
         val dateInText = "2024-02-17T00:00:00Z"
 
         // when
-        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime(useSystemTimeZone = false) ?: throw RuntimeException("Failed to parse")
+        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals(dateInText, dateParsed.print(YYYY_MM_DD_DASH_T_HH_MM_SS_XXX))
@@ -131,7 +131,7 @@ class ZonedDateTimeParsingExtensionsTest {
         val dateInText = "2024-02-17T23:59:59.999999Z"
 
         // when
-        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime(useSystemTimeZone = false) ?: throw RuntimeException("Failed to parse")
+        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals(dateInText, dateParsed.print("yyyy-MM-dd'T'HH:mm:ss.SSSSSSXXX"))
@@ -143,7 +143,7 @@ class ZonedDateTimeParsingExtensionsTest {
         val dateInText = "2024-02-17T23:59:59.999999Z"
 
         // when
-        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime(useSystemTimeZone = false) ?: throw RuntimeException("Failed to parse")
+        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals("2024-02-17T23:59:59.999999", dateParsed.print("yyyy-MM-dd'T'HH:mm:ss.SSSSSS"))
@@ -155,7 +155,7 @@ class ZonedDateTimeParsingExtensionsTest {
         val dateInText = "2024-02-29T12:34:56Z"
 
         // when
-        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime(useSystemTimeZone = false) ?: throw RuntimeException("Failed to parse")
+        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals(dateInText, dateParsed.print(YYYY_MM_DD_DASH_T_HH_MM_SS_XXX))
@@ -167,7 +167,7 @@ class ZonedDateTimeParsingExtensionsTest {
         val dateInText = "2024-12-31T23:59:59+14:00"
 
         // when
-        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime(useSystemTimeZone = false) ?: throw RuntimeException("Failed to parse")
+        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals(dateInText, dateParsed.print(YYYY_MM_DD_DASH_T_HH_MM_SS_XXX))
@@ -179,7 +179,7 @@ class ZonedDateTimeParsingExtensionsTest {
         val dateInText = "2024-12-31T23:59:59-12:00"
 
         // when
-        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime(useSystemTimeZone = false) ?: throw RuntimeException("Failed to parse")
+        val dateParsed: ZonedDateTime = dateInText.toZonedDateTime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals(dateInText, dateParsed.print(YYYY_MM_DD_DASH_T_HH_MM_SS_XXX))

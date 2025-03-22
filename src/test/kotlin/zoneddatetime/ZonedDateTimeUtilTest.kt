@@ -1,5 +1,6 @@
 package zoneddatetime
 
+import javatimefun.ZoneIds
 import javatimefun.calendar.extensions.toZonedDateTime
 import javatimefun.zoneddatetime.ZonedDateTimeUtil
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -77,7 +78,6 @@ class ZonedDateTimeTest {
         val month = 6
         val year = 2021
         val hour = 7
-        val hourInAm = true
         val minute = 35
         val second = 45
 
@@ -86,8 +86,7 @@ class ZonedDateTimeTest {
             year = year,
             month = month,
             day = day,
-            hour = hour,
-            isAm = hourInAm,
+            hourIn24 = hour,
             minute = minute,
             second = second
         )
@@ -108,8 +107,7 @@ class ZonedDateTimeTest {
         val day = 7
         val month = 6
         val year = 2021
-        val hour = 7
-        val hourInAm = false
+        val hour = 19
         val minute = 35
         val second = 45
 
@@ -118,17 +116,17 @@ class ZonedDateTimeTest {
             year = year,
             month = month,
             day = day,
-            hour = hour,
-            isAm = hourInAm,
+            hourIn24 = hour,
             minute = minute,
-            second = second
+            second = second,
+            zoneId = ZoneIds.UTC
         )
 
         // then
         assertEquals(day, dateFormed.dayOfMonth)
         assertEquals(month, dateFormed.month.value)
         assertEquals(year, dateFormed.year)
-        assertEquals(hour + 12, dateFormed.hour)
+        assertEquals(hour, dateFormed.hour)
         assertEquals(minute, dateFormed.minute)
         assertEquals(second, dateFormed.second)
         assertEquals(0, dateFormed.nano)
@@ -170,7 +168,7 @@ class ZonedDateTimeTest {
 
         // when
         val date = Date(epoch)
-        val zonedDateTime = ZonedDateTimeUtil.new(epoch, useSystemTimeZone = false)
+        val zonedDateTime = ZonedDateTimeUtil.new(epoch)
 
         // then
         assertEquals(date.time, zonedDateTime.toInstant().toEpochMilli())
@@ -184,7 +182,7 @@ class ZonedDateTimeTest {
 
         // when
         val date = Date(epoch)
-        val zonedDateTime = ZonedDateTimeUtil.new(epoch, useSystemTimeZone = false)
+        val zonedDateTime = ZonedDateTimeUtil.new(epoch, ZoneIds.UTC)
         val calendar = GregorianCalendar().apply {
             timeZone = TimeZone.getTimeZone(defaultTimeZoneId)
             time = date
