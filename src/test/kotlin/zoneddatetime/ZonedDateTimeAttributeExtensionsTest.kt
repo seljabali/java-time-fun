@@ -86,7 +86,7 @@ class ZonedDateTimeAttributeExtensionsTest {
             23,
             59,
             59,
-            999999999,
+            999_999_999,
         )
 
         // when

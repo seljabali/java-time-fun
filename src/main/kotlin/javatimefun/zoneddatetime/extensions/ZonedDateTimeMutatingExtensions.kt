@@ -21,12 +21,11 @@ fun ZonedDateTime.atEndOfDay(): ZonedDateTime = this.withLocalTime(LocalTime.MAX
  * @param localTime  LocalTime of which we want to copy its time to our contextual ZonedDateTime
  * @return  ZonedDateTime with its LocalTime updated to use param's.
  */
-fun ZonedDateTime.withLocalTime(localTime: LocalTime): ZonedDateTime {
-    val withHour = this.withHour(localTime.hour)
-    val withMinute = withHour.withMinute(localTime.minute)
-    val withSecond = withMinute.withSecond(localTime.second)
-    return withSecond.withNano(localTime.nano)
-}
+fun ZonedDateTime.withLocalTime(localTime: LocalTime): ZonedDateTime =
+    this.withHour(localTime.hour)
+        .withMinute(localTime.minute)
+        .withSecond(localTime.second)
+        .withNano(localTime.nano)
 
 /**
  * Works off of ZonedDateTime context.
