@@ -12,11 +12,8 @@ import java.time.format.DateTimeParseException
  * @param format  String representing format that should solely be used when parsing the date.
  * @return ZonedDateTime? Null means couldn't parse, else parsed ZonedDateTime.
  */
-fun String.toZonedDateTime(format: String? = null): ZonedDateTime? {
-    val zonedDateTime = parseZonedDateTimeOrNull(this, format)
-    if (zonedDateTime != null) return zonedDateTime
-    return null
-}
+fun String.toZonedDateTime(format: String? = null): ZonedDateTime? =
+    parseZonedDateTimeOrNull(this, format)
 
 private fun parseZonedDateTimeOrNull(dateText: String, format: String?): ZonedDateTime? =
     if (format.isNullOrEmpty()) {

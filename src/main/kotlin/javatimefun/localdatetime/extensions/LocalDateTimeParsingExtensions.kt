@@ -18,14 +18,8 @@ private const val flexibleIso8601Format = "yyyy-MM-dd'T'HH:mm:ss[.SSSSSS][.SSSSS
  * @param format String representing format that should solely be used when parsing the date.
  * @return LocalDateTime? Null means couldn't parse, else parsed LocalDateTime.
  */
-fun String.toLocalDateTime(format: String? = null): LocalDateTime? {
-    var localDateTime = parseLocalDateTimeOrNull(this, format)
-    if (localDateTime != null) return localDateTime
-
-    localDateTime = parseLocalDateTimeOrNull(this, flexibleIso8601Format)
-    if (localDateTime != null) return localDateTime
-    return null
-}
+fun String.toLocalDateTime(format: String? = null): LocalDateTime? =
+    parseLocalDateTimeOrNull(this, format) ?: parseLocalDateTimeOrNull(this, flexibleIso8601Format)
 
 private fun parseLocalDateTimeOrNull(dateText: String, format: String?): LocalDateTime? =
     if (format.isNullOrEmpty())
