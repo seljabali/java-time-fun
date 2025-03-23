@@ -1,7 +1,4 @@
-<p align="center" >
-  <img src="screenshots/logo.png" width=300px alt="SwiftDate" title="SwiftDate">
-</p>
-
+<h1 align="center"><strong>Java Time Fun</strong></h1>
 <h3 align="center"><strong>Java Time Kotlin extension functions.</strong></h3>
 <p align="center">
   <a href="https://github.com/seljabali/java-time-fun/actions?query=branch%3Amain"><img alt="Build Status" src="https://github.com/seljabali/java-time-fun/actions/workflows/main.yml/badge.svg"/></a> 
@@ -21,45 +18,42 @@
 
 - if (ChronoUnit.YEARS.between(dateOfBirth, LocalDate.now()) < 18) {
 + if (dateOfBirth.getYearDifference(LocalDates.today) < 18) {
+
+- val zoneId = ZoneId.of("America/Los_Angeles")
++ val zoneId = ZoneIds.AMERICA_LOS_ANGELES
 ```
 
 ## Background
-[Java Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html), released in Java 8, was a huge improvement over its [Date](https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html) predecessor.<br><br>
-This library empowers Java Time & makes it that much more **fun**! 😃
+[Java Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html), introduced in Java 8, was a huge improvement over the older [Date](https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html) API. This library builds on that success by adding convenient Kotlin extension functions to make working with Java Time even more fun!
 
-## What's In It?
-#### 1. Parsing
+## Features
+### Parsing
+_Convert strings into Java Time objects with ease_
 ```kotlin
-// Provided time
 val result = "01:30 AM".toLocalTime()
-
-// Provided local date
 val result = "2021-06-07".toLocalDate()
-
-// Provided ambiguous date formats
 val result = "06/07/2021".toLocalDate(format = "MM/dd/yyyy")
-
-// Automatic time zone conversions
+val result = "2024-11-15T12:34:56.123456Z".toLocalDateTime() // handles fractional seconds that Java Time doesn't
 val result = "2021-10-04T10:10:00+0000".toZonedDateTime()
-
-// Maintain original time zone
-val result = "2021-10-04T10:10:00+0000".toZonedDateTime(useSystemTimeZone = false)
-
-// Parse LocalDate as ZonedDateTime
-val result = "2021-06-07".toZonedDateTime()
 ```
-#### 2. Creation
+### Creation
+_Create new date/time instances using factory functions_
 ```kotlin
-val result = ZonedDateTimeUtil.new(year = 2021, month = 3, day = 25)
-
-val result = Date().toLocalDateTime()
-
-val result = GregorianCalendar().toLocalDate()
-
-val result = LocalTimeUtil.new(hour = 5, minute = 30)
+val result = LocalTimeFactory.new(hour = 7, minute = 30)
+val result = LocalDateFactory.new(year = 2024, month = 11, day = 15)
+val result = LocalDateTimeFactory.new(year = 2024, month = 11, day = 15)
+val result = ZonedDateTimeFactory.new(year = 2024, month = 11, day = 15, zoneId = ZoneIds.AMERICA_LOS_ANGELES)
 ```
 
-#### 3. Comparisons
+### Conversion from Legacy Date Types
+_Easily convert legacy date objects to Java Time_
+```kotlin
+val result = Date().toLocalDateTime()
+val result = GregorianCalendar().toZonedDateTime()
+```
+
+### Comparisons
+_Compare dates and times at various granularities_
 ```kotlin
 // Year
 val result = dateA.compareYear(dateB)
@@ -67,7 +61,7 @@ val result = dateA.isBeforeYear(dateB)
 
 // Month
 val result = dateA.compareMonth(dateB)
-val result = dateA.getMonthDifference(dateB)
+val result = zonedDateA.getMonthDifference(zonedDateB) // auto-conversion to same time zone for expected results
 val result = dateA.isEqualMonth(dateB)
 
 // Day
@@ -81,46 +75,41 @@ val result = dateA.getMinuteDifference(dateB)
 val result = dateA.isAfterEqualTime(dateB)
 ```
 
-#### 4. Print
+### Formatting
+_Print dates and times using a custom format_
 ```kotlin
 val date = "2021-07-06".toZonedDateTime()
 val result = date.print(format = "MM/dd/yyyy")
 ```
 
-#### 5. Attributes
+### Attributes & Mutations
+_Query and transform date/time attributes_
 ```kotlin
 val result = date.isAtStartOfDay()
-
 val result = date.getDaysInMonth()
-```
 
-#### 6. Mutations
-```kotlin
 val result = date.atStartOfDay()
-
 val result = date.getLast(DayOfWeek.FRIDAY)
-
 val result = date.getNext(DayOfWeek.MONDAY)
 ```
 
-#### 7. Preset Dates
+### Preset Dates
+_Quickly access commonly used dates_
 ```kotlin
-val result = ZonedDateTimes.today
-
-val result = LocalDateTimes.tomorrow
-
-val result = LocalDates.nextMonday
+val result = LocalDates.startOfYear()
+val result = LocalDateTimes.tomorrow()
+val result = ZonedDateTimes.nextMonday()
 ```
 
-## Install
-Add to module `build.gradle`:
+## Installation
+Add the following to your module’s `build.gradle`:
 ```gradle
 repositories {
   mavenCentral()
 }
 
 dependencies {
-  implementation("org.eljabali.sami.javatimefun:javatimefun:3.1.1")
+  implementation("org.eljabali.sami.javatimefun:javatimefun:4.0.0")
 }  
 ```
 
@@ -155,4 +144,4 @@ For more information on Android desugaring click [here](https://developer.androi
 </details>
 
 ## Find this library useful? 😏
-Star this repository __[as others have](https://github.com/seljabali/java-time-fun/stargazers)__. ⭐️ <br>
+If you like what you see, please star the repository __[as others have](https://github.com/seljabali/java-time-fun/stargazers)__! ⭐️ <br>
