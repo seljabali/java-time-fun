@@ -23,9 +23,6 @@
 + val zoneId = ZoneIds.AMERICA_LOS_ANGELES
 ```
 
-## Background
-[Java Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html), introduced in Java 8, was a huge improvement over the older [Date](https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html) API. This library builds on that success by adding convenient Kotlin extension functions to make working with Java Time even more fun!
-
 ## Features
 ### Parsing
 _Convert strings into Java Time objects with ease_
