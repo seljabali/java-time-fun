@@ -31,8 +31,8 @@ object LocalDateTimes {
     fun nextSunday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).getNext(DayOfWeek.SUNDAY)
 
     fun startOfYear(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime =
-        LocalDateTimeUtil.new(today(zoneId).year, 1, 1)
+        LocalDateTimeFactory.new(today(zoneId).year, 1, 1)
     fun endOfYear(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime =
-        LocalDateTimeUtil.new(today(zoneId).year, 12, 31)
+        LocalDateTimeFactory.new(today(zoneId).year, 12, 31)
             .atEndOfDay()
 }

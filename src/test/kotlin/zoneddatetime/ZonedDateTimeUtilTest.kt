@@ -2,7 +2,7 @@ package zoneddatetime
 
 import javatimefun.ZoneIds
 import javatimefun.calendar.extensions.toZonedDateTime
-import javatimefun.zoneddatetime.ZonedDateTimeUtil
+import javatimefun.zoneddatetime.ZonedDateTimeFactory
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import javatimefun.zoneddatetime.extensions.getMonthBaseZero
@@ -29,7 +29,7 @@ class ZonedDateTimeTest {
         val year = 2021
 
         // when
-        val dateFormed: ZonedDateTime = ZonedDateTimeUtil.new(
+        val dateFormed: ZonedDateTime = ZonedDateTimeFactory.new(
             year = year,
             month = month,
             day = day
@@ -52,7 +52,7 @@ class ZonedDateTimeTest {
         val second = 45
 
         // when
-        val dateFormed: ZonedDateTime = ZonedDateTimeUtil.new(
+        val dateFormed: ZonedDateTime = ZonedDateTimeFactory.new(
             year = year,
             month = month,
             day = day,
@@ -82,7 +82,7 @@ class ZonedDateTimeTest {
         val second = 45
 
         // when
-        val dateFormed: ZonedDateTime = ZonedDateTimeUtil.new(
+        val dateFormed: ZonedDateTime = ZonedDateTimeFactory.new(
             year = year,
             month = month,
             day = day,
@@ -112,7 +112,7 @@ class ZonedDateTimeTest {
         val second = 45
 
         // when
-        val dateFormed: ZonedDateTime = ZonedDateTimeUtil.new(
+        val dateFormed: ZonedDateTime = ZonedDateTimeFactory.new(
             year = year,
             month = month,
             day = day,
@@ -168,7 +168,7 @@ class ZonedDateTimeTest {
 
         // when
         val date = Date(epoch)
-        val zonedDateTime = ZonedDateTimeUtil.new(epoch)
+        val zonedDateTime = ZonedDateTimeFactory.new(epoch)
 
         // then
         assertEquals(date.time, zonedDateTime.toInstant().toEpochMilli())
@@ -182,7 +182,7 @@ class ZonedDateTimeTest {
 
         // when
         val date = Date(epoch)
-        val zonedDateTime = ZonedDateTimeUtil.new(epoch, ZoneIds.UTC)
+        val zonedDateTime = ZonedDateTimeFactory.new(epoch, ZoneIds.UTC)
         val calendar = GregorianCalendar().apply {
             timeZone = TimeZone.getTimeZone(defaultTimeZoneId)
             time = date

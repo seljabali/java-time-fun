@@ -1,6 +1,6 @@
 package javatimefun.localtime
 
-import javatimefun.localdatetime.LocalDateTimeUtil
+import javatimefun.localdatetime.LocalDateTimeFactory
 import java.time.LocalTime
 import java.time.ZoneId
 
@@ -26,5 +26,5 @@ object LocalTimeUtil {
         LocalTime.of(hourIn24, minute, second, nanoOfSecond)
 
     fun new(epochMilliseconds: Long, zoneId: ZoneId = ZoneId.systemDefault()): LocalTime =
-        LocalDateTimeUtil.new(epochMilliseconds, zoneId).toLocalTime()
+        LocalDateTimeFactory.new(epochMilliseconds, zoneId).toLocalTime()
 }

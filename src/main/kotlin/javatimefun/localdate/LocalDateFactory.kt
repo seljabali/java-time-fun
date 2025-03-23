@@ -9,7 +9,7 @@ import java.time.ZoneId
  * Contains helper functions that only serve to create new LocalDates.
  * Creation methods do not include parsing methods.
  */
-object LocalDateUtil {
+object LocalDateFactory {
 
     /**
      * @param year  Year, ie, 2020.

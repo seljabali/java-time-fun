@@ -10,7 +10,7 @@ import java.time.ZonedDateTime
  * Contains helper functions that only serve to create new ZonedDateTimes.
  * Creation methods do not include parsing methods.
  */
-object ZonedDateTimeUtil {
+object ZonedDateTimeFactory {
 
     /**
      * @param year  Year, ie, 2020.

@@ -10,7 +10,7 @@ import java.util.Calendar
 import java.util.GregorianCalendar
 import java.util.TimeZone
 
-class LocalDateUtilTest {
+class LocalDateFactoryTest {
 
     @Test
     fun `given date epoch millisecond, when converted to localDateTime, then should match attributes`() {
@@ -18,7 +18,7 @@ class LocalDateUtilTest {
         val epoch = 1325134800000
 
         // when
-        val localDate = javatimefun.localdate.LocalDateUtil.new(epoch)
+        val localDate = javatimefun.localdate.LocalDateFactory.new(epoch)
 
         // then
         assertEquals(2011, localDate.year)

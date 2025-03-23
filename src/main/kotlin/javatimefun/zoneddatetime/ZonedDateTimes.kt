@@ -37,8 +37,8 @@ object ZonedDateTimes {
     fun nextSunday(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).getNext(SUNDAY)
 
     fun startOfYear(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime =
-        ZonedDateTimeUtil.new(today(zoneId).year, 1, 1)
+        ZonedDateTimeFactory.new(today(zoneId).year, 1, 1)
     fun endOfYear(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime =
-        ZonedDateTimeUtil.new(today(zoneId).year, 12, 31)
+        ZonedDateTimeFactory.new(today(zoneId).year, 12, 31)
             .atEndOfDay()
 }
