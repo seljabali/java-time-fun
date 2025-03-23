@@ -1,8 +1,6 @@
 package javatimefun.zoneddatetime
 
 import java.time.Instant
-import java.time.LocalDateTime
-import java.time.Month
 import java.time.ZoneId
 import java.time.ZonedDateTime
 
@@ -32,10 +30,17 @@ object ZonedDateTimeFactory {
         second: Int = 0,
         nano: Int = 0,
         zoneId: ZoneId = ZoneId.systemDefault()
-    ): ZonedDateTime {
-        val localDateTime = LocalDateTime.of(year, Month.of(month), day, hourIn24, minute, second, nano)
-        return ZonedDateTime.of(localDateTime, zoneId)
-    }
+    ): ZonedDateTime 
+        = ZonedDateTime.of(
+            year,
+            month,
+            day,
+            hourIn24,
+            minute,
+            second,
+            nano,
+            zoneId
+        )
 
     /**
      * @param epochMilliseconds  Epoch time, aka Unix time, are seconds elapsed since January 1st 1970 at 00:00:00 UTC.
