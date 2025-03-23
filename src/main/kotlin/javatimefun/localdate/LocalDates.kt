@@ -4,11 +4,10 @@ import javatimefun.localdate.extensions.getLast
 import javatimefun.localdate.extensions.getNext
 import java.time.DayOfWeek
 import java.time.LocalDate
-import java.time.LocalDateTime
 import java.time.ZoneId
 
 object LocalDates {
-    fun now(zoneId: ZoneId = ZoneId.systemDefault()): LocalDate = LocalDateTime.now(zoneId).toLocalDate()
+    fun now(zoneId: ZoneId = ZoneId.systemDefault()): LocalDate = LocalDate.now(zoneId)
     fun today(zoneId: ZoneId = ZoneId.systemDefault()): LocalDate = now(zoneId)
     fun yesterday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDate = today().minusDays(1)
     fun tomorrow(zoneId: ZoneId = ZoneId.systemDefault()): LocalDate = today().plusDays(1)

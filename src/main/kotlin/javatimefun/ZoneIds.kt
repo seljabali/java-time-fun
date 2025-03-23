@@ -3,435 +3,435 @@ package javatimefun
 import java.time.ZoneId
 
 object ZoneIds {
-    val AFRICA_ABIDJAN = ZoneId.of("Africa/Abidjan")
-    val AFRICA_ACCRA = ZoneId.of("Africa/Accra")
-    val AFRICA_ADDIS_ABABA = ZoneId.of("Africa/Addis_Ababa")
-    val AFRICA_ALGIERS = ZoneId.of("Africa/Algiers")
-    val AFRICA_ASMERA = ZoneId.of("Africa/Asmera")
-    val AFRICA_BAMAKO = ZoneId.of("Africa/Bamako")
-    val AFRICA_BANJUL = ZoneId.of("Africa/Banjul")
-    val AFRICA_BANGUI = ZoneId.of("Africa/Bangui")
-    val AFRICA_BISSAU = ZoneId.of("Africa/Bissau")
-    val AFRICA_BLANTYRE = ZoneId.of("Africa/Blantyre")
-    val AFRICA_BRAZZAVILLE = ZoneId.of("Africa/Brazzaville")
-    val AFRICA_BUJUMBURA = ZoneId.of("Africa/Bujumbura")
-    val AFRICA_CAIRO = ZoneId.of("Africa/Cairo")
-    val AFRICA_CASABLANCA = ZoneId.of("Africa/Casablanca")
-    val AFRICA_CEUTA = ZoneId.of("Africa/Ceuta")
-    val AFRICA_CONAKRY = ZoneId.of("Africa/Conakry")
-    val AFRICA_DAKAR = ZoneId.of("Africa/Dakar")
-    val AFRICA_DAR_ES_SALAAM = ZoneId.of("Africa/Dar_es_Salaam")
-    val AFRICA_DJIBOUTI = ZoneId.of("Africa/Djibouti")
-    val AFRICA_DOUALA = ZoneId.of("Africa/Douala")
-    val AFRICA_EL_AAIUN = ZoneId.of("Africa/El_Aaiun")
-    val AFRICA_FREETOWN = ZoneId.of("Africa/Freetown")
-    val AFRICA_GABORONE = ZoneId.of("Africa/Gaborone")
-    val AFRICA_HARARE = ZoneId.of("Africa/Harare")
-    val AFRICA_JOHANNESBURG = ZoneId.of("Africa/Johannesburg")
-    val AFRICA_JUBA = ZoneId.of("Africa/Juba")
-    val AFRICA_KAMPALA = ZoneId.of("Africa/Kampala")
-    val AFRICA_KHARTOUM = ZoneId.of("Africa/Khartoum")
-    val AFRICA_KIGALI = ZoneId.of("Africa/Kigali")
-    val AFRICA_KINSHASA = ZoneId.of("Africa/Kinshasa")
-    val AFRICA_LAGOS = ZoneId.of("Africa/Lagos")
-    val AFRICA_LIBREVILLE = ZoneId.of("Africa/Libreville")
-    val AFRICA_LUBUMBASHI = ZoneId.of("Africa/Lubumbashi")
-    val AFRICA_LUSAKA = ZoneId.of("Africa/Lusaka")
-    val AFRICA_MALABO = ZoneId.of("Africa/Malabo")
-    val AFRICA_MBABANE = ZoneId.of("Africa/Mbabane")
-    val AFRICA_MAPUTO = ZoneId.of("Africa/Maputo")
-    val AFRICA_MASERU = ZoneId.of("Africa/Maseru")
-    val AFRICA_MOGADISHU = ZoneId.of("Africa/Mogadishu")
-    val AFRICA_MONROVIA = ZoneId.of("Africa/Monrovia")
-    val AFRICA_NAIROBI = ZoneId.of("Africa/Nairobi")
-    val AFRICA_NDJAMENA = ZoneId.of("Africa/Ndjamena")
-    val AFRICA_NIAMEY = ZoneId.of("Africa/Niamey")
-    val AFRICA_NOUAKCHOTT = ZoneId.of("Africa/Nouakchott")
-    val AFRICA_OUAGADOUGOU = ZoneId.of("Africa/Ouagadougou")
-    val AFRICA_PORTO_NOVO = ZoneId.of("Africa/Porto-Novo")
-    val AFRICA_SAO_TOME = ZoneId.of("Africa/Sao_Tome")
-    val AFRICA_TUNIS = ZoneId.of("Africa/Tunis")
-    val AFRICA_TRIPOLI = ZoneId.of("Africa/Tripoli")
-    val AFRICA_WINDHOEK = ZoneId.of("Africa/Windhoek")
+    val AFRICA_ABIDJAN by lazy { ZoneId.of("Africa/Abidjan") }
+    val AFRICA_ACCRA by lazy { ZoneId.of("Africa/Accra") }
+    val AFRICA_ADDIS_ABABA by lazy { ZoneId.of("Africa/Addis_Ababa") }
+    val AFRICA_ALGIERS by lazy { ZoneId.of("Africa/Algiers") }
+    val AFRICA_ASMERA by lazy { ZoneId.of("Africa/Asmera") }
+    val AFRICA_BAMAKO by lazy { ZoneId.of("Africa/Bamako") }
+    val AFRICA_BANJUL by lazy { ZoneId.of("Africa/Banjul") }
+    val AFRICA_BANGUI by lazy { ZoneId.of("Africa/Bangui") }
+    val AFRICA_BISSAU by lazy { ZoneId.of("Africa/Bissau") }
+    val AFRICA_BLANTYRE by lazy { ZoneId.of("Africa/Blantyre") }
+    val AFRICA_BRAZZAVILLE by lazy { ZoneId.of("Africa/Brazzaville") }
+    val AFRICA_BUJUMBURA by lazy { ZoneId.of("Africa/Bujumbura") }
+    val AFRICA_CAIRO by lazy { ZoneId.of("Africa/Cairo") }
+    val AFRICA_CASABLANCA by lazy { ZoneId.of("Africa/Casablanca") }
+    val AFRICA_CEUTA by lazy { ZoneId.of("Africa/Ceuta") }
+    val AFRICA_CONAKRY by lazy { ZoneId.of("Africa/Conakry") }
+    val AFRICA_DAKAR by lazy { ZoneId.of("Africa/Dakar") }
+    val AFRICA_DAR_ES_SALAAM by lazy { ZoneId.of("Africa/Dar_es_Salaam") }
+    val AFRICA_DJIBOUTI by lazy { ZoneId.of("Africa/Djibouti") }
+    val AFRICA_DOUALA by lazy { ZoneId.of("Africa/Douala") }
+    val AFRICA_EL_AAIUN by lazy { ZoneId.of("Africa/El_Aaiun") }
+    val AFRICA_FREETOWN by lazy { ZoneId.of("Africa/Freetown") }
+    val AFRICA_GABORONE by lazy { ZoneId.of("Africa/Gaborone") }
+    val AFRICA_HARARE by lazy { ZoneId.of("Africa/Harare") }
+    val AFRICA_JOHANNESBURG by lazy { ZoneId.of("Africa/Johannesburg") }
+    val AFRICA_JUBA by lazy { ZoneId.of("Africa/Juba") }
+    val AFRICA_KAMPALA by lazy { ZoneId.of("Africa/Kampala") }
+    val AFRICA_KHARTOUM by lazy { ZoneId.of("Africa/Khartoum") }
+    val AFRICA_KIGALI by lazy { ZoneId.of("Africa/Kigali") }
+    val AFRICA_KINSHASA by lazy { ZoneId.of("Africa/Kinshasa") }
+    val AFRICA_LAGOS by lazy { ZoneId.of("Africa/Lagos") }
+    val AFRICA_LIBREVILLE by lazy { ZoneId.of("Africa/Libreville") }
+    val AFRICA_LUBUMBASHI by lazy { ZoneId.of("Africa/Lubumbashi") }
+    val AFRICA_LUSAKA by lazy { ZoneId.of("Africa/Lusaka") }
+    val AFRICA_MALABO by lazy { ZoneId.of("Africa/Malabo") }
+    val AFRICA_MBABANE by lazy { ZoneId.of("Africa/Mbabane") }
+    val AFRICA_MAPUTO by lazy { ZoneId.of("Africa/Maputo") }
+    val AFRICA_MASERU by lazy { ZoneId.of("Africa/Maseru") }
+    val AFRICA_MOGADISHU by lazy { ZoneId.of("Africa/Mogadishu") }
+    val AFRICA_MONROVIA by lazy { ZoneId.of("Africa/Monrovia") }
+    val AFRICA_NAIROBI by lazy { ZoneId.of("Africa/Nairobi") }
+    val AFRICA_NDJAMENA by lazy { ZoneId.of("Africa/Ndjamena") }
+    val AFRICA_NIAMEY by lazy { ZoneId.of("Africa/Niamey") }
+    val AFRICA_NOUAKCHOTT by lazy { ZoneId.of("Africa/Nouakchott") }
+    val AFRICA_OUAGADOUGOU by lazy { ZoneId.of("Africa/Ouagadougou") }
+    val AFRICA_PORTO_NOVO by lazy { ZoneId.of("Africa/Porto-Novo") }
+    val AFRICA_SAO_TOME by lazy { ZoneId.of("Africa/Sao_Tome") }
+    val AFRICA_TUNIS by lazy { ZoneId.of("Africa/Tunis") }
+    val AFRICA_TRIPOLI by lazy { ZoneId.of("Africa/Tripoli") }
+    val AFRICA_WINDHOEK by lazy { ZoneId.of("Africa/Windhoek") }
 
-    val AMERICA_ADAK = ZoneId.of("America/Adak")
-    val AMERICA_ANGUILLA = ZoneId.of("America/Anguilla")
-    val AMERICA_ANTIGUA = ZoneId.of("America/Antigua")
-    val AMERICA_ARAGUAINA = ZoneId.of("America/Araguaina")
-    val AMERICA_ARGENTINA_Catamarca = ZoneId.of("America/Argentina/Catamarca")
-    val AMERICA_ARGENTINA_ComodRivadavia = ZoneId.of("America/Argentina/ComodRivadavia")
-    val AMERICA_ARGENTINA_Cordoba = ZoneId.of("America/Argentina/Cordoba")
-    val AMERICA_ARGENTINA_Jujuy = ZoneId.of("America/Argentina/Jujuy")
-    val AMERICA_ARGENTINA_La_Rioja = ZoneId.of("America/Argentina/La_Rioja")
-    val AMERICA_ARGENTINA_Mendoza = ZoneId.of("America/Argentina/Mendoza")
-    val AMERICA_ARGENTINA_Rio_Gallegos = ZoneId.of("America/Argentina/Rio_Gallegos")
-    val AMERICA_ARGENTINA_Salta = ZoneId.of("America/Argentina/Salta")
-    val AMERICA_ARGENTINA_San_Juan = ZoneId.of("America/Argentina/San_Juan")
-    val AMERICA_ARGENTINA_San_Luis = ZoneId.of("America/Argentina/San_Luis")
-    val AMERICA_ARGENTINA_Ushuaia = ZoneId.of("America/Argentina/Ushuaia")
-    val AMERICA_ARGENTINA_Tucuman = ZoneId.of("America/Argentina/Tucuman")
-    val AMERICA_ARUBA = ZoneId.of("America/Aruba")
-    val AMERICA_BAHIA = ZoneId.of("America/Bahia")
-    val AMERICA_BAHIA_BANDERAS = ZoneId.of("America/Bahia_Banderas")
-    val AMERICA_BARBADOS = ZoneId.of("America/Barbados")
-    val AMERICA_BELIZE = ZoneId.of("America/Belize")
-    val AMERICA_BELEM = ZoneId.of("America/Belem")
-    val AMERICA_BLANC_SABLON = ZoneId.of("America/Blanc-Sablon")
-    val AMERICA_BOGOTA = ZoneId.of("America/Bogota")
-    val AMERICA_BOA_VISTA = ZoneId.of("America/Boa_Vista")
-    val AMERICA_BOISE = ZoneId.of("America/Boise")
-    val AMERICA_CAMBRIDGE_BAY = ZoneId.of("America/Cambridge_Bay")
-    val AMERICA_CAMPO_GRANDE = ZoneId.of("America/Campo_Grande")
-    val AMERICA_CANCUN = ZoneId.of("America/Cancun")
-    val AMERICA_CARACAS = ZoneId.of("America/Caracas")
-    val AMERICA_CATAMARCA = ZoneId.of("America/Catamarca")
-    val AMERICA_CIUDAD_JUAREZ = ZoneId.of("America/Ciudad_Juarez")
-    val AMERICA_CORDOBA = ZoneId.of("America/Cordoba")
-    val AMERICA_CURACAO = ZoneId.of("America/Curacao")
-    val AMERICA_CUIABA = ZoneId.of("America/Cuiaba")
-    val AMERICA_CAYENNE = ZoneId.of("America/Cayenne")
-    val AMERICA_CAYMAN = ZoneId.of("America/Cayman")
-    val AMERICA_CHICAGO = ZoneId.of("America/Chicago")
-    val AMERICA_CHIHUAHUA = ZoneId.of("America/Chihuahua")
-    val AMERICA_CRESTON = ZoneId.of("America/Creston")
-    val AMERICA_DANMARKSHAVN = ZoneId.of("America/Danmarkshavn")
-    val AMERICA_DAWSON = ZoneId.of("America/Dawson")
-    val AMERICA_DAWSON_CREEK = ZoneId.of("America/Dawson_Creek")
-    val AMERICA_DETROIT = ZoneId.of("America/Detroit")
-    val AMERICA_DOMINICA = ZoneId.of("America/Dominica")
-    val AMERICA_EDMONTON = ZoneId.of("America/Edmonton")
-    val AMERICA_EL_SALVADOR = ZoneId.of("America/El_Salvador")
-    val AMERICA_ENSENADA = ZoneId.of("America/Ensenada")
-    val AMERICA_EIRUNEPE = ZoneId.of("America/Eirunepe")
-    val AMERICA_FORTALEZA = ZoneId.of("America/Fortaleza")
-    val AMERICA_FORT_WAYNE = ZoneId.of("America/Fort_Wayne")
-    val AMERICA_FORT_NELSON = ZoneId.of("America/Fort_Nelson")
-    val AMERICA_GLACE_BAY = ZoneId.of("America/Glace_Bay")
-    val AMERICA_GODTHAB = ZoneId.of("America/Godthab")
-    val AMERICA_GRAND_TURK = ZoneId.of("America/Grand_Turk")
-    val AMERICA_GUADELOUPE = ZoneId.of("America/Guadeloupe")
-    val AMERICA_GUATEMALA = ZoneId.of("America/Guatemala")
-    val AMERICA_GUAYAQUIL = ZoneId.of("America/Guayaquil")
-    val AMERICA_GUYANA = ZoneId.of("America/Guyana")
-    val AMERICA_HALIFAX = ZoneId.of("America/Halifax")
-    val AMERICA_HAVANA = ZoneId.of("America/Havana")
-    val AMERICA_HERMOSILLO = ZoneId.of("America/Hermosillo")
-    val AMERICA_INDIANA_Indianapolis = ZoneId.of("America/Indiana/Indianapolis")
-    val AMERICA_INDIANA_Knox = ZoneId.of("America/Indiana/Knox")
-    val AMERICA_INDIANA_Marengo = ZoneId.of("America/Indiana/Marengo")
-    val AMERICA_INDIANA_Petersburg = ZoneId.of("America/Indiana/Petersburg")
-    val AMERICA_INDIANA_Tell_City = ZoneId.of("America/Indiana/Tell_City")
-    val AMERICA_INDIANA_Vevay = ZoneId.of("America/Indiana/Vevay")
-    val AMERICA_INDIANA_Vincennes = ZoneId.of("America/Indiana/Vincennes")
-    val AMERICA_INDIANAPOLIS = ZoneId.of("America/Indianapolis")
-    val AMERICA_INUVIK = ZoneId.of("America/Inuvik")
-    val AMERICA_IQALUIT = ZoneId.of("America/Iqaluit")
-    val AMERICA_JAMAICA = ZoneId.of("America/Jamaica")
-    val AMERICA_JUNEAU = ZoneId.of("America/Juneau")
-    val AMERICA_JUJUY = ZoneId.of("America/Jujuy")
-    val AMERICA_KENTUCKY_LOUISVILLE = ZoneId.of("America/Kentucky/Louisville")
-    val AMERICA_KENTUCKY_Monticello = ZoneId.of("America/Kentucky/Monticello")
-    val AMERICA_KNOX_IN = ZoneId.of("America/Knox_IN")
-    val AMERICA_KRALENDIJK = ZoneId.of("America/Kralendijk")
-    val AMERICA_LA_PAZ = ZoneId.of("America/La_Paz")
-    val AMERICA_LIMA = ZoneId.of("America/Lima")
-    val AMERICA_LOS_ANGELES = ZoneId.of("America/Los_Angeles")
-    val AMERICA_LOWER_PRINCES = ZoneId.of("America/Lower_Princes")
-    val AMERICA_MACEIO = ZoneId.of("America/Maceio")
-    val AMERICA_MANAGUA = ZoneId.of("America/Managua")
-    val AMERICA_MANAUS = ZoneId.of("America/Manaus")
-    val AMERICA_MARTINIQUE = ZoneId.of("America/Martinique")
-    val AMERICA_MATAMOROS = ZoneId.of("America/Matamoros")
-    val AMERICA_MAZATLAN = ZoneId.of("America/Mazatlan")
-    val AMERICA_MERIDA = ZoneId.of("America/Merida")
-    val AMERICA_METLAKATLA = ZoneId.of("America/Metlakatla")
-    val AMERICA_MEXICO_CITY = ZoneId.of("America/Mexico_City")
-    val AMERICA_MENDOZA = ZoneId.of("America/Mendoza")
-    val AMERICA_MONCTON = ZoneId.of("America/Moncton")
-    val AMERICA_MONTEVIDEO = ZoneId.of("America/Montevideo")
-    val AMERICA_MONTREAL = ZoneId.of("America/Montreal")
-    val AMERICA_MONTERREY = ZoneId.of("America/Monterrey")
-    val AMERICA_NASSAU = ZoneId.of("America/Nassau")
-    val AMERICA_NORONHA = ZoneId.of("America/Noronha")
-    val AMERICA_NOME = ZoneId.of("America/Nome")
-    val AMERICA_NORTH_DAKOTA_Beulah = ZoneId.of("America/North_Dakota/Beulah")
-    val AMERICA_NORTH_DAKOTA_Center = ZoneId.of("America/North_Dakota/Center")
-    val AMERICA_NORTH_DAKOTA_New_Salem = ZoneId.of("America/North_Dakota/New_Salem")
-    val AMERICA_NIPIGON = ZoneId.of("America/Nipigon")
-    val AMERICA_NUUK = ZoneId.of("America/Nuuk")
-    val AMERICA_NEW_YORK = ZoneId.of("America/New_York")
-    val AMERICA_OJINAGA = ZoneId.of("America/Ojinaga")
-    val AMERICA_PORTO_ACRE = ZoneId.of("America/Porto_Acre")
-    val AMERICA_PORT_OF_SPAIN = ZoneId.of("America/Port_of_Spain")
-    val AMERICA_PORTO_VELHO = ZoneId.of("America/Porto_Velho")
-    val AMERICA_PANAMA = ZoneId.of("America/Panama")
-    val AMERICA_PARAMARIBO = ZoneId.of("America/Paramaribo")
-    val AMERICA_PHOENIX = ZoneId.of("America/Phoenix")
-    val AMERICA_PUERTO_RICO = ZoneId.of("America/Puerto_Rico")
-    val AMERICA_PUNTA_ARENAS = ZoneId.of("America/Punta_Arenas")
-    val AMERICA_PANGNIRTUNG = ZoneId.of("America/Pangnirtung")
-    val AMERICA_RECIFE = ZoneId.of("America/Recife")
-    val AMERICA_REGINA = ZoneId.of("America/Regina")
-    val AMERICA_RESOLUTE = ZoneId.of("America/Resolute")
-    val AMERICA_ROSARIO = ZoneId.of("America/Rosario")
-    val AMERICA_RAINY_RIVER = ZoneId.of("America/Rainy_River")
-    val AMERICA_RANKIN_INLET = ZoneId.of("America/Rankin_Inlet")
-    val AMERICA_RIO_BRANCO = ZoneId.of("America/Rio_Branco")
-    val AMERICA_SANTIAGO = ZoneId.of("America/Santiago")
-    val AMERICA_SANTO_DOMINGO = ZoneId.of("America/Santo_Domingo")
-    val AMERICA_SAO_PAULO = ZoneId.of("America/Sao_Paulo")
-    val AMERICA_SANTA_ISABEL = ZoneId.of("America/Santa_Isabel")
-    val AMERICA_SANTAREM = ZoneId.of("America/Santarem")
-    val AMERICA_ST_BARTHELEMY = ZoneId.of("America/St_Barthelemy")
-    val AMERICA_ST_JOHNS = ZoneId.of("America/St_Johns")
-    val AMERICA_ST_KITTS = ZoneId.of("America/St_Kitts")
-    val AMERICA_ST_LUCIA = ZoneId.of("America/St_Lucia")
-    val AMERICA_ST_THOMAS = ZoneId.of("America/St_Thomas")
-    val AMERICA_ST_VINCENT = ZoneId.of("America/St_Vincent")
-    val AMERICA_SWIFT_CURRENT = ZoneId.of("America/Swift_Current")
-    val AMERICA_THUNDER_BAY = ZoneId.of("America/Thunder_Bay")
-    val AMERICA_TEGUCIGALPA = ZoneId.of("America/Tegucigalpa")
-    val AMERICA_TIJUANA = ZoneId.of("America/Tijuana")
-    val AMERICA_TORONTO = ZoneId.of("America/Toronto")
-    val AMERICA_TORTOLA = ZoneId.of("America/Tortola")
-    val AMERICA_VANCOUVER = ZoneId.of("America/Vancouver")
-    val AMERICA_VIRGIN = ZoneId.of("America/Virgin")
-    val AMERICA_WHITEHORSE = ZoneId.of("America/Whitehorse")
-    val AMERICA_YAKUTAT = ZoneId.of("America/Yakutat")
-    val AMERICA_YELLOWKNIFE = ZoneId.of("America/Yellowknife")
+    val AMERICA_ADAK by lazy { ZoneId.of("America/Adak") }
+    val AMERICA_ANGUILLA by lazy { ZoneId.of("America/Anguilla") }
+    val AMERICA_ANTIGUA by lazy { ZoneId.of("America/Antigua") }
+    val AMERICA_ARAGUAINA by lazy { ZoneId.of("America/Araguaina") }
+    val AMERICA_ARGENTINA_Catamarca by lazy { ZoneId.of("America/Argentina/Catamarca") }
+    val AMERICA_ARGENTINA_ComodRivadavia by lazy { ZoneId.of("America/Argentina/ComodRivadavia") }
+    val AMERICA_ARGENTINA_Cordoba by lazy { ZoneId.of("America/Argentina/Cordoba") }
+    val AMERICA_ARGENTINA_Jujuy by lazy { ZoneId.of("America/Argentina/Jujuy") }
+    val AMERICA_ARGENTINA_La_Rioja by lazy { ZoneId.of("America/Argentina/La_Rioja") }
+    val AMERICA_ARGENTINA_Mendoza by lazy { ZoneId.of("America/Argentina/Mendoza") }
+    val AMERICA_ARGENTINA_Rio_Gallegos by lazy { ZoneId.of("America/Argentina/Rio_Gallegos") }
+    val AMERICA_ARGENTINA_Salta by lazy { ZoneId.of("America/Argentina/Salta") }
+    val AMERICA_ARGENTINA_San_Juan by lazy { ZoneId.of("America/Argentina/San_Juan") }
+    val AMERICA_ARGENTINA_San_Luis by lazy { ZoneId.of("America/Argentina/San_Luis") }
+    val AMERICA_ARGENTINA_Ushuaia by lazy { ZoneId.of("America/Argentina/Ushuaia") }
+    val AMERICA_ARGENTINA_Tucuman by lazy { ZoneId.of("America/Argentina/Tucuman") }
+    val AMERICA_ARUBA by lazy { ZoneId.of("America/Aruba") }
+    val AMERICA_BAHIA by lazy { ZoneId.of("America/Bahia") }
+    val AMERICA_BAHIA_BANDERAS by lazy { ZoneId.of("America/Bahia_Banderas") }
+    val AMERICA_BARBADOS by lazy { ZoneId.of("America/Barbados") }
+    val AMERICA_BELIZE by lazy { ZoneId.of("America/Belize") }
+    val AMERICA_BELEM by lazy { ZoneId.of("America/Belem") }
+    val AMERICA_BLANC_SABLON by lazy { ZoneId.of("America/Blanc-Sablon") }
+    val AMERICA_BOGOTA by lazy { ZoneId.of("America/Bogota") }
+    val AMERICA_BOA_VISTA by lazy { ZoneId.of("America/Boa_Vista") }
+    val AMERICA_BOISE by lazy { ZoneId.of("America/Boise") }
+    val AMERICA_CAMBRIDGE_BAY by lazy { ZoneId.of("America/Cambridge_Bay") }
+    val AMERICA_CAMPO_GRANDE by lazy { ZoneId.of("America/Campo_Grande") }
+    val AMERICA_CANCUN by lazy { ZoneId.of("America/Cancun") }
+    val AMERICA_CARACAS by lazy { ZoneId.of("America/Caracas") }
+    val AMERICA_CATAMARCA by lazy { ZoneId.of("America/Catamarca") }
+    val AMERICA_CIUDAD_JUAREZ by lazy { ZoneId.of("America/Ciudad_Juarez") }
+    val AMERICA_CORDOBA by lazy { ZoneId.of("America/Cordoba") }
+    val AMERICA_CURACAO by lazy { ZoneId.of("America/Curacao") }
+    val AMERICA_CUIABA by lazy { ZoneId.of("America/Cuiaba") }
+    val AMERICA_CAYENNE by lazy { ZoneId.of("America/Cayenne") }
+    val AMERICA_CAYMAN by lazy { ZoneId.of("America/Cayman") }
+    val AMERICA_CHICAGO by lazy { ZoneId.of("America/Chicago") }
+    val AMERICA_CHIHUAHUA by lazy { ZoneId.of("America/Chihuahua") }
+    val AMERICA_CRESTON by lazy { ZoneId.of("America/Creston") }
+    val AMERICA_DANMARKSHAVN by lazy { ZoneId.of("America/Danmarkshavn") }
+    val AMERICA_DAWSON by lazy { ZoneId.of("America/Dawson") }
+    val AMERICA_DAWSON_CREEK by lazy { ZoneId.of("America/Dawson_Creek") }
+    val AMERICA_DETROIT by lazy { ZoneId.of("America/Detroit") }
+    val AMERICA_DOMINICA by lazy { ZoneId.of("America/Dominica") }
+    val AMERICA_EDMONTON by lazy { ZoneId.of("America/Edmonton") }
+    val AMERICA_EL_SALVADOR by lazy { ZoneId.of("America/El_Salvador") }
+    val AMERICA_ENSENADA by lazy { ZoneId.of("America/Ensenada") }
+    val AMERICA_EIRUNEPE by lazy { ZoneId.of("America/Eirunepe") }
+    val AMERICA_FORTALEZA by lazy { ZoneId.of("America/Fortaleza") }
+    val AMERICA_FORT_WAYNE by lazy { ZoneId.of("America/Fort_Wayne") }
+    val AMERICA_FORT_NELSON by lazy { ZoneId.of("America/Fort_Nelson") }
+    val AMERICA_GLACE_BAY by lazy { ZoneId.of("America/Glace_Bay") }
+    val AMERICA_GODTHAB by lazy { ZoneId.of("America/Godthab") }
+    val AMERICA_GRAND_TURK by lazy { ZoneId.of("America/Grand_Turk") }
+    val AMERICA_GUADELOUPE by lazy { ZoneId.of("America/Guadeloupe") }
+    val AMERICA_GUATEMALA by lazy { ZoneId.of("America/Guatemala") }
+    val AMERICA_GUAYAQUIL by lazy { ZoneId.of("America/Guayaquil") }
+    val AMERICA_GUYANA by lazy { ZoneId.of("America/Guyana") }
+    val AMERICA_HALIFAX by lazy { ZoneId.of("America/Halifax") }
+    val AMERICA_HAVANA by lazy { ZoneId.of("America/Havana") }
+    val AMERICA_HERMOSILLO by lazy { ZoneId.of("America/Hermosillo") }
+    val AMERICA_INDIANA_Indianapolis by lazy { ZoneId.of("America/Indiana/Indianapolis") }
+    val AMERICA_INDIANA_Knox by lazy { ZoneId.of("America/Indiana/Knox") }
+    val AMERICA_INDIANA_Marengo by lazy { ZoneId.of("America/Indiana/Marengo") }
+    val AMERICA_INDIANA_Petersburg by lazy { ZoneId.of("America/Indiana/Petersburg") }
+    val AMERICA_INDIANA_Tell_City by lazy { ZoneId.of("America/Indiana/Tell_City") }
+    val AMERICA_INDIANA_Vevay by lazy { ZoneId.of("America/Indiana/Vevay") }
+    val AMERICA_INDIANA_Vincennes by lazy { ZoneId.of("America/Indiana/Vincennes") }
+    val AMERICA_INDIANAPOLIS by lazy { ZoneId.of("America/Indianapolis") }
+    val AMERICA_INUVIK by lazy { ZoneId.of("America/Inuvik") }
+    val AMERICA_IQALUIT by lazy { ZoneId.of("America/Iqaluit") }
+    val AMERICA_JAMAICA by lazy { ZoneId.of("America/Jamaica") }
+    val AMERICA_JUNEAU by lazy { ZoneId.of("America/Juneau") }
+    val AMERICA_JUJUY by lazy { ZoneId.of("America/Jujuy") }
+    val AMERICA_KENTUCKY_LOUISVILLE by lazy { ZoneId.of("America/Kentucky/Louisville") }
+    val AMERICA_KENTUCKY_Monticello by lazy { ZoneId.of("America/Kentucky/Monticello") }
+    val AMERICA_KNOX_IN by lazy { ZoneId.of("America/Knox_IN") }
+    val AMERICA_KRALENDIJK by lazy { ZoneId.of("America/Kralendijk") }
+    val AMERICA_LA_PAZ by lazy { ZoneId.of("America/La_Paz") }
+    val AMERICA_LIMA by lazy { ZoneId.of("America/Lima") }
+    val AMERICA_LOS_ANGELES by lazy { ZoneId.of("America/Los_Angeles") }
+    val AMERICA_LOWER_PRINCES by lazy { ZoneId.of("America/Lower_Princes") }
+    val AMERICA_MACEIO by lazy { ZoneId.of("America/Maceio") }
+    val AMERICA_MANAGUA by lazy { ZoneId.of("America/Managua") }
+    val AMERICA_MANAUS by lazy { ZoneId.of("America/Manaus") }
+    val AMERICA_MARTINIQUE by lazy { ZoneId.of("America/Martinique") }
+    val AMERICA_MATAMOROS by lazy { ZoneId.of("America/Matamoros") }
+    val AMERICA_MAZATLAN by lazy { ZoneId.of("America/Mazatlan") }
+    val AMERICA_MERIDA by lazy { ZoneId.of("America/Merida") }
+    val AMERICA_METLAKATLA by lazy { ZoneId.of("America/Metlakatla") }
+    val AMERICA_MEXICO_CITY by lazy { ZoneId.of("America/Mexico_City") }
+    val AMERICA_MENDOZA by lazy { ZoneId.of("America/Mendoza") }
+    val AMERICA_MONCTON by lazy { ZoneId.of("America/Moncton") }
+    val AMERICA_MONTEVIDEO by lazy { ZoneId.of("America/Montevideo") }
+    val AMERICA_MONTREAL by lazy { ZoneId.of("America/Montreal") }
+    val AMERICA_MONTERREY by lazy { ZoneId.of("America/Monterrey") }
+    val AMERICA_NASSAU by lazy { ZoneId.of("America/Nassau") }
+    val AMERICA_NORONHA by lazy { ZoneId.of("America/Noronha") }
+    val AMERICA_NOME by lazy { ZoneId.of("America/Nome") }
+    val AMERICA_NORTH_DAKOTA_Beulah by lazy { ZoneId.of("America/North_Dakota/Beulah") }
+    val AMERICA_NORTH_DAKOTA_Center by lazy { ZoneId.of("America/North_Dakota/Center") }
+    val AMERICA_NORTH_DAKOTA_New_Salem by lazy { ZoneId.of("America/North_Dakota/New_Salem") }
+    val AMERICA_NIPIGON by lazy { ZoneId.of("America/Nipigon") }
+    val AMERICA_NUUK by lazy { ZoneId.of("America/Nuuk") }
+    val AMERICA_NEW_YORK by lazy { ZoneId.of("America/New_York") }
+    val AMERICA_OJINAGA by lazy { ZoneId.of("America/Ojinaga") }
+    val AMERICA_PORTO_ACRE by lazy { ZoneId.of("America/Porto_Acre") }
+    val AMERICA_PORT_OF_SPAIN by lazy { ZoneId.of("America/Port_of_Spain") }
+    val AMERICA_PORTO_VELHO by lazy { ZoneId.of("America/Porto_Velho") }
+    val AMERICA_PANAMA by lazy { ZoneId.of("America/Panama") }
+    val AMERICA_PARAMARIBO by lazy { ZoneId.of("America/Paramaribo") }
+    val AMERICA_PHOENIX by lazy { ZoneId.of("America/Phoenix") }
+    val AMERICA_PUERTO_RICO by lazy { ZoneId.of("America/Puerto_Rico") }
+    val AMERICA_PUNTA_ARENAS by lazy { ZoneId.of("America/Punta_Arenas") }
+    val AMERICA_PANGNIRTUNG by lazy { ZoneId.of("America/Pangnirtung") }
+    val AMERICA_RECIFE by lazy { ZoneId.of("America/Recife") }
+    val AMERICA_REGINA by lazy { ZoneId.of("America/Regina") }
+    val AMERICA_RESOLUTE by lazy { ZoneId.of("America/Resolute") }
+    val AMERICA_ROSARIO by lazy { ZoneId.of("America/Rosario") }
+    val AMERICA_RAINY_RIVER by lazy { ZoneId.of("America/Rainy_River") }
+    val AMERICA_RANKIN_INLET by lazy { ZoneId.of("America/Rankin_Inlet") }
+    val AMERICA_RIO_BRANCO by lazy { ZoneId.of("America/Rio_Branco") }
+    val AMERICA_SANTIAGO by lazy { ZoneId.of("America/Santiago") }
+    val AMERICA_SANTO_DOMINGO by lazy { ZoneId.of("America/Santo_Domingo") }
+    val AMERICA_SAO_PAULO by lazy { ZoneId.of("America/Sao_Paulo") }
+    val AMERICA_SANTA_ISABEL by lazy { ZoneId.of("America/Santa_Isabel") }
+    val AMERICA_SANTAREM by lazy { ZoneId.of("America/Santarem") }
+    val AMERICA_ST_BARTHELEMY by lazy { ZoneId.of("America/St_Barthelemy") }
+    val AMERICA_ST_JOHNS by lazy { ZoneId.of("America/St_Johns") }
+    val AMERICA_ST_KITTS by lazy { ZoneId.of("America/St_Kitts") }
+    val AMERICA_ST_LUCIA by lazy { ZoneId.of("America/St_Lucia") }
+    val AMERICA_ST_THOMAS by lazy { ZoneId.of("America/St_Thomas") }
+    val AMERICA_ST_VINCENT by lazy { ZoneId.of("America/St_Vincent") }
+    val AMERICA_SWIFT_CURRENT by lazy { ZoneId.of("America/Swift_Current") }
+    val AMERICA_THUNDER_BAY by lazy { ZoneId.of("America/Thunder_Bay") }
+    val AMERICA_TEGUCIGALPA by lazy { ZoneId.of("America/Tegucigalpa") }
+    val AMERICA_TIJUANA by lazy { ZoneId.of("America/Tijuana") }
+    val AMERICA_TORONTO by lazy { ZoneId.of("America/Toronto") }
+    val AMERICA_TORTOLA by lazy { ZoneId.of("America/Tortola") }
+    val AMERICA_VANCOUVER by lazy { ZoneId.of("America/Vancouver") }
+    val AMERICA_VIRGIN by lazy { ZoneId.of("America/Virgin") }
+    val AMERICA_WHITEHORSE by lazy { ZoneId.of("America/Whitehorse") }
+    val AMERICA_YAKUTAT by lazy { ZoneId.of("America/Yakutat") }
+    val AMERICA_YELLOWKNIFE by lazy { ZoneId.of("America/Yellowknife") }
 
-    val ANTARCTICA_CASEY = ZoneId.of("Antarctica/Casey")
-    val ANTARCTICA_DAVIS = ZoneId.of("Antarctica/Davis")
-    val ANTARCTICA_DUMONTDURVILLE = ZoneId.of("Antarctica/DumontDUrville")
-    val ANTARCTICA_MACQUARIE = ZoneId.of("Antarctica/Macquarie")
-    val ANTARCTICA_MAWSON = ZoneId.of("Antarctica/Mawson")
-    val ANTARCTICA_MCMURDO = ZoneId.of("Antarctica/McMurdo")
-    val ANTARCTICA_PALMER = ZoneId.of("Antarctica/Palmer")
-    val ANTARCTICA_ROTHERA = ZoneId.of("Antarctica/Rothera")
-    val ANTARCTICA_SOUTH_POLE = ZoneId.of("Antarctica/South_Pole")
-    val ANTARCTICA_SYOWA = ZoneId.of("Antarctica/Syowa")
-    val ANTARCTICA_TROLL = ZoneId.of("Antarctica/Troll")
-    val ANTARCTICA_VOSTOK = ZoneId.of("Antarctica/Vostok")
+    val ANTARCTICA_CASEY by lazy { ZoneId.of("Antarctica/Casey") }
+    val ANTARCTICA_DAVIS by lazy { ZoneId.of("Antarctica/Davis") }
+    val ANTARCTICA_DUMONTDURVILLE by lazy { ZoneId.of("Antarctica/DumontDUrville") }
+    val ANTARCTICA_MACQUARIE by lazy { ZoneId.of("Antarctica/Macquarie") }
+    val ANTARCTICA_MAWSON by lazy { ZoneId.of("Antarctica/Mawson") }
+    val ANTARCTICA_MCMURDO by lazy { ZoneId.of("Antarctica/McMurdo") }
+    val ANTARCTICA_PALMER by lazy { ZoneId.of("Antarctica/Palmer") }
+    val ANTARCTICA_ROTHERA by lazy { ZoneId.of("Antarctica/Rothera") }
+    val ANTARCTICA_SOUTH_POLE by lazy { ZoneId.of("Antarctica/South_Pole") }
+    val ANTARCTICA_SYOWA by lazy { ZoneId.of("Antarctica/Syowa") }
+    val ANTARCTICA_TROLL by lazy { ZoneId.of("Antarctica/Troll") }
+    val ANTARCTICA_VOSTOK by lazy { ZoneId.of("Antarctica/Vostok") }
 
-    val ARCTIC_LONGYEARBYEN = ZoneId.of("Arctic/Longyearbyen")
+    val ARCTIC_LONGYEARBYEN by lazy { ZoneId.of("Arctic/Longyearbyen") }
 
-    val ATLANTIC_AZORES = ZoneId.of("Atlantic/Azores")
-    val ATLANTIC_BERMUDA = ZoneId.of("Atlantic/Bermuda")
-    val ATLANTIC_CANARY = ZoneId.of("Atlantic/Canary")
-    val ATLANTIC_CAPE_VERDE = ZoneId.of("Atlantic/Cape_Verde")
-    val ATLANTIC_FAEROE = ZoneId.of("Atlantic/Faeroe")
-    val ATLANTIC_FAROE = ZoneId.of("Atlantic/Faroe")
-    val ATLANTIC_JAN_MAYEN = ZoneId.of("Atlantic/Jan_Mayen")
-    val ATLANTIC_MADEIRA = ZoneId.of("Atlantic/Madeira")
-    val ATLANTIC_REYKJAVIK = ZoneId.of("Atlantic/Reykjavik")
-    val ATLANTIC_ST_HELENA = ZoneId.of("Atlantic/St_Helena")
-    val ATLANTIC_STANLEY = ZoneId.of("Atlantic/Stanley")
+    val ATLANTIC_AZORES by lazy { ZoneId.of("Atlantic/Azores") }
+    val ATLANTIC_BERMUDA by lazy { ZoneId.of("Atlantic/Bermuda") }
+    val ATLANTIC_CANARY by lazy { ZoneId.of("Atlantic/Canary") }
+    val ATLANTIC_CAPE_VERDE by lazy { ZoneId.of("Atlantic/Cape_Verde") }
+    val ATLANTIC_FAEROE by lazy { ZoneId.of("Atlantic/Faeroe") }
+    val ATLANTIC_FAROE by lazy { ZoneId.of("Atlantic/Faroe") }
+    val ATLANTIC_JAN_MAYEN by lazy { ZoneId.of("Atlantic/Jan_Mayen") }
+    val ATLANTIC_MADEIRA by lazy { ZoneId.of("Atlantic/Madeira") }
+    val ATLANTIC_REYKJAVIK by lazy { ZoneId.of("Atlantic/Reykjavik") }
+    val ATLANTIC_ST_HELENA by lazy { ZoneId.of("Atlantic/St_Helena") }
+    val ATLANTIC_STANLEY by lazy { ZoneId.of("Atlantic/Stanley") }
 
-    val AUSTRALIA_ACT = ZoneId.of("Australia/ACT")
-    val AUSTRALIA_ADELAIDE = ZoneId.of("Australia/Adelaide")
-    val AUSTRALIA_BROKEN_HILL = ZoneId.of("Australia/Broken_Hill")
-    val AUSTRALIA_BRISBANE = ZoneId.of("Australia/Brisbane")
-    val AUSTRALIA_CANBERRA = ZoneId.of("Australia/Canberra")
-    val AUSTRALIA_CURRIE = ZoneId.of("Australia/Currie")
-    val AUSTRALIA_DARWIN = ZoneId.of("Australia/Darwin")
-    val AUSTRALIA_EUCLA = ZoneId.of("Australia/Eucla")
-    val AUSTRALIA_HOBART = ZoneId.of("Australia/Hobart")
-    val AUSTRALIA_LHI = ZoneId.of("Australia/LHI")
-    val AUSTRALIA_LINDEMAN = ZoneId.of("Australia/Lindeman")
-    val AUSTRALIA_LORD_HOWE = ZoneId.of("Australia/Lord_Howe")
-    val AUSTRALIA_MELBOURNE = ZoneId.of("Australia/Melbourne")
-    val AUSTRALIA_NORTH = ZoneId.of("Australia/North")
-    val AUSTRALIA_NSW = ZoneId.of("Australia/NSW")
-    val AUSTRALIA_PERTH = ZoneId.of("Australia/Perth")
-    val AUSTRALIA_QUEENSLAND = ZoneId.of("Australia/Queensland")
-    val AUSTRALIA_SOUTH = ZoneId.of("Australia/South")
-    val AUSTRALIA_TASMANIA = ZoneId.of("Australia/Tasmania")
-    val AUSTRALIA_VICTORIA = ZoneId.of("Australia/Victoria")
-    val AUSTRALIA_WEST = ZoneId.of("Australia/West")
+    val AUSTRALIA_ACT by lazy { ZoneId.of("Australia/ACT") }
+    val AUSTRALIA_ADELAIDE by lazy { ZoneId.of("Australia/Adelaide") }
+    val AUSTRALIA_BROKEN_HILL by lazy { ZoneId.of("Australia/Broken_Hill") }
+    val AUSTRALIA_BRISBANE by lazy { ZoneId.of("Australia/Brisbane") }
+    val AUSTRALIA_CANBERRA by lazy { ZoneId.of("Australia/Canberra") }
+    val AUSTRALIA_CURRIE by lazy { ZoneId.of("Australia/Currie") }
+    val AUSTRALIA_DARWIN by lazy { ZoneId.of("Australia/Darwin") }
+    val AUSTRALIA_EUCLA by lazy { ZoneId.of("Australia/Eucla") }
+    val AUSTRALIA_HOBART by lazy { ZoneId.of("Australia/Hobart") }
+    val AUSTRALIA_LHI by lazy { ZoneId.of("Australia/LHI") }
+    val AUSTRALIA_LINDEMAN by lazy { ZoneId.of("Australia/Lindeman") }
+    val AUSTRALIA_LORD_HOWE by lazy { ZoneId.of("Australia/Lord_Howe") }
+    val AUSTRALIA_MELBOURNE by lazy { ZoneId.of("Australia/Melbourne") }
+    val AUSTRALIA_NORTH by lazy { ZoneId.of("Australia/North") }
+    val AUSTRALIA_NSW by lazy { ZoneId.of("Australia/NSW") }
+    val AUSTRALIA_PERTH by lazy { ZoneId.of("Australia/Perth") }
+    val AUSTRALIA_QUEENSLAND by lazy { ZoneId.of("Australia/Queensland") }
+    val AUSTRALIA_SOUTH by lazy { ZoneId.of("Australia/South") }
+    val AUSTRALIA_TASMANIA by lazy { ZoneId.of("Australia/Tasmania") }
+    val AUSTRALIA_VICTORIA by lazy { ZoneId.of("Australia/Victoria") }
+    val AUSTRALIA_WEST by lazy { ZoneId.of("Australia/West") }
 
-    val BRAZIL_ACRE = ZoneId.of("Brazil/Acre")
-    val BRAZIL_DENORONHA = ZoneId.of("Brazil/DeNoronha")
-    val BRAZIL_EAST = ZoneId.of("Brazil/East")
-    val BRAZIL_WEST = ZoneId.of("Brazil/West")
+    val BRAZIL_ACRE by lazy { ZoneId.of("Brazil/Acre") }
+    val BRAZIL_DENORONHA by lazy { ZoneId.of("Brazil/DeNoronha") }
+    val BRAZIL_EAST by lazy { ZoneId.of("Brazil/East") }
+    val BRAZIL_WEST by lazy { ZoneId.of("Brazil/West") }
 
-    val CANADA_ATLANTIC = ZoneId.of("Canada/Atlantic")
-    val CANADA_CENTRAL = ZoneId.of("Canada/Central")
-    val CANADA_EASTERN = ZoneId.of("Canada/Eastern")
-    val CANADA_NEWFOUNDLAND = ZoneId.of("Canada/Newfoundland")
-    val CANADA_PACIFIC = ZoneId.of("Canada/Pacific")
-    val CANADA_SASKATCHEWAN = ZoneId.of("Canada/Saskatchewan")
-    val CANADA_MOUNTAIN = ZoneId.of("Canada/Mountain")
-    val CANADA_YUKON = ZoneId.of("Canada/Yukon")
+    val CANADA_ATLANTIC by lazy { ZoneId.of("Canada/Atlantic") }
+    val CANADA_CENTRAL by lazy { ZoneId.of("Canada/Central") }
+    val CANADA_EASTERN by lazy { ZoneId.of("Canada/Eastern") }
+    val CANADA_NEWFOUNDLAND by lazy { ZoneId.of("Canada/Newfoundland") }
+    val CANADA_PACIFIC by lazy { ZoneId.of("Canada/Pacific") }
+    val CANADA_SASKATCHEWAN by lazy { ZoneId.of("Canada/Saskatchewan") }
+    val CANADA_MOUNTAIN by lazy { ZoneId.of("Canada/Mountain") }
+    val CANADA_YUKON by lazy { ZoneId.of("Canada/Yukon") }
 
-    val CHILE_CONTINENTAL = ZoneId.of("Chile/Continental")
-    val CHILE_EASTERISLAND = ZoneId.of("Chile/EasterIsland")
+    val CHILE_CONTINENTAL by lazy { ZoneId.of("Chile/Continental") }
+    val CHILE_EASTERISLAND by lazy { ZoneId.of("Chile/EasterIsland") }
 
-    val CST6CDT = ZoneId.of("CST6CDT")
+    val CST6CDT by lazy { ZoneId.of("CST6CDT") }
 
-    val CUBA = ZoneId.of("Cuba")
+    val CUBA by lazy { ZoneId.of("Cuba") }
 
-    val CET = ZoneId.of("CET")
+    val CET by lazy { ZoneId.of("CET") }
 
-    val EET = ZoneId.of("EET")
-    val EIRE = ZoneId.of("Eire")
-    val EST5EDT = ZoneId.of("EST5EDT")
+    val EET by lazy { ZoneId.of("EET") }
+    val EIRE by lazy { ZoneId.of("Eire") }
+    val EST5EDT by lazy { ZoneId.of("EST5EDT") }
 
-    val EGYPT = ZoneId.of("Egypt")
+    val EGYPT by lazy { ZoneId.of("Egypt") }
 
-    val EUROPE_AMSTERDAM = ZoneId.of("Europe/Amsterdam")
-    val EUROPE_ANDORRA = ZoneId.of("Europe/Andorra")
-    val EUROPE_ATHENS = ZoneId.of("Europe/Athens")
-    val EUROPE_ASTRAKHAN = ZoneId.of("Europe/Astrakhan")
-    val EUROPE_BELGRADE = ZoneId.of("Europe/Belgrade")
-    val EUROPE_BELFAST = ZoneId.of("Europe/Belfast")
-    val EUROPE_BERLIN = ZoneId.of("Europe/Berlin")
-    val EUROPE_BUDAPEST = ZoneId.of("Europe/Budapest")
-    val EUROPE_BUCHAREST = ZoneId.of("Europe/Bucharest")
-    val EUROPE_BRATISLAVA = ZoneId.of("Europe/Bratislava")
-    val EUROPE_BRUSSELS = ZoneId.of("Europe/Brussels")
-    val EUROPE_BUSINGEN = ZoneId.of("Europe/Busingen")
-    val EUROPE_COPENHAGEN = ZoneId.of("Europe/Copenhagen")
-    val EUROPE_CHISINAU = ZoneId.of("Europe/Chisinau")
-    val EUROPE_DUBLIN = ZoneId.of("Europe/Dublin")
-    val EUROPE_GIBRALTAR = ZoneId.of("Europe/Gibraltar")
-    val EUROPE_GUERNSEY = ZoneId.of("Europe/Guernsey")
-    val EUROPE_HELSINKI = ZoneId.of("Europe/Helsinki")
-    val EUROPE_ISTANBUL = ZoneId.of("Europe/Istanbul")
-    val EUROPE_ISLE_OF_MAN = ZoneId.of("Europe/Isle_of_Man")
-    val EUROPE_JERSEY = ZoneId.of("Europe/Jersey")
-    val EUROPE_KALININGRAD = ZoneId.of("Europe/Kaliningrad")
-    val EUROPE_KIEV = ZoneId.of("Europe/Kiev")
-    val EUROPE_KIROV = ZoneId.of("Europe/Kirov")
-    val EUROPE_KIEV_ALT = ZoneId.of("Europe/Kyiv")
-    val EUROPE_KYIV = ZoneId.of("Europe/Kyiv")
-    val EUROPE_LISBON = ZoneId.of("Europe/Lisbon")
-    val EUROPE_LJUBLJANA = ZoneId.of("Europe/Ljubljana")
-    val EUROPE_LONDON = ZoneId.of("Europe/London")
-    val EUROPE_LUXEMBOURG = ZoneId.of("Europe/Luxembourg")
-    val EUROPE_MADRID = ZoneId.of("Europe/Madrid")
-    val EUROPE_MALTA = ZoneId.of("Europe/Malta")
-    val EUROPE_MARIEHAMN = ZoneId.of("Europe/Mariehamn")
-    val EUROPE_MINSK = ZoneId.of("Europe/Minsk")
-    val EUROPE_MONACO = ZoneId.of("Europe/Monaco")
-    val EUROPE_MOSCOW = ZoneId.of("Europe/Moscow")
-    val EUROPE_NICOSIA = ZoneId.of("Europe/Nicosia")
-    val EUROPE_NICOSIA_ALT = ZoneId.of("Europe/Nicosia")
-    val EUROPE_OSLO = ZoneId.of("Europe/Oslo")
-    val EUROPE_PARIS = ZoneId.of("Europe/Paris")
-    val EUROPE_PODGORICA = ZoneId.of("Europe/Podgorica")
-    val EUROPE_PRAGUE = ZoneId.of("Europe/Prague")
-    val EUROPE_RIGA = ZoneId.of("Europe/Riga")
-    val EUROPE_ROME = ZoneId.of("Europe/Rome")
-    val EUROPE_SARAJEVO = ZoneId.of("Europe/Sarajevo")
-    val EUROPE_SAMARA = ZoneId.of("Europe/Samara")
-    val EUROPE_SAN_MARINO = ZoneId.of("Europe/San_Marino")
-    val EUROPE_SIMFEROPOL = ZoneId.of("Europe/Simferopol")
-    val EUROPE_SKOPJE = ZoneId.of("Europe/Skopje")
-    val EUROPE_SOFIA = ZoneId.of("Europe/Sofia")
-    val EUROPE_STOCKHOLM = ZoneId.of("Europe/Stockholm")
-    val EUROPE_TALLINN = ZoneId.of("Europe/Tallinn")
-    val EUROPE_TIRASPOL = ZoneId.of("Europe/Tiraspol")
-    val EUROPE_TIRANE = ZoneId.of("Europe/Tirane")
-    val EUROPE_ULYANOVSK = ZoneId.of("Europe/Ulyanovsk")
-    val EUROPE_UZHGOROD = ZoneId.of("Europe/Uzhgorod")
-    val EUROPE_VADUZ = ZoneId.of("Europe/Vaduz")
-    val EUROPE_VATICAN = ZoneId.of("Europe/Vatican")
-    val EUROPE_VIENNA = ZoneId.of("Europe/Vienna")
-    val EUROPE_VILNIUS = ZoneId.of("Europe/Vilnius")
-    val EUROPE_VOLGOGRAD = ZoneId.of("Europe/Volgograd")
-    val EUROPE_ZAGREB = ZoneId.of("Europe/Zagreb")
-    val EUROPE_ZAPOROZHYE = ZoneId.of("Europe/Zaporozhye")
+    val EUROPE_AMSTERDAM by lazy { ZoneId.of("Europe/Amsterdam") }
+    val EUROPE_ANDORRA by lazy { ZoneId.of("Europe/Andorra") }
+    val EUROPE_ATHENS by lazy { ZoneId.of("Europe/Athens") }
+    val EUROPE_ASTRAKHAN by lazy { ZoneId.of("Europe/Astrakhan") }
+    val EUROPE_BELGRADE by lazy { ZoneId.of("Europe/Belgrade") }
+    val EUROPE_BELFAST by lazy { ZoneId.of("Europe/Belfast") }
+    val EUROPE_BERLIN by lazy { ZoneId.of("Europe/Berlin") }
+    val EUROPE_BUDAPEST by lazy { ZoneId.of("Europe/Budapest") }
+    val EUROPE_BUCHAREST by lazy { ZoneId.of("Europe/Bucharest") }
+    val EUROPE_BRATISLAVA by lazy { ZoneId.of("Europe/Bratislava") }
+    val EUROPE_BRUSSELS by lazy { ZoneId.of("Europe/Brussels") }
+    val EUROPE_BUSINGEN by lazy { ZoneId.of("Europe/Busingen") }
+    val EUROPE_COPENHAGEN by lazy { ZoneId.of("Europe/Copenhagen") }
+    val EUROPE_CHISINAU by lazy { ZoneId.of("Europe/Chisinau") }
+    val EUROPE_DUBLIN by lazy { ZoneId.of("Europe/Dublin") }
+    val EUROPE_GIBRALTAR by lazy { ZoneId.of("Europe/Gibraltar") }
+    val EUROPE_GUERNSEY by lazy { ZoneId.of("Europe/Guernsey") }
+    val EUROPE_HELSINKI by lazy { ZoneId.of("Europe/Helsinki") }
+    val EUROPE_ISTANBUL by lazy { ZoneId.of("Europe/Istanbul") }
+    val EUROPE_ISLE_OF_MAN by lazy { ZoneId.of("Europe/Isle_of_Man") }
+    val EUROPE_JERSEY by lazy { ZoneId.of("Europe/Jersey") }
+    val EUROPE_KALININGRAD by lazy { ZoneId.of("Europe/Kaliningrad") }
+    val EUROPE_KIEV by lazy { ZoneId.of("Europe/Kiev") }
+    val EUROPE_KIROV by lazy { ZoneId.of("Europe/Kirov") }
+    val EUROPE_KIEV_ALT by lazy { ZoneId.of("Europe/Kyiv") }
+    val EUROPE_KYIV by lazy { ZoneId.of("Europe/Kyiv") }
+    val EUROPE_LISBON by lazy { ZoneId.of("Europe/Lisbon") }
+    val EUROPE_LJUBLJANA by lazy { ZoneId.of("Europe/Ljubljana") }
+    val EUROPE_LONDON by lazy { ZoneId.of("Europe/London") }
+    val EUROPE_LUXEMBOURG by lazy { ZoneId.of("Europe/Luxembourg") }
+    val EUROPE_MADRID by lazy { ZoneId.of("Europe/Madrid") }
+    val EUROPE_MALTA by lazy { ZoneId.of("Europe/Malta") }
+    val EUROPE_MARIEHAMN by lazy { ZoneId.of("Europe/Mariehamn") }
+    val EUROPE_MINSK by lazy { ZoneId.of("Europe/Minsk") }
+    val EUROPE_MONACO by lazy { ZoneId.of("Europe/Monaco") }
+    val EUROPE_MOSCOW by lazy { ZoneId.of("Europe/Moscow") }
+    val EUROPE_NICOSIA by lazy { ZoneId.of("Europe/Nicosia") }
+    val EUROPE_NICOSIA_ALT by lazy { ZoneId.of("Europe/Nicosia") }
+    val EUROPE_OSLO by lazy { ZoneId.of("Europe/Oslo") }
+    val EUROPE_PARIS by lazy { ZoneId.of("Europe/Paris") }
+    val EUROPE_PODGORICA by lazy { ZoneId.of("Europe/Podgorica") }
+    val EUROPE_PRAGUE by lazy { ZoneId.of("Europe/Prague") }
+    val EUROPE_RIGA by lazy { ZoneId.of("Europe/Riga") }
+    val EUROPE_ROME by lazy { ZoneId.of("Europe/Rome") }
+    val EUROPE_SARAJEVO by lazy { ZoneId.of("Europe/Sarajevo") }
+    val EUROPE_SAMARA by lazy { ZoneId.of("Europe/Samara") }
+    val EUROPE_SAN_MARINO by lazy { ZoneId.of("Europe/San_Marino") }
+    val EUROPE_SIMFEROPOL by lazy { ZoneId.of("Europe/Simferopol") }
+    val EUROPE_SKOPJE by lazy { ZoneId.of("Europe/Skopje") }
+    val EUROPE_SOFIA by lazy { ZoneId.of("Europe/Sofia") }
+    val EUROPE_STOCKHOLM by lazy { ZoneId.of("Europe/Stockholm") }
+    val EUROPE_TALLINN by lazy { ZoneId.of("Europe/Tallinn") }
+    val EUROPE_TIRASPOL by lazy { ZoneId.of("Europe/Tiraspol") }
+    val EUROPE_TIRANE by lazy { ZoneId.of("Europe/Tirane") }
+    val EUROPE_ULYANOVSK by lazy { ZoneId.of("Europe/Ulyanovsk") }
+    val EUROPE_UZHGOROD by lazy { ZoneId.of("Europe/Uzhgorod") }
+    val EUROPE_VADUZ by lazy { ZoneId.of("Europe/Vaduz") }
+    val EUROPE_VATICAN by lazy { ZoneId.of("Europe/Vatican") }
+    val EUROPE_VIENNA by lazy { ZoneId.of("Europe/Vienna") }
+    val EUROPE_VILNIUS by lazy { ZoneId.of("Europe/Vilnius") }
+    val EUROPE_VOLGOGRAD by lazy { ZoneId.of("Europe/Volgograd") }
+    val EUROPE_ZAGREB by lazy { ZoneId.of("Europe/Zagreb") }
+    val EUROPE_ZAPOROZHYE by lazy { ZoneId.of("Europe/Zaporozhye") }
 
-    val GB = ZoneId.of("GB")
-    val GB_EIRE = ZoneId.of("GB-Eire")
+    val GB by lazy { ZoneId.of("GB") }
+    val GB_EIRE by lazy { ZoneId.of("GB-Eire") }
 
-    val GMT = ZoneId.of("GMT")
-    val GREENWICH = ZoneId.of("Greenwich")
+    val GMT by lazy { ZoneId.of("GMT") }
+    val GREENWICH by lazy { ZoneId.of("Greenwich") }
 
-    val HONGKONG = ZoneId.of("Hongkong")
+    val HONGKONG by lazy { ZoneId.of("Hongkong") }
 
-    val ICELAND = ZoneId.of("Iceland")
+    val ICELAND by lazy { ZoneId.of("Iceland") }
 
-    val INDIAN_CHAGOS = ZoneId.of("Indian/Chagos")
-    val INDIAN_CHRISTMAS = ZoneId.of("Indian/Christmas")
-    val INDIAN_COCOS = ZoneId.of("Indian/Cocos")
-    val INDIAN_KERGUELEN = ZoneId.of("Indian/Kerguelen")
-    val INDIAN_MAHE = ZoneId.of("Indian/Mahe")
-    val INDIAN_MALDIVES = ZoneId.of("Indian/Maldives")
-    val INDIAN_MAYOTTE = ZoneId.of("Indian/Mayotte")
-    val INDIAN_REUNION = ZoneId.of("Indian/Reunion")
+    val INDIAN_CHAGOS by lazy { ZoneId.of("Indian/Chagos") }
+    val INDIAN_CHRISTMAS by lazy { ZoneId.of("Indian/Christmas") }
+    val INDIAN_COCOS by lazy { ZoneId.of("Indian/Cocos") }
+    val INDIAN_KERGUELEN by lazy { ZoneId.of("Indian/Kerguelen") }
+    val INDIAN_MAHE by lazy { ZoneId.of("Indian/Mahe") }
+    val INDIAN_MALDIVES by lazy { ZoneId.of("Indian/Maldives") }
+    val INDIAN_MAYOTTE by lazy { ZoneId.of("Indian/Mayotte") }
+    val INDIAN_REUNION by lazy { ZoneId.of("Indian/Reunion") }
 
-    val IRAN = ZoneId.of("Iran")
+    val IRAN by lazy { ZoneId.of("Iran") }
 
-    val ISRAEL = ZoneId.of("Israel")
+    val ISRAEL by lazy { ZoneId.of("Israel") }
 
-    val JAPAN = ZoneId.of("Japan")
+    val JAPAN by lazy { ZoneId.of("Japan") }
 
-    val JAMAICA = ZoneId.of("Jamaica")
+    val JAMAICA by lazy { ZoneId.of("Jamaica") }
 
-    val KWAJALEIN = ZoneId.of("Kwajalein")
+    val KWAJALEIN by lazy { ZoneId.of("Kwajalein") }
 
-    val LIBYA = ZoneId.of("Libya")
+    val LIBYA by lazy { ZoneId.of("Libya") }
 
-    val MET = ZoneId.of("MET")
+    val MET by lazy { ZoneId.of("MET") }
 
-    val MEXICO_BAJANORTE = ZoneId.of("Mexico/BajaNorte")
-    val MEXICO_BAJASUR = ZoneId.of("Mexico/BajaSur")
-    val MEXICO_GENERAL = ZoneId.of("Mexico/General")
+    val MEXICO_BAJANORTE by lazy { ZoneId.of("Mexico/BajaNorte") }
+    val MEXICO_BAJASUR by lazy { ZoneId.of("Mexico/BajaSur") }
+    val MEXICO_GENERAL by lazy { ZoneId.of("Mexico/General") }
 
-    val NAVAJO = ZoneId.of("Navajo")
+    val NAVAJO by lazy { ZoneId.of("Navajo") }
 
-    val NZ = ZoneId.of("NZ")
-    val NZ_CHAT = ZoneId.of("NZ-CHAT")
+    val NZ by lazy { ZoneId.of("NZ") }
+    val NZ_CHAT by lazy { ZoneId.of("NZ-CHAT") }
 
-    val POLAND = ZoneId.of("Poland")
+    val POLAND by lazy { ZoneId.of("Poland") }
 
-    val PORTUGAL = ZoneId.of("Portugal")
+    val PORTUGAL by lazy { ZoneId.of("Portugal") }
 
-    val PRC = ZoneId.of("PRC")
+    val PRC by lazy { ZoneId.of("PRC") }
 
-    val PST8PDT = ZoneId.of("PST8PDT")
+    val PST8PDT by lazy { ZoneId.of("PST8PDT") }
 
-    val ROK = ZoneId.of("ROK")
+    val ROK by lazy { ZoneId.of("ROK") }
 
-    val SINGAPORE = ZoneId.of("Singapore")
+    val SINGAPORE by lazy { ZoneId.of("Singapore") }
 
-    val SYSTEMV_AST4 = ZoneId.of("SystemV/AST4")
-    val SYSTEMV_AST4ADT = ZoneId.of("SystemV/AST4ADT")
-    val SYSTEMV_CST6 = ZoneId.of("SystemV/CST6")
-    val SYSTEMV_CST6CDT = ZoneId.of("SystemV/CST6CDT")
-    val SYSTEMV_EST5EDT = ZoneId.of("SystemV/EST5EDT")
-    val SYSTEMV_HST10 = ZoneId.of("SystemV/HST10")
-    val SYSTEMV_MST7 = ZoneId.of("SystemV/MST7")
-    val SYSTEMV_MST7MDT = ZoneId.of("SystemV/MST7MDT")
-    val SYSTEMV_PST8 = ZoneId.of("SystemV/PST8")
-    val SYSTEMV_PST8PDT = ZoneId.of("SystemV/PST8PDT")
-    val SYSTEMV_YST9 = ZoneId.of("SystemV/YST9")
-    val SYSTEMV_YST9YDT = ZoneId.of("SystemV/YST9YDT")
+    val SYSTEMV_AST4 by lazy { ZoneId.of("SystemV/AST4") }
+    val SYSTEMV_AST4ADT by lazy { ZoneId.of("SystemV/AST4ADT") }
+    val SYSTEMV_CST6 by lazy { ZoneId.of("SystemV/CST6") }
+    val SYSTEMV_CST6CDT by lazy { ZoneId.of("SystemV/CST6CDT") }
+    val SYSTEMV_EST5EDT by lazy { ZoneId.of("SystemV/EST5EDT") }
+    val SYSTEMV_HST10 by lazy { ZoneId.of("SystemV/HST10") }
+    val SYSTEMV_MST7 by lazy { ZoneId.of("SystemV/MST7") }
+    val SYSTEMV_MST7MDT by lazy { ZoneId.of("SystemV/MST7MDT") }
+    val SYSTEMV_PST8 by lazy { ZoneId.of("SystemV/PST8") }
+    val SYSTEMV_PST8PDT by lazy { ZoneId.of("SystemV/PST8PDT") }
+    val SYSTEMV_YST9 by lazy { ZoneId.of("SystemV/YST9") }
+    val SYSTEMV_YST9YDT by lazy { ZoneId.of("SystemV/YST9YDT") }
 
-    val TURKEY = ZoneId.of("Turkey")
+    val TURKEY by lazy { ZoneId.of("Turkey") }
 
-    val US_ALEUTIAN = ZoneId.of("US/Aleutian")
-    val US_ALASKA = ZoneId.of("US/Alaska")
-    val US_ARIZONA = ZoneId.of("US/Arizona")
-    val US_CENTRAL = ZoneId.of("US/Central")
-    val US_EASTERN = ZoneId.of("US/Eastern")
-    val US_EAST_Indiana = ZoneId.of("US/East-Indiana")
-    val US_HAWAII = ZoneId.of("US/Hawaii")
-    val US_INDIANA_Starke = ZoneId.of("US/Indiana-Starke")
-    val US_MICHIGAN = ZoneId.of("US/Michigan")
-    val US_MOUNTAIN = ZoneId.of("US/Mountain")
-    val US_PACIFIC = ZoneId.of("US/Pacific")
-    val US_SAMOA = ZoneId.of("US/Samoa")
+    val US_ALEUTIAN by lazy { ZoneId.of("US/Aleutian") }
+    val US_ALASKA by lazy { ZoneId.of("US/Alaska") }
+    val US_ARIZONA by lazy { ZoneId.of("US/Arizona") }
+    val US_CENTRAL by lazy { ZoneId.of("US/Central") }
+    val US_EASTERN by lazy { ZoneId.of("US/Eastern") }
+    val US_EAST_Indiana by lazy { ZoneId.of("US/East-Indiana") }
+    val US_HAWAII by lazy { ZoneId.of("US/Hawaii") }
+    val US_INDIANA_Starke by lazy { ZoneId.of("US/Indiana-Starke") }
+    val US_MICHIGAN by lazy { ZoneId.of("US/Michigan") }
+    val US_MOUNTAIN by lazy { ZoneId.of("US/Mountain") }
+    val US_PACIFIC by lazy { ZoneId.of("US/Pacific") }
+    val US_SAMOA by lazy { ZoneId.of("US/Samoa") }
 
-    val UTC = ZoneId.of("UTC")
+    val UTC by lazy { ZoneId.of("UTC") }
 
-    val UCT = ZoneId.of("UCT")
+    val UCT by lazy { ZoneId.of("UCT") }
 
-    val UNIVERSAL = ZoneId.of("Universal")
+    val UNIVERSAL by lazy { ZoneId.of("Universal") }
 
-    val WET = ZoneId.of("WET")
-    val W_SU = ZoneId.of("W-SU")
+    val WET by lazy { ZoneId.of("WET") }
+    val W_SU by lazy { ZoneId.of("W-SU") }
 
-    val ZULU = ZoneId.of("Zulu")
+    val ZULU by lazy { ZoneId.of("Zulu") }
 }
