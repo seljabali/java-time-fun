@@ -1,5 +1,6 @@
 package javatimefun.zoneddatetime
 
+import javatimefun.zoneddatetime.extensions.atEndOfDay
 import javatimefun.zoneddatetime.extensions.atStartOfDay
 import javatimefun.zoneddatetime.extensions.getLast
 import javatimefun.zoneddatetime.extensions.getNext
@@ -35,8 +36,9 @@ object ZonedDateTimes {
     fun nextSaturday(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).getNext(SATURDAY)
     fun nextSunday(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime = today(zoneId).getNext(SUNDAY)
 
-    fun firstDayOfTheYear(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime =
+    fun startOfYear(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime =
         ZonedDateTimeUtil.new(today(zoneId).year, 1, 1)
-    fun lastDayOfTheYear(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime =
+    fun endOfYear(zoneId: ZoneId = ZoneId.systemDefault()): ZonedDateTime =
         ZonedDateTimeUtil.new(today(zoneId).year, 12, 31)
+            .atEndOfDay()
 }

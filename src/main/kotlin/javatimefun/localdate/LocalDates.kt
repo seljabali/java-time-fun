@@ -28,8 +28,8 @@ object LocalDates {
     fun nextSaturday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDate = today().getNext(DayOfWeek.SATURDAY)
     fun nextSunday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDate = today().getNext(DayOfWeek.SUNDAY)
 
-    fun firstDayOfTheYear(zoneId: ZoneId = ZoneId.systemDefault()): LocalDate =
+    fun startOfYear(zoneId: ZoneId = ZoneId.systemDefault()): LocalDate =
         LocalDateUtil.new(today(zoneId).year, 1, 1)
-    fun lastDayOfTheYear(zoneId: ZoneId = ZoneId.systemDefault()): LocalDate =
+    fun endOfYear(zoneId: ZoneId = ZoneId.systemDefault()): LocalDate =
         LocalDateUtil.new(today(zoneId).year, 12, 31)
 }

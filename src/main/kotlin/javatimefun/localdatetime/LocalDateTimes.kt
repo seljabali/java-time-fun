@@ -1,5 +1,6 @@
 package javatimefun.localdatetime
 
+import javatimefun.localdatetime.extensions.atEndOfDay
 import javatimefun.localdatetime.extensions.atStartOfDay
 import javatimefun.localdatetime.extensions.getLast
 import javatimefun.localdatetime.extensions.getNext
@@ -29,8 +30,9 @@ object LocalDateTimes {
     fun nextSaturday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).getNext(DayOfWeek.SATURDAY)
     fun nextSunday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).getNext(DayOfWeek.SUNDAY)
 
-    fun firstDayOfTheYear(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime =
+    fun startOfYear(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime =
         LocalDateTimeUtil.new(today(zoneId).year, 1, 1)
-    fun lastDayOfTheYear(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime =
+    fun endOfYear(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime =
         LocalDateTimeUtil.new(today(zoneId).year, 12, 31)
+            .atEndOfDay()
 }
