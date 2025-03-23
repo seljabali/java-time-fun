@@ -1,6 +1,6 @@
 package localdatetime
 
-import javatimefun.localdatetime.LocalDateTimeUtil
+import javatimefun.localdatetime.LocalDateTimeFactory
 import javatimefun.localdatetime.extensions.getDayDifference
 import javatimefun.localdatetime.extensions.getHourDifference
 import javatimefun.localdatetime.extensions.getMinuteDifference
@@ -15,7 +15,7 @@ class LocalDateTimeComparisonExtensionsTest {
     fun `given 2 dateTimes 1hr and 10m apart, then should see such differences in comparing`() {
         // given
         // 2021-06-08 3:30 PM
-        val dateA = LocalDateTimeUtil.new(
+        val dateA = LocalDateTimeFactory.new(
             year = 2021,
             month = 6,
             day = 8,
@@ -26,7 +26,7 @@ class LocalDateTimeComparisonExtensionsTest {
         )
 
         // 2021-06-08 4:40 PM
-        val dateB = LocalDateTimeUtil.new(
+        val dateB = LocalDateTimeFactory.new(
             year = 2021,
             month = 6,
             day = 8,
@@ -55,7 +55,7 @@ class LocalDateTimeComparisonExtensionsTest {
     fun `given 2 dateTimes 3 years apart, then should see such differences in comparing`() {
         // given
         // 2021-06-08 3:30 PM
-        val dateA = LocalDateTimeUtil.new(
+        val dateA = LocalDateTimeFactory.new(
             year = 2021,
             month = 6,
             day = 8,
@@ -66,7 +66,7 @@ class LocalDateTimeComparisonExtensionsTest {
         )
 
         // 2024-06-08 3:30 PM
-        val dateB = LocalDateTimeUtil.new(
+        val dateB = LocalDateTimeFactory.new(
             year = 2024,
             month = 6,
             day = 8,

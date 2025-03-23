@@ -8,12 +8,11 @@ fun LocalDateTime.atStartOfDay(): LocalDateTime = this.withLocalTime(LocalTime.M
 
 fun LocalDateTime.atEndOfDay(): LocalDateTime = this.withLocalTime(LocalTime.MAX)
 
-fun LocalDateTime.withLocalTime(localTime: LocalTime): LocalDateTime {
-    val withHour = this.withHour(localTime.hour)
-    val withMinute = withHour.withMinute(localTime.minute)
-    val withSecond = withMinute.withSecond(localTime.second)
-    return withSecond.withNano(localTime.nano)
-}
+fun LocalDateTime.withLocalTime(localTime: LocalTime): LocalDateTime =
+    this.withHour(localTime.hour)
+        .withMinute(localTime.minute)
+        .withSecond(localTime.second)
+        .withNano(localTime.nano)
 
 fun LocalDateTime.getLast(dayOfWeek: DayOfWeek, countingInThisDay: Boolean = false): LocalDateTime {
     if (countingInThisDay && this.dayOfWeek == dayOfWeek) {

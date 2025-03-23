@@ -1,5 +1,6 @@
 package localtime
 
+import javatimefun.ZoneIds
 import javatimefun.calendar.extensions.toLocalTime
 import javatimefun.date.extensions.toLocalTime
 import javatimefun.localtime.LocalTimeUtil
@@ -18,7 +19,7 @@ class LocalTimeUtilTest {
         val epoch = 1325134800000
 
         // when
-        val localTime = LocalTimeUtil.new(epoch)
+        val localTime = LocalTimeUtil.new(epoch, ZoneIds.UTC)
 
         // then
         assertEquals(5, localTime.hour)
@@ -33,7 +34,7 @@ class LocalTimeUtilTest {
 
         // when
         val date = Date(epoch)
-        val localTime = date.toLocalTime()
+        val localTime = date.toLocalTime(ZoneIds.UTC)
 
         // then
         assertEquals(5, localTime.hour)

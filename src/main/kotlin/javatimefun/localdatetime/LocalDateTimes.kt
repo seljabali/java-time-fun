@@ -1,33 +1,38 @@
 package javatimefun.localdatetime
 
+import javatimefun.localdatetime.extensions.atEndOfDay
 import javatimefun.localdatetime.extensions.atStartOfDay
 import javatimefun.localdatetime.extensions.getLast
 import javatimefun.localdatetime.extensions.getNext
 import java.time.DayOfWeek
 import java.time.LocalDateTime
+import java.time.ZoneId
 
 object LocalDateTimes {
-    val now: LocalDateTime get() = LocalDateTime.now()
-    val today: LocalDateTime get() = now.atStartOfDay()
-    val yesterday: LocalDateTime get() = today.minusDays(1)
-    val tomorrow: LocalDateTime get() = today.plusDays(1)
+    fun now(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = LocalDateTime.now(zoneId)
+    fun today(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = now(zoneId).atStartOfDay()
+    fun yesterday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).minusDays(1)
+    fun tomorrow(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).plusDays(1)
 
-    val lastMonday: LocalDateTime get() = today.getLast(DayOfWeek.MONDAY)
-    val lastTuesday: LocalDateTime get() = today.getLast(DayOfWeek.TUESDAY)
-    val lastWednesday: LocalDateTime get() = today.getLast(DayOfWeek.WEDNESDAY)
-    val lastThursday: LocalDateTime get() = today.getLast(DayOfWeek.THURSDAY)
-    val lastFriday: LocalDateTime get() = today.getLast(DayOfWeek.FRIDAY)
-    val lastSaturday: LocalDateTime get() = today.getLast(DayOfWeek.SATURDAY)
-    val lastSunday: LocalDateTime get() = today.getLast(DayOfWeek.SUNDAY)
+    fun lastMonday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).getLast(DayOfWeek.MONDAY)
+    fun lastTuesday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).getLast(DayOfWeek.TUESDAY)
+    fun lastWednesday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).getLast(DayOfWeek.WEDNESDAY)
+    fun lastThursday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).getLast(DayOfWeek.THURSDAY)
+    fun lastFriday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).getLast(DayOfWeek.FRIDAY)
+    fun lastSaturday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).getLast(DayOfWeek.SATURDAY)
+    fun lastSunday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).getLast(DayOfWeek.SUNDAY)
 
-    val nextMonday: LocalDateTime get() = today.getNext(DayOfWeek.MONDAY)
-    val nextTuesday: LocalDateTime get() = today.getNext(DayOfWeek.TUESDAY)
-    val nextWednesday: LocalDateTime get() = today.getNext(DayOfWeek.WEDNESDAY)
-    val nextThursday: LocalDateTime get() = today.getNext(DayOfWeek.THURSDAY)
-    val nextFriday: LocalDateTime get() = today.getNext(DayOfWeek.FRIDAY)
-    val nextSaturday: LocalDateTime get() = today.getNext(DayOfWeek.SATURDAY)
-    val nextSunday: LocalDateTime get() = today.getNext(DayOfWeek.SUNDAY)
+    fun nextMonday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).getNext(DayOfWeek.MONDAY)
+    fun nextTuesday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).getNext(DayOfWeek.TUESDAY)
+    fun nextWednesday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).getNext(DayOfWeek.WEDNESDAY)
+    fun nextThursday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).getNext(DayOfWeek.THURSDAY)
+    fun nextFriday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).getNext(DayOfWeek.FRIDAY)
+    fun nextSaturday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).getNext(DayOfWeek.SATURDAY)
+    fun nextSunday(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = today(zoneId).getNext(DayOfWeek.SUNDAY)
 
-    val firstDayOfThisYear: LocalDateTime get() = LocalDateTimeUtil.new(today.year, 1, 1)
-    val lastDayOfThisYear: LocalDateTime get() = LocalDateTimeUtil.new(today.year, 12, 31)
+    fun startOfYear(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime =
+        LocalDateTimeFactory.new(today(zoneId).year, 1, 1)
+    fun endOfYear(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime =
+        LocalDateTimeFactory.new(today(zoneId).year, 12, 31)
+            .atEndOfDay()
 }

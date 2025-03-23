@@ -1,6 +1,6 @@
 package zoneddatetime
 
-import javatimefun.zoneddatetime.ZonedDateTimeUtil
+import javatimefun.zoneddatetime.ZonedDateTimeFactory
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
@@ -17,7 +17,7 @@ class ZonedDateTimeAttributeExtensionsTest {
 
         // when
         leapYearList.forEach { year ->
-            val date = ZonedDateTimeUtil.new(year, 1, 1)
+            val date = ZonedDateTimeFactory.new(year, 1, 1)
             areAllLeapYears = areAllLeapYears and date.isInLeapYear()
         }
 
@@ -34,7 +34,7 @@ class ZonedDateTimeAttributeExtensionsTest {
 
         // when
         nonLeapYearList.forEach { year ->
-            val date = ZonedDateTimeUtil.new(year, 1, 1)
+            val date = ZonedDateTimeFactory.new(year, 1, 1)
             areAnyLeapYears = areAnyLeapYears or date.isInLeapYear()
         }
 
@@ -45,7 +45,7 @@ class ZonedDateTimeAttributeExtensionsTest {
     @Test
     fun `given date A, then should properly describe its attributes`() {
         // given
-        val dateA = ZonedDateTimeUtil.new(2020, 6, 20)
+        val dateA = ZonedDateTimeFactory.new(2020, 6, 20)
 
         // when
         val monthBase0 = dateA.getMonthBaseZero()
@@ -59,7 +59,7 @@ class ZonedDateTimeAttributeExtensionsTest {
     @Test
     fun `given date A at start of day, then should properly describe it as such`() {
         // given
-        val dateA = ZonedDateTimeUtil.new(
+        val dateA = ZonedDateTimeFactory.new(
             2020,
             6,
             20,
@@ -67,7 +67,6 @@ class ZonedDateTimeAttributeExtensionsTest {
             0,
             0,
             0,
-            false
         )
 
         // when
@@ -80,15 +79,14 @@ class ZonedDateTimeAttributeExtensionsTest {
     @Test
     fun `given date A at end of day, then should properly describe it as such`() {
         // given
-        val dateA = ZonedDateTimeUtil.new(
+        val dateA = ZonedDateTimeFactory.new(
             2020,
             6,
             20,
             23,
             59,
             59,
-            999999999,
-            false
+            999_999_999,
         )
 
         // when

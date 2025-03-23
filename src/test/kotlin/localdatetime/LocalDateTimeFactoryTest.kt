@@ -1,8 +1,9 @@
 package localdatetime
 
+import javatimefun.ZoneIds
 import javatimefun.calendar.extensions.toLocalDateTime
 import javatimefun.date.extensions.toLocalDateTime
-import javatimefun.localdatetime.LocalDateTimeUtil
+import javatimefun.localdatetime.LocalDateTimeFactory
 import javatimefun.localdatetime.extensions.getMonthBaseZero
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
@@ -11,7 +12,7 @@ import java.util.Date
 import java.util.GregorianCalendar
 import java.util.TimeZone
 
-class LocalDateTimeUtilTest {
+class LocalDateTimeFactoryTest {
 
     @Test
     fun `given date epoch millisecond, when converted to localDateTime, then should match attributes`() {
@@ -19,7 +20,7 @@ class LocalDateTimeUtilTest {
         val epoch = 1325134800000
 
         // when
-        val localDateTime = LocalDateTimeUtil.new(epoch)
+        val localDateTime = LocalDateTimeFactory.new(epoch, ZoneIds.UTC)
 
         // then
         assertEquals(2011, localDateTime.year)
@@ -37,7 +38,7 @@ class LocalDateTimeUtilTest {
 
         // when
         val date = Date(epoch)
-        val localDateTime = date.toLocalDateTime()
+        val localDateTime = date.toLocalDateTime(ZoneIds.UTC)
 
         // then
         assertEquals(2011, localDateTime.year)

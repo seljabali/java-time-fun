@@ -2,7 +2,7 @@ package zoneddatetime
 
 import javatimefun.localtime.extensions.toLocalTime
 import javatimefun.localtime.extensions.print
-import javatimefun.zoneddatetime.ZonedDateTimeUtil
+import javatimefun.zoneddatetime.ZonedDateTimeFactory
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
@@ -22,7 +22,7 @@ class ZonedDateTimeMutatingExtensionsTest {
     @Test
     fun `given date is on a Monday, when looking for last Monday inclusive, then should return same date`() {
         // given
-        val dateA = ZonedDateTimeUtil.new(2021, 6, 7)
+        val dateA = ZonedDateTimeFactory.new(2021, 6, 7)
 
         // when
         val resultLastMondayInclusive = dateA.getLast(DayOfWeek.MONDAY, countingInThisDay = true)
@@ -34,8 +34,8 @@ class ZonedDateTimeMutatingExtensionsTest {
     @Test
     fun `given date is on a Monday, when looking for last Monday exclusive, then should return date minus 1 week`() {
         // given
-        val dateA = ZonedDateTimeUtil.new(2021, 6, 14)
-        val expectedDate = ZonedDateTimeUtil.new(2021, 6, 7)
+        val dateA = ZonedDateTimeFactory.new(2021, 6, 14)
+        val expectedDate = ZonedDateTimeFactory.new(2021, 6, 7)
 
         // when
         val resultLastMondayExclusive = dateA.getLast(DayOfWeek.MONDAY)
@@ -47,7 +47,7 @@ class ZonedDateTimeMutatingExtensionsTest {
     @Test
     fun `given date is on a Monday, when looking for next Monday inclusive, then should return same date`() {
         // given
-        val dateA = ZonedDateTimeUtil.new(2021, 6, 7)
+        val dateA = ZonedDateTimeFactory.new(2021, 6, 7)
 
         // when
         val resultNextMondayInclusive = dateA.getNext(DayOfWeek.MONDAY, countingInThisDay = true)
@@ -59,8 +59,8 @@ class ZonedDateTimeMutatingExtensionsTest {
     @Test
     fun `given date is on a Monday, when looking for next Monday exclusive, then should return date plus 1 week`() {
         // given
-        val dateA = ZonedDateTimeUtil.new(2021, 6, 7)
-        val expectedDate = ZonedDateTimeUtil.new(2021, 6, 14)
+        val dateA = ZonedDateTimeFactory.new(2021, 6, 7)
+        val expectedDate = ZonedDateTimeFactory.new(2021, 6, 14)
 
         // when
         val resultNextMondayExclusive = dateA.getNext(DayOfWeek.MONDAY)
@@ -72,7 +72,7 @@ class ZonedDateTimeMutatingExtensionsTest {
     @Test
     fun `given date A, when adjusted time, then should properly apply time`() {
         // given
-        var dateA = ZonedDateTimeUtil.new(2020, 3, 20)
+        var dateA = ZonedDateTimeFactory.new(2020, 3, 20)
         val timeText = "07:35:11 AM"
         val time: LocalTime = timeText.toLocalTime(HH_MM_SS_AM)  ?: throw RuntimeException("Failed to parse")
 

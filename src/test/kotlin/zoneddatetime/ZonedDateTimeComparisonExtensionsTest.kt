@@ -1,6 +1,6 @@
 package zoneddatetime
 
-import javatimefun.zoneddatetime.ZonedDateTimeUtil
+import javatimefun.zoneddatetime.ZonedDateTimeFactory
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Assertions.assertFalse
@@ -12,8 +12,8 @@ class ZonedDateTimeComparisonExtensionsTest {
     @Test
     fun `given date A & B, when A is before B, then should properly have compare results as such`() {
         // given
-        val dateA = ZonedDateTimeUtil.new(2020, 3, 20)
-        val dateB = ZonedDateTimeUtil.new(2020, 3, 25)
+        val dateA = ZonedDateTimeFactory.new(2020, 3, 20)
+        val dateB = ZonedDateTimeFactory.new(2020, 3, 25)
 
         // when
         val isDateABeforeDayB =
@@ -41,8 +41,8 @@ class ZonedDateTimeComparisonExtensionsTest {
     @Test
     fun `given date A & B, when A is before B, then should properly have day & month compare results as such`() {
         // given
-        val dateA = ZonedDateTimeUtil.new(2020, 3, 20)
-        val dateB = ZonedDateTimeUtil.new(2020, 3, 25)
+        val dateA = ZonedDateTimeFactory.new(2020, 3, 20)
+        val dateB = ZonedDateTimeFactory.new(2020, 3, 25)
 
         // when
         val monthDifferenceOfAAndB = dateA.getMonthDifference(dateB)
@@ -66,8 +66,8 @@ class ZonedDateTimeComparisonExtensionsTest {
     @Test
     fun `given date A & B, when A is same day as B but not same time, then should properly have matching day comparisons`() {
         // given
-        val dateA = ZonedDateTimeUtil.new(2020, 3, 20)
-        val dateB = ZonedDateTimeUtil.new(2020, 3, 20, 12, 12, 0, 0)
+        val dateA = ZonedDateTimeFactory.new(2020, 3, 20)
+        val dateB = ZonedDateTimeFactory.new(2020, 3, 20, 12, 12, 0, 0)
 
         // when
         val isDateABeforeDayB = dateA.isBeforeDay(dateB) && dateA.compareDay(dateB) == -1
@@ -88,8 +88,8 @@ class ZonedDateTimeComparisonExtensionsTest {
     @Test
     fun `given date A & B, when A is same day as B but not same time, then should properly have matching time comparisons`() {
         // given
-        val dateA = ZonedDateTimeUtil.new(2020, 3, 20)
-        val dateB = ZonedDateTimeUtil.new(2020, 3, 20, 12, 12, 0, 0)
+        val dateA = ZonedDateTimeFactory.new(2020, 3, 20)
+        val dateB = ZonedDateTimeFactory.new(2020, 3, 20, 12, 12, 0, 0)
 
         // when
         val isDateABeforeDayTimeB =
@@ -108,7 +108,7 @@ class ZonedDateTimeComparisonExtensionsTest {
     fun `given 2 dateTimes 1hr and 10m apart, then should see such differences in comparing`() {
         // given
         // 2021-06-08 3:30 PM
-        val dateA = ZonedDateTimeUtil.new(
+        val dateA = ZonedDateTimeFactory.new(
             year = 2021,
             month = 6,
             day = 8,
@@ -119,7 +119,7 @@ class ZonedDateTimeComparisonExtensionsTest {
         )
 
         // 2021-06-08 4:40 PM
-        val dateB = ZonedDateTimeUtil.new(
+        val dateB = ZonedDateTimeFactory.new(
             year = 2021,
             month = 6,
             day = 8,
@@ -148,7 +148,7 @@ class ZonedDateTimeComparisonExtensionsTest {
     fun `given 2 dateTimes 3 years apart, then should see such differences in comparing`() {
         // given
         // 2021-06-08 3:30 PM
-        val dateA = ZonedDateTimeUtil.new(
+        val dateA = ZonedDateTimeFactory.new(
             year = 2021,
             month = 6,
             day = 8,
@@ -159,7 +159,7 @@ class ZonedDateTimeComparisonExtensionsTest {
         )
 
         // 2024-06-08 3:30 PM
-        val dateB = ZonedDateTimeUtil.new(
+        val dateB = ZonedDateTimeFactory.new(
             year = 2024,
             month = 6,
             day = 8,
