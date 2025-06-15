@@ -1,0 +1,15 @@
+[versions]
+kotlin = "2.1.20"
+junit = "5.8.1"
+dokka = "1.9.20"
+nexus = "2.0.0"
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+nexus-publish = { id = "io.github.gradle-nexus.publish-plugin", version.ref = "nexus" }
+
+[libraries]
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+junit-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
+junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
