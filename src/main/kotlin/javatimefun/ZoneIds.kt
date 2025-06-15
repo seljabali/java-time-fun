@@ -215,6 +215,79 @@ object ZoneIds {
 
     val ARCTIC_LONGYEARBYEN by lazy { ZoneId.of("Arctic/Longyearbyen") }
 
+    val ASIA_AMMAN by lazy { ZoneId.of("Asia/Amman") }
+    val ASIA_BAGHDAD by lazy { ZoneId.of("Asia/Baghdad") }
+    val ASIA_BAHRAIN by lazy { ZoneId.of("Asia/Bahrain") }
+    val ASIA_BAKU by lazy { ZoneId.of("Asia/Baku") }
+    val ASIA_BANGKOK by lazy { ZoneId.of("Asia/Bangkok") }
+    val ASIA_BEIRUT by lazy { ZoneId.of("Asia/Beirut") }
+    val ASIA_BISHKEK by lazy { ZoneId.of("Asia/Bishkek") }
+    val ASIA_BRUNEI by lazy { ZoneId.of("Asia/Brunei") }
+    val ASIA_CALCUTTA by lazy { ZoneId.of("Asia/Calcutta") } // alias of Asia/Kolkata
+    val ASIA_CHITA by lazy { ZoneId.of("Asia/Chita") }
+    val ASIA_CHOIBALSAN by lazy { ZoneId.of("Asia/Choibalsan") }
+    val ASIA_COLOMBO by lazy { ZoneId.of("Asia/Colombo") }
+    val ASIA_DAMASCUS by lazy { ZoneId.of("Asia/Damascus") }
+    val ASIA_DHAKA by lazy { ZoneId.of("Asia/Dhaka") }
+    val ASIA_DILI by lazy { ZoneId.of("Asia/Dili") }
+    val ASIA_DUBAI by lazy { ZoneId.of("Asia/Dubai") }
+    val ASIA_DUSHANBE by lazy { ZoneId.of("Asia/Dushanbe") }
+    val ASIA_GAZA by lazy { ZoneId.of("Asia/Gaza") }
+    val ASIA_HONG_KONG by lazy { ZoneId.of("Asia/Hong_Kong") }
+    val ASIA_HOVD by lazy { ZoneId.of("Asia/Hovd") }
+    val ASIA_IRKUTSK by lazy { ZoneId.of("Asia/Irkutsk") }
+    val ASIA_JAKARTA by lazy { ZoneId.of("Asia/Jakarta") }
+    val ASIA_JAYAPURA by lazy { ZoneId.of("Asia/Jayapura") }
+    val ASIA_JERUSALEM by lazy { ZoneId.of("Asia/Jerusalem") }
+    val ASIA_KABUL by lazy { ZoneId.of("Asia/Kabul") }
+    val ASIA_KAMCHATKA by lazy { ZoneId.of("Asia/Kamchatka") }
+    val ASIA_KARACHI by lazy { ZoneId.of("Asia/Karachi") }
+    val ASIA_KATHMANDU by lazy { ZoneId.of("Asia/Kathmandu") }
+    val ASIA_KHANDYGA by lazy { ZoneId.of("Asia/Khandyga") }
+    val ASIA_KOLKATA by lazy { ZoneId.of("Asia/Kolkata") }
+    val ASIA_KRASNOYARSK by lazy { ZoneId.of("Asia/Krasnoyarsk") }
+    val ASIA_KUALA_LUMPUR by lazy { ZoneId.of("Asia/Kuala_Lumpur") }
+    val ASIA_KUCHING by lazy { ZoneId.of("Asia/Kuching") }
+    val ASIA_KUWAIT by lazy { ZoneId.of("Asia/Kuwait") }
+    val ASIA_MACAU by lazy { ZoneId.of("Asia/Macau") }
+    val ASIA_MAGADAN by lazy { ZoneId.of("Asia/Magadan") }
+    val ASIA_MAKASSAR by lazy { ZoneId.of("Asia/Makassar") }
+    val ASIA_MANILA by lazy { ZoneId.of("Asia/Manila") }
+    val ASIA_MUSCAT by lazy { ZoneId.of("Asia/Muscat") }
+    val ASIA_NICOSIA by lazy { ZoneId.of("Asia/Nicosia") }
+    val ASIA_NOVOKUZNETSK by lazy { ZoneId.of("Asia/Novokuznetsk") }
+    val ASIA_NOVOSIBIRSK by lazy { ZoneId.of("Asia/Novosibirsk") }
+    val ASIA_OMSK by lazy { ZoneId.of("Asia/Omsk") }
+    val ASIA_ORAL by lazy { ZoneId.of("Asia/Oral") }
+    val ASIA_PHNOM_PENH by lazy { ZoneId.of("Asia/Phnom_Penh") }
+    val ASIA_PONTIANAK by lazy { ZoneId.of("Asia/Pontianak") }
+    val ASIA_PYONGYANG by lazy { ZoneId.of("Asia/Pyongyang") }
+    val ASIA_QATAR by lazy { ZoneId.of("Asia/Qatar") }
+    val ASIA_QYZYLORDA by lazy { ZoneId.of("Asia/Qyzylorda") }
+    val ASIA_RIYADH by lazy { ZoneId.of("Asia/Riyadh") }
+    val ASIA_SAKHALIN by lazy { ZoneId.of("Asia/Sakhalin") }
+    val ASIA_SAMARKAND by lazy { ZoneId.of("Asia/Samarkand") }
+    val ASIA_SEOUL by lazy { ZoneId.of("Asia/Seoul") }
+    val ASIA_SHANGHAI by lazy { ZoneId.of("Asia/Shanghai") }
+    val ASIA_SINGAPORE by lazy { ZoneId.of("Asia/Singapore") }
+    val ASIA_SREDNEKOLYMSK by lazy { ZoneId.of("Asia/Srednekolymsk") }
+    val ASIA_TAIPEI by lazy { ZoneId.of("Asia/Taipei") }
+    val ASIA_TASHKENT by lazy { ZoneId.of("Asia/Tashkent") }
+    val ASIA_TBILISI by lazy { ZoneId.of("Asia/Tbilisi") }
+    val ASIA_TEHRAN by lazy { ZoneId.of("Asia/Tehran") }
+    val ASIA_THIMPHU by lazy { ZoneId.of("Asia/Thimphu") }
+    val ASIA_TOKYO by lazy { ZoneId.of("Asia/Tokyo") }
+    val ASIA_TOMSK by lazy { ZoneId.of("Asia/Tomsk") }
+    val ASIA_ULAANBAATAR by lazy { ZoneId.of("Asia/Ulaanbaatar") }
+    val ASIA_URUMQI by lazy { ZoneId.of("Asia/Urumqi") } // May throw on some JDKs
+    val ASIA_UST_NERA by lazy { ZoneId.of("Asia/Ust-Nera") }
+    val ASIA_VIENTIANE by lazy { ZoneId.of("Asia/Vientiane") }
+    val ASIA_VLADIVOSTOK by lazy { ZoneId.of("Asia/Vladivostok") }
+    val ASIA_YAKUTSK by lazy { ZoneId.of("Asia/Yakutsk") }
+    val ASIA_YANGON by lazy { ZoneId.of("Asia/Yangon") }
+    val ASIA_YEKATERINBURG by lazy { ZoneId.of("Asia/Yekaterinburg") }
+    val ASIA_YEREVAN by lazy { ZoneId.of("Asia/Yerevan") }
+
     val ATLANTIC_AZORES by lazy { ZoneId.of("Atlantic/Azores") }
     val ATLANTIC_BERMUDA by lazy { ZoneId.of("Atlantic/Bermuda") }
     val ATLANTIC_CANARY by lazy { ZoneId.of("Atlantic/Canary") }
