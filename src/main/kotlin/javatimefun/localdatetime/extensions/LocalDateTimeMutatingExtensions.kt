@@ -1,8 +1,10 @@
 package javatimefun.localdatetime.extensions
 
+import javatimefun.ZoneIds
 import java.time.DayOfWeek
 import java.time.LocalDateTime
 import java.time.LocalTime
+import java.time.ZoneId
 
 fun LocalDateTime.atStartOfDay(): LocalDateTime = this.withLocalTime(LocalTime.MIN)
 
@@ -41,3 +43,17 @@ fun LocalDateTime.getNext(dayOfWeek: DayOfWeek, countingInThisDay: Boolean = fal
     }
     return nextLocalDate
 }
+
+fun LocalDateTime.fromZoneToZone(fromZoneId: ZoneId, toZoneId: ZoneId): LocalDateTime {
+    if (fromZoneId == toZoneId) return this
+    return this
+        .atZone(fromZoneId)
+        .withZoneSameInstant(toZoneId)
+        .toLocalDateTime()
+}
+
+fun LocalDateTime.fromUtcToZone(toZoneId: ZoneId): LocalDateTime =
+    this.fromZoneToZone(ZoneIds.UTC, toZoneId)
+
+fun LocalDateTime.fromZoneToUtc(fromZoneId: ZoneId): LocalDateTime =
+    this.fromZoneToZone(fromZoneId, ZoneIds.UTC)
