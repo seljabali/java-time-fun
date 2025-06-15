@@ -75,6 +75,9 @@ $dokka.location:javatimefun.localdatetime.extensions//compareDay/java.time.Local
 $dokka.location:javatimefun.localdatetime.extensions//compareMonth/java.time.LocalDateTime#java.time.LocalDateTime/PointingToDeclaration/javatimefun/javatimefun.localdatetime.extensions/compare-month.html
 $dokka.location:javatimefun.localdatetime.extensions//compareTime/java.time.LocalDateTime#java.time.LocalDateTime/PointingToDeclaration/javatimefun/javatimefun.localdatetime.extensions/compare-time.html
 $dokka.location:javatimefun.localdatetime.extensions//compareYear/java.time.LocalDateTime#java.time.LocalDateTime/PointingToDeclaration/javatimefun/javatimefun.localdatetime.extensions/compare-year.html
+$dokka.location:javatimefun.localdatetime.extensions//fromUtcToZone/java.time.LocalDateTime#java.time.ZoneId/PointingToDeclaration/javatimefun/javatimefun.localdatetime.extensions/from-utc-to-zone.html
+$dokka.location:javatimefun.localdatetime.extensions//fromZoneToUtc/java.time.LocalDateTime#java.time.ZoneId/PointingToDeclaration/javatimefun/javatimefun.localdatetime.extensions/from-zone-to-utc.html
+$dokka.location:javatimefun.localdatetime.extensions//fromZoneToZone/java.time.LocalDateTime#java.time.ZoneId#java.time.ZoneId/PointingToDeclaration/javatimefun/javatimefun.localdatetime.extensions/from-zone-to-zone.html
 $dokka.location:javatimefun.localdatetime.extensions//getDayDifference/java.time.LocalDateTime#java.time.LocalDateTime/PointingToDeclaration/javatimefun/javatimefun.localdatetime.extensions/get-day-difference.html
 $dokka.location:javatimefun.localdatetime.extensions//getDaysInMonth/java.time.LocalDateTime#/PointingToDeclaration/javatimefun/javatimefun.localdatetime.extensions/get-days-in-month.html
 $dokka.location:javatimefun.localdatetime.extensions//getHourDifference/java.time.LocalDateTime#java.time.LocalDateTime/PointingToDeclaration/javatimefun/javatimefun.localdatetime.extensions/get-hour-difference.html
