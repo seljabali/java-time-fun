@@ -1,6 +1,6 @@
 [versions]
 kotlin = "2.2.21"
-junit = "5.8.1"
+junit = "6.0.0"
 dokka = "1.9.20"
 nexus = "2.0.0"
 
