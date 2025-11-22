@@ -1,7 +1,6 @@
 [versions]
 kotlin = "2.2.21"
-junit = "5.8.1"
-junit-launcher = "6.0.1"
+junit = "6.0.1"
 dokka = "1.9.20"
 nexus = "2.0.0"
 
@@ -14,4 +13,4 @@ nexus-publish = { id = "io.github.gradle-nexus.publish-plugin", version.ref = "n
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 junit-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
 junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
-junit-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit-launcher" }
+junit-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit" }
