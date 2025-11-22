@@ -4,6 +4,13 @@ import java.time.DayOfWeek
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
+import java.time.temporal.TemporalAdjusters
+
+fun LocalDate.atEndOfDay(): LocalDateTime = LocalDateTime.of(this, LocalTime.MAX)
+
+fun LocalDate.atStartOfMonth(): LocalDate = this.with(TemporalAdjusters.firstDayOfMonth())
+
+fun LocalDate.atEndOfMonth(): LocalDate = this.with(TemporalAdjusters.lastDayOfMonth())
 
 fun LocalDate.getLast(dayOfWeek: DayOfWeek, countingInThisDay: Boolean = false): LocalDate {
     if (countingInThisDay && this.dayOfWeek == dayOfWeek) {
@@ -32,5 +39,3 @@ fun LocalDate.getNext(dayOfWeek: DayOfWeek, countingInThisDay: Boolean = false):
     }
     return nextLocalDate
 }
-
-fun LocalDate.atEndOfDay(): LocalDateTime = LocalDateTime.of(this, LocalTime.MAX)
