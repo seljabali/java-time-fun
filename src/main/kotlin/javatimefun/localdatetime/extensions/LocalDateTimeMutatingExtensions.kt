@@ -5,10 +5,17 @@ import java.time.DayOfWeek
 import java.time.LocalDateTime
 import java.time.LocalTime
 import java.time.ZoneId
+import java.time.temporal.TemporalAdjusters
 
 fun LocalDateTime.atStartOfDay(): LocalDateTime = this.withLocalTime(LocalTime.MIN)
 
 fun LocalDateTime.atEndOfDay(): LocalDateTime = this.withLocalTime(LocalTime.MAX)
+
+fun LocalDateTime.atStartOfMonth(): LocalDateTime =
+    this.with(TemporalAdjusters.firstDayOfMonth()).atStartOfDay()
+
+fun LocalDateTime.atEndOfMonth(): LocalDateTime =
+    this.with(TemporalAdjusters.lastDayOfMonth()).atEndOfDay()
 
 fun LocalDateTime.withLocalTime(localTime: LocalTime): LocalDateTime =
     this.withHour(localTime.hour)

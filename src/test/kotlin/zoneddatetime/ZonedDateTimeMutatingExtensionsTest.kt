@@ -3,6 +3,7 @@ package zoneddatetime
 import javatimefun.localtime.extensions.toLocalTime
 import javatimefun.localtime.extensions.print
 import javatimefun.zoneddatetime.ZonedDateTimeFactory
+import javatimefun.zoneddatetime.extensions.atEndOfDay
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
@@ -10,6 +11,9 @@ import javatimefun.zoneddatetime.extensions.getLast
 import javatimefun.zoneddatetime.extensions.getNext
 import javatimefun.zoneddatetime.extensions.isEqualDay
 import javatimefun.zoneddatetime.extensions.withLocalTime
+import javatimefun.zoneddatetime.extensions.atStartOfMonth
+import javatimefun.zoneddatetime.extensions.atEndOfMonth
+import javatimefun.zoneddatetime.extensions.atStartOfDay
 import java.time.DayOfWeek
 import java.time.LocalTime
 
@@ -86,4 +90,29 @@ class ZonedDateTimeMutatingExtensionsTest {
         Assertions.assertEquals(timeText, resultText)
     }
 
+    @Test
+    fun `given date, when getting start of month, then should return first day at start of day`() {
+        // given
+        val date = ZonedDateTimeFactory.new(2021, 6, 15, hourIn24 = 12)
+        val expected = ZonedDateTimeFactory.new(2021, 6, 1).atStartOfDay()
+
+        // when
+        val result = date.atStartOfMonth()
+
+        // then
+        assertTrue(expected.isEqual(result))
+    }
+
+    @Test
+    fun `given date, when getting end of month, then should return last day at end of day`() {
+        // given
+        val date = ZonedDateTimeFactory.new(2021, 6, 15)
+        val expected = ZonedDateTimeFactory.new(2021, 6, 30).atEndOfDay()
+
+        // when
+        val result = date.atEndOfMonth()
+
+        // then
+        assertTrue(expected.isEqual(result))
+    }
 }

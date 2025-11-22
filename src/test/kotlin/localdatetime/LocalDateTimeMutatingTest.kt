@@ -1,6 +1,8 @@
 package localdatetime
 
 import javatimefun.ZoneIds
+import javatimefun.localdatetime.extensions.atEndOfMonth
+import javatimefun.localdatetime.extensions.atStartOfMonth
 import javatimefun.localdatetime.extensions.fromUtcToZone
 import javatimefun.localdatetime.extensions.fromZoneToUtc
 import javatimefun.localdatetime.extensions.fromZoneToZone
@@ -9,6 +11,33 @@ import org.junit.jupiter.api.Test
 import java.time.LocalDateTime
 
 class LocalDateTimeMutatingTest {
+    @Test
+    fun `atStartOfMonth sets time to first day of month at start of day`() {
+        val dateTime = LocalDateTime.of(2025, 6, 15, 12, 30)
+        val result = dateTime.atStartOfMonth()
+
+        assertEquals(2025, result.year)
+        assertEquals(6, result.monthValue)
+        assertEquals(1, result.dayOfMonth)
+        assertEquals(0, result.hour)
+        assertEquals(0, result.minute)
+        assertEquals(0, result.second)
+        assertEquals(0, result.nano)
+    }
+
+    @Test
+    fun `atEndOfMonth sets time to last day of month at end of day`() {
+        val dateTime = LocalDateTime.of(2025, 6, 15, 12, 30)
+        val result = dateTime.atEndOfMonth()
+
+        assertEquals(2025, result.year)
+        assertEquals(6, result.monthValue)
+        assertEquals(30, result.dayOfMonth)
+        assertEquals(23, result.hour)
+        assertEquals(59, result.minute)
+        assertEquals(59, result.second)
+        assertEquals(999999999, result.nano)
+    }
 
     @Test
     fun `fromZoneToZone returns same time if zones are identical`() {

@@ -22,7 +22,7 @@ class ZonedDateTimeAttributeExtensionsTest {
         }
 
         // then
-        Assertions.assertTrue(areAllLeapYears)
+        assertTrue(areAllLeapYears)
     }
 
     @Test

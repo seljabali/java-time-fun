@@ -3,6 +3,7 @@ package javatimefun.zoneddatetime.extensions
 import java.time.DayOfWeek
 import java.time.LocalTime
 import java.time.ZonedDateTime
+import java.time.temporal.TemporalAdjusters
 
 /**
  * Works off of ZonedDateTime context.
@@ -15,6 +16,21 @@ fun ZonedDateTime.atStartOfDay(): ZonedDateTime = this.withLocalTime(LocalTime.M
  * @return  ZonedDateTime with its LocalTime set to the very last moment of the day.
  */
 fun ZonedDateTime.atEndOfDay(): ZonedDateTime = this.withLocalTime(LocalTime.MAX)
+
+
+/**
+ * Works off of ZonedDateTime context.
+ * @return ZonedDateTime set to the first day of the month at start of day.
+ */
+fun ZonedDateTime.atStartOfMonth(): ZonedDateTime =
+    this.with(TemporalAdjusters.firstDayOfMonth()).atStartOfDay()
+
+/**
+ * Works off of ZonedDateTime context.
+ * @return ZonedDateTime set to the last day of the month at end of day.
+ */
+fun ZonedDateTime.atEndOfMonth(): ZonedDateTime =
+    this.with(TemporalAdjusters.lastDayOfMonth()).atEndOfDay()
 
 /**
  * Works off of ZonedDateTime context.
