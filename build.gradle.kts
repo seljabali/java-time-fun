@@ -18,6 +18,7 @@ dependencies {
     implementation(libs.kotlin.stdlib)
     testImplementation(libs.junit.api)
     testRuntimeOnly(libs.junit.engine)
+    testRuntimeOnly(libs.junit.launcher)
 }
 
 tasks.getByName<Test>("test") {
