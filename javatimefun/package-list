@@ -12,6 +12,8 @@ $dokka.location:javatimefun.date.extensions//toLocalTime/java.util.Date#java.tim
 $dokka.location:javatimefun.date.extensions//toZonedDateTime/java.util.Date#java.time.ZoneId/PointingToDeclaration/javatimefun/javatimefun.date.extensions/to-zoned-date-time.html
 $dokka.location:javatimefun.localdate.extensions////PointingToDeclaration/javatimefun/javatimefun.localdate.extensions/index.html
 $dokka.location:javatimefun.localdate.extensions//atEndOfDay/java.time.LocalDate#/PointingToDeclaration/javatimefun/javatimefun.localdate.extensions/at-end-of-day.html
+$dokka.location:javatimefun.localdate.extensions//atEndOfMonth/java.time.LocalDate#/PointingToDeclaration/javatimefun/javatimefun.localdate.extensions/at-end-of-month.html
+$dokka.location:javatimefun.localdate.extensions//atStartOfMonth/java.time.LocalDate#/PointingToDeclaration/javatimefun/javatimefun.localdate.extensions/at-start-of-month.html
 $dokka.location:javatimefun.localdate.extensions//compareDay/java.time.LocalDate#java.time.LocalDate/PointingToDeclaration/javatimefun/javatimefun.localdate.extensions/compare-day.html
 $dokka.location:javatimefun.localdate.extensions//compareMonth/java.time.LocalDate#java.time.LocalDate/PointingToDeclaration/javatimefun/javatimefun.localdate.extensions/compare-month.html
 $dokka.location:javatimefun.localdate.extensions//compareYear/java.time.LocalDate#java.time.LocalDate/PointingToDeclaration/javatimefun/javatimefun.localdate.extensions/compare-year.html
@@ -70,7 +72,9 @@ $dokka.location:javatimefun.localdate/LocalDates/tomorrow/#java.time.ZoneId/Poin
 $dokka.location:javatimefun.localdate/LocalDates/yesterday/#java.time.ZoneId/PointingToDeclaration/javatimefun/javatimefun.localdate/-local-dates/yesterday.html
 $dokka.location:javatimefun.localdatetime.extensions////PointingToDeclaration/javatimefun/javatimefun.localdatetime.extensions/index.html
 $dokka.location:javatimefun.localdatetime.extensions//atEndOfDay/java.time.LocalDateTime#/PointingToDeclaration/javatimefun/javatimefun.localdatetime.extensions/at-end-of-day.html
+$dokka.location:javatimefun.localdatetime.extensions//atEndOfMonth/java.time.LocalDateTime#/PointingToDeclaration/javatimefun/javatimefun.localdatetime.extensions/at-end-of-month.html
 $dokka.location:javatimefun.localdatetime.extensions//atStartOfDay/java.time.LocalDateTime#/PointingToDeclaration/javatimefun/javatimefun.localdatetime.extensions/at-start-of-day.html
+$dokka.location:javatimefun.localdatetime.extensions//atStartOfMonth/java.time.LocalDateTime#/PointingToDeclaration/javatimefun/javatimefun.localdatetime.extensions/at-start-of-month.html
 $dokka.location:javatimefun.localdatetime.extensions//compareDay/java.time.LocalDateTime#java.time.LocalDateTime/PointingToDeclaration/javatimefun/javatimefun.localdatetime.extensions/compare-day.html
 $dokka.location:javatimefun.localdatetime.extensions//compareMonth/java.time.LocalDateTime#java.time.LocalDateTime/PointingToDeclaration/javatimefun/javatimefun.localdatetime.extensions/compare-month.html
 $dokka.location:javatimefun.localdatetime.extensions//compareTime/java.time.LocalDateTime#java.time.LocalDateTime/PointingToDeclaration/javatimefun/javatimefun.localdatetime.extensions/compare-time.html
@@ -166,7 +170,9 @@ $dokka.location:javatimefun.localtime/LocalTimes/noon/#/PointingToDeclaration/j
 $dokka.location:javatimefun.localtime/LocalTimes/startOfDay/#/PointingToDeclaration/javatimefun/javatimefun.localtime/-local-times/start-of-day.html
 $dokka.location:javatimefun.zoneddatetime.extensions////PointingToDeclaration/javatimefun/javatimefun.zoneddatetime.extensions/index.html
 $dokka.location:javatimefun.zoneddatetime.extensions//atEndOfDay/java.time.ZonedDateTime#/PointingToDeclaration/javatimefun/javatimefun.zoneddatetime.extensions/at-end-of-day.html
+$dokka.location:javatimefun.zoneddatetime.extensions//atEndOfMonth/java.time.ZonedDateTime#/PointingToDeclaration/javatimefun/javatimefun.zoneddatetime.extensions/at-end-of-month.html
 $dokka.location:javatimefun.zoneddatetime.extensions//atStartOfDay/java.time.ZonedDateTime#/PointingToDeclaration/javatimefun/javatimefun.zoneddatetime.extensions/at-start-of-day.html
+$dokka.location:javatimefun.zoneddatetime.extensions//atStartOfMonth/java.time.ZonedDateTime#/PointingToDeclaration/javatimefun/javatimefun.zoneddatetime.extensions/at-start-of-month.html
 $dokka.location:javatimefun.zoneddatetime.extensions//compareDay/java.time.ZonedDateTime#java.time.ZonedDateTime/PointingToDeclaration/javatimefun/javatimefun.zoneddatetime.extensions/compare-day.html
 $dokka.location:javatimefun.zoneddatetime.extensions//compareMonth/java.time.ZonedDateTime#java.time.ZonedDateTime/PointingToDeclaration/javatimefun/javatimefun.zoneddatetime.extensions/compare-month.html
 $dokka.location:javatimefun.zoneddatetime.extensions//compareTime/java.time.ZonedDateTime#java.time.ZonedDateTime/PointingToDeclaration/javatimefun/javatimefun.zoneddatetime.extensions/compare-time.html
